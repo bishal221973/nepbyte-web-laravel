@@ -10,8 +10,10 @@
         <label style="color: #fff;" class="description">From Strategy to Branding, Production to AI - We Do It
             All.</label>
     </div>
-    <div class="mt-5 d-flex justify-content-center animate__animated animate__backInDown" style="gap:10px">
+   <div style="position: relative;">
+     <div class="mt-5 d-flex justify-content-center animate__animated animate__backInDown" style="gap:10px;position: relative;">
         <x-home-card />
-
     </div>
+    <x-home-card-bottom/>
+   </div>
 @endsection

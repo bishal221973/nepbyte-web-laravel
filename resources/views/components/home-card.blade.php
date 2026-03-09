@@ -175,12 +175,13 @@
     <script>
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.glass-card');
-
+cards.forEach(c => c.classList.remove('animate__animated'));
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             // Remove 'active' from all cards
             cards.forEach(c => c.classList.remove('active'));
             // Add 'active' to hovered card
+            card.classList.remove("animate__animated")
             card.classList.add('active');
         });
     });

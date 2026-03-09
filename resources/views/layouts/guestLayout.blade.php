@@ -12,7 +12,7 @@
     @stack('style')
 </head>
 
-<body>
+<body style="overflow-x: hidden">
     @include('front.includes.navbar')
     @yield('content')
 </body>
