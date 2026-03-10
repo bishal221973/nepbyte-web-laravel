@@ -10,10 +10,74 @@
         <label style="color: #fff;" class="description">From Strategy to Branding, Production to AI - We Do It
             All.</label>
     </div>
-   <div style="position: relative;">
-     <div class="mt-5 d-flex justify-content-center animate__animated animate__backInDown" style="gap:10px;position: relative;">
-        <x-home-card />
+    <div style="position: relative;">
+        <div class="mt-5 d-flex justify-content-center animate__animated animate__backInDown"
+            style="gap:10px;position: relative;">
+            <x-home-card />
+        </div>
+        <x-home-card-bottom />
+
+        <div class="footer-glass-container animate__animated animate__rubberBand">
+            <div class="footer-glass">
+                <h3 class=" text-center capitalize animate__animated animate__swing">
+                    Trusted by leading brands
+                </h3>
+                <div class="flex justify-center animate__animated animate__bounceIn">
+                    <img src="/images/border1.png" class="d-block mx-auto" style="width:200px;opacity: 0.5" alt="" />
+                </div>
+
+
+                <div class="my-carosel animate__animated animate__zoomIn">
+                    <div class="group">
+                        <div class="card1">
+                            <img  src="{{ asset('logos/logo1.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo2.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo3.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo4.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo2.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo3.png') }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="group" aria-hidden>
+                         <div class="card1">
+                            <img  src="{{ asset('logos/logo1.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo2.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo3.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo4.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo2.png') }}" alt="">
+                        </div>
+                        <div class="card1">
+                             <img  src="{{ asset('logos/logo3.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <small class="d-block text-center">
+                    © 2024 Surkhet Soft. All rights reserved
+                </small>
+            </div>
+        </div>
+
     </div>
-    <x-home-card-bottom/>
-   </div>
 @endsection

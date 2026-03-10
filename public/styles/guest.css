@@ -122,3 +122,73 @@ body {
 .description {
   font-size: 0.9vw;
 }
+.footer-glass-container{
+    /* padding: 0 10%; */
+    margin-top: 30px;
+}
+.footer-glass {
+    background: rgba(255, 255, 255, 0.3);
+    /* border-radius: 5px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden; /* important for pseudo-elements */
+    padding: 30px 10%;
+}
+.footer-glass h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: #2F409F;
+}
+
+/* =============================== */
+.my-carosel{
+    margin: 30px auto;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    gap: 3em;
+}
+
+.group{
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    animation: scroll 30s linear infinite;
+}
+
+.card1{
+
+}
+
+.card1 img{
+    height: 50px;
+    width: auto;
+    display: block;
+    background: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card1 img:hover{
+    /* height: 60px; */
+}
+/* animation */
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* hide scrollbar */
+.my-carosel{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.my-carosel::-webkit-scrollbar{
+    display: none;
+}
