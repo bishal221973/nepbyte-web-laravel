@@ -18,7 +18,7 @@
                 into
                 predictable growth.</span>
 
-            <div class="flex gap-5 my-10">
+            <div class="flex gap-5 my-10 animate__animated animate__bounceInDown">
 
                 <button class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
                     Get Funnel Blueprint
@@ -30,7 +30,7 @@
 
             <div class="mt-5">
 
-                <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         01
@@ -38,7 +38,7 @@
                     <h5 class="text-white fw-bold mb-0">Framework for Profit</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         02
@@ -46,7 +46,7 @@
                     <h5 class="text-white fw-bold mb-0">Data Driven Execution</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft" style="animation-delay: 0.4s">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         03
