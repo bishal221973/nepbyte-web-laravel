@@ -1,4 +1,4 @@
-<div class="glass-card sub-second-card animate__animated animate__zoomInLeft">
+<a href="{{ route('front.strategy') }}" class="glass-card sub-second-card animate__animated animate__zoomInLeft">
     <div class="d-flex align-items-center w-100 h-100">
         <div class="d-block w-100">
             <div class="d-flex w-100 justify-content-center relative" style="margin-top: -10px">
@@ -18,7 +18,7 @@
             </small> --}}
         </div>
     </div>
-</div>
+</a>
 
 <div class="glass-card second-card animate__animated animate__zoomInUp">
     <div class="d-flex align-items-center w-100 h-100">
