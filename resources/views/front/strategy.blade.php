@@ -2,7 +2,7 @@
 @section('content')
     <x-breadcrumb title="Our Strategy" page="Strategy" />
 
-    <div class="w-100 row align-items-center" style="padding: 10px 10%">
+    <div id="fixedContent" class="w-100 row align-items-center m-0" style="padding: 0px 10%;position: relative;">
         <div class="col-md-6">
             <h1 class="strategy-title uppercase animate__animated animate__zoomIn">
                 <span class="fw-bold">Sales Funnel </span>
@@ -87,7 +87,8 @@
             <x-triangular-hierarchy :steps="$steps" />
         </div>
     </div>
-    <div class="divider-glass">
+    <div id="placeholder"></div>
+    <div class="divider-glass" style="z-index: 999">
         <div class="mt-10">
             <!-- <hr> -->
             <h3 class="page-title fw-bold text-center capitalize">
@@ -137,5 +138,129 @@
             ];
         @endphp
         <x-stepper-component :steps="$steps" :active-step="5" />
+
+
+
+        {{-- <div class="relative  fixed-bg" style="z-index:999999">
+            <div class="h-full w-full bg-[rgba(0,0,0,0.7)] absolute"></div>
+            <div class="relative z-10 flex px-[100px] items-center justify-center h-full text-white text-3xl font-bold"
+                style="z-index: 999999999">
+                <div class="row w-100 ">
+                    <div class="col-md-4 borde-right">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-block">
+                                <h5 class="text-center main-val">3.8X</h5>
+                                <small class="d-block text-center text-[14px]" style="letter-spacing: 2px;">Average
+                                    ROAS</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 borde-right">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-block">
+                                <h5 class="text-center main-val">40%</h5>
+                                <small class="d-block text-center text-[14px]" style="letter-spacing: 2px;">Conversion rate
+                                    increase</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-block">
+                                <h5 class="text-center main-val">20%</h5>
+                                <small class="d-block text-center text-[14px]" style="letter-spacing: 2px;">Lower cost per
+                                    leads</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+
+        <div class="mt-5">
+            <!-- <hr> -->
+            <h3 class="page-title fw-bold text-center">
+                <span>Where </span>
+                <span class="font-bold">Social Media</span>
+                <span>Meets Funnel </span>
+                <span class="font-bold">Architecture</span>
+            </h3>
+            <small class="d-block text-white text-center" style="letter-spacing: 1px;">We Integrate Content and Social
+                Strategies with a custom sales funnel system, but for growth.</small>
+        </div>
+        <div class="footer-glass py-8 px-[10%] mt-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle1"></div>
+                    <span class="block text-gray-700">Social</span>
+                </div>
+                <i class="fa fa-arrow-right text-white"></i>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle1"></div>
+                    <span class="block text-gray-700">Lead Capture</span>
+                </div>
+                <i class="fa fa-arrow-right text-white"></i>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle1"></div>
+                    <span class="block text-gray-700">Email</span>
+                </div>
+                <i class="fa fa-arrow-right text-white"></i>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle1"></div>
+                    <span class="block text-gray-700">Retarget</span>
+                </div>
+                <i class="fa fa-arrow-right text-white"></i>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle1"></div>
+                    <span class="block text-gray-700">Conversion</span>
+                </div>
+                <i class="fa fa-arrow-right text-white"></i>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle1"></div>
+                    <span class="block text-gray-700">Upsell</span>
+                </div>
+            </div>
+        </div>
+
+         <div class="mt-5">
+      <!-- <hr> -->
+      <h3 class="page-title  text-center">
+        <span>Ready to build a revenue system___Not just a website ? </span>
+      </h3>
+      <div class="d-flex justify-content-center gap-5 my-5 animate__animated animate__bounceInDown">
+
+                <button class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
+                    Get Funnel Blueprint
+                </button>
+                <button class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
+                    Book strategy call
+                </button>
+            </div>
+    </div>
     </div>
 @endsection
+@push('script')
+    <script>
+        const element = document.getElementById("fixedContent");
+        const placeholder = document.getElementById("placeholder");
+
+        const elementTop = element.offsetTop + 50;
+        const elementHeight = element.offsetHeight;
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY >= elementTop) {
+                element.classList.add("active");
+
+                // keep bottom content from jumping
+                placeholder.style.height = 700 + "px";
+
+            } else {
+                element.classList.remove("active");
+                placeholder.style.height = "0px";
+            }
+
+        });
+    </script>
+@endpush

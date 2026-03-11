@@ -28,7 +28,7 @@
             </div>
 
             <h5 class="menu-title text-white font-weight-bold" style="position: relative; top: 5px">
-                Content Production
+                Branding
             </h5>
 
             <div class="d-flex justify-content-center">
