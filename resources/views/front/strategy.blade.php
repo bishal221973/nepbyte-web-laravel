@@ -14,7 +14,8 @@
                 <span>into Customers </span>
             </h1>
 
-            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">We architect structured revenue systems that transform traffic
+            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">We architect structured
+                revenue systems that transform traffic
                 into
                 predictable growth.</span>
 
@@ -38,7 +39,8 @@
                     <h5 class="text-white fw-bold mb-0">Framework for Profit</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s">
+                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft"
+                    style="animation-delay: 0.2s">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         02
@@ -46,7 +48,8 @@
                     <h5 class="text-white fw-bold mb-0">Data Driven Execution</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft" style="animation-delay: 0.4s">
+                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft"
+                    style="animation-delay: 0.4s">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         03
@@ -83,5 +86,56 @@
             @endphp
             <x-triangular-hierarchy :steps="$steps" />
         </div>
+    </div>
+    <div class="divider-glass">
+        <div class="mt-10">
+            <!-- <hr> -->
+            <h3 class="page-title fw-bold text-center capitalize">
+                <span>What is a </span>
+                <span class="font-bold">Social Funnel ?</span>
+            </h3>
+            <small class="d-block text-white text-center" style="letter-spacing: 1px;">A Stractured journy that moves your
+                audience from discovery to loyalty.</small>
+        </div>
+
+        @php
+            $steps = [
+                [
+                    'title' => 'Awareness',
+                    'description' => 'Attracts qualified prospects',
+                    'lists' => ['Social Ads', 'Short form content', 'Creative hooks', 'Targeted traffic'],
+                ],
+                [
+                    'title' => 'Lead Capture',
+                    'description' => 'Capture contact details',
+                    'lists' => ['High-converting Landing Page', 'Leads Magnets', 'Clear CTA Strategy'],
+                ],
+                [
+                    'title' => 'Nurture',
+                    'description' => 'Build authority & credibility',
+                    'lists' => ['Email Automation', 'Whatsnipg trons', 'Retargeting Ads', 'Case Study remarketing'],
+                ],
+                [
+                    'title' => 'Conversion',
+                    'description' => 'Turn leads into customers',
+                    'lists' => [
+                        'Sales page optimization',
+                        'Checkout Ux',
+                        'Booking System Stracture',
+                        'Scarcity miagers',
+                    ],
+                ],
+                [
+                    'title' => 'Retention',
+                    'description' => 'Keep your audience engaged',
+                    'lists' => [
+                        'Regular Email and messaging marketting',
+                        'Personaliz Recomandations',
+                        'Loyalty Programs',
+                    ],
+                ],
+            ];
+        @endphp
+        <x-stepper-component :steps="$steps" :active-step="5" />
     </div>
 @endsection

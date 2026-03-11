@@ -1,3 +1,7 @@
+.page-title{
+    font-size: 30px;
+    color: #2F409F;
+}
 body {
     background-image: url("/images/bg.png");
     background-size: cover; /* fills the screen */
@@ -265,4 +269,98 @@ body {
 .strategy-btn:hover{
     background: #f8f9fa;
     /* transform: translateY(-2px); */
+}
+
+
+.divider-glass{
+     background: rgba(255, 255, 255, 0.1);
+    /* border-radius: 5px; */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden; /* important for pseudo-elements */
+    padding: 30px 10%;
+}
+/* ======================================= */
+.hierarchy-wrapper {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.step-item {
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+.step-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.step-circle.active {
+  background: linear-gradient(135deg,#2DACF7,#1B8ED1);
+  box-shadow: 0 0 20px rgba(45,172,247,0.6);
+}
+
+.step-content {
+  margin-top: 1rem;
+}
+
+.step-desc-box {
+  width: 96%;
+  margin-left: 2%;
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.2);
+}
+
+.step-line {
+  position: absolute;
+  top: 30px;
+  right: -50%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  z-index: -1;
+}
+
+.line-active {
+  background: linear-gradient(90deg,#2DACF7,#1B8ED1);
+}
+
+@media (max-width:768px){
+  .steps-container{
+    flex-direction: column;
+    align-items:center;
+  }
+
+  .step-line{
+    display:none;
+  }
+
+  .step-item{
+    margin-bottom:2rem;
+  }
 }
