@@ -395,3 +395,8 @@ body {
     background-color: rgba(0, 0, 255, 0.584);
     border-radius: 50%;
 }
+
+#3d_render{
+    width:100%;
+    height:500px;
+}

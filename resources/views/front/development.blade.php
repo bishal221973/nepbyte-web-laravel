@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            
+    <div id="3d_render" style="height:500px;width:100%"></div>
         </div>
     </div>
     
@@ -74,53 +74,56 @@
   }
 }
 </script>
-    <script type="module">
+   <script type="module">
 
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-let scene, camera, renderer, controls;
+const container = document.getElementById("3d_render");
 
-scene = new THREE.Scene();
-scene.background = new THREE.Color(0x111111);
+// Scene
+const scene = new THREE.Scene();
 
-camera = new THREE.PerspectiveCamera(
+// Camera
+const camera = new THREE.PerspectiveCamera(
 75,
-window.innerWidth/window.innerHeight,
+container.clientWidth / container.clientHeight,
 0.1,
 1000
 );
 
-renderer = new THREE.WebGLRenderer({antialias:true});
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setSize(container.clientWidth, container.clientHeight);
 
-// controls
-controls = new OrbitControls(camera, renderer.domElement);
+container.appendChild(renderer.domElement);
+
+// Controls
+const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 
-// lighting
+// Lighting
 scene.add(new THREE.AmbientLight(0xffffff,2));
 
 const light = new THREE.DirectionalLight(0xffffff,3);
 light.position.set(5,10,7);
 scene.add(light);
 
-// load model
+// Load Model
 const loader = new GLTFLoader();
 
-loader.load('./3d/desktop_pc/scene.gltf', (gltf)=>{
+loader.load('/3d/desktop_pc/scene.gltf', function(gltf){
 
 const model = gltf.scene;
 scene.add(model);
 
-// auto center camera
+// Center camera to model
 const box = new THREE.Box3().setFromObject(model);
 const center = box.getCenter(new THREE.Vector3());
 const size = box.getSize(new THREE.Vector3()).length();
 
-camera.position.set(size,size,size);
+camera.position.set(size, size/2, size);
 camera.lookAt(center);
 
 controls.target.copy(center);
@@ -128,20 +131,26 @@ controls.update();
 
 });
 
-// resize
-window.addEventListener("resize",()=>{
+// Resize
+window.addEventListener("resize", ()=>{
 
-camera.aspect = window.innerWidth/window.innerHeight;
+const width = container.clientWidth;
+const height = container.clientHeight;
+
+camera.aspect = width/height;
 camera.updateProjectionMatrix();
-renderer.setSize(window.innerWidth, window.innerHeight);
+
+renderer.setSize(width, height);
 
 });
 
-// animation
+// Animation
 function animate(){
 
 requestAnimationFrame(animate);
+
 controls.update();
+
 renderer.render(scene,camera);
 
 }
