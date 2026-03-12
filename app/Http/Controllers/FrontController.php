@@ -15,4 +15,9 @@ class FrontController extends Controller
     {
         return view(view: 'front.development');
     }
+
+    public function brand()
+    {
+        return view(view: 'front.brand');
+    }
 }
