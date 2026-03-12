@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view(view: 'front.home');
 });
 Route::get('strategy',[FrontController::class,'strategy'])->name('front.strategy');
+Route::get('development',[FrontController::class,'development'])->name('front.development');

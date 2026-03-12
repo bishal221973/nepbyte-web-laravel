@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public function strategy(){
+    public function strategy()
+    {
         return view(view: 'front.strategy');
+    }
+
+    public function development()
+    {
+        return view(view: 'front.development');
     }
 }
