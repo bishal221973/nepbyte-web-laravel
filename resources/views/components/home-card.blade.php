@@ -128,7 +128,7 @@
     </div>
 </a>
 
-<div class="glass-card second-card animate__animated animate__zoomInUp">
+<a href="{{route('front.ai')}}" class="glass-card text-decoration-none second-card animate__animated animate__zoomInUp">
     <div class="d-flex align-items-center w-100 h-100">
         <div class="d-block w-100">
             <div class="d-flex w-100 justify-content-center relative">
@@ -148,7 +148,7 @@
             </small>
         </div>
     </div>
-</div>
+</a>
 
 <div class="glass-card sub-second-card animate__animated animate__zoomInRight">
     <div class="d-flex align-items-center w-100 h-100">

@@ -20,4 +20,9 @@ class FrontController extends Controller
     {
         return view(view: 'front.brand');
     }
+
+    public function ai()
+    {
+        return view(view: 'front.ai');
+    }
 }
