@@ -23,6 +23,28 @@
         animate
     } = anime;
 </script>
+<!-- GSAP & ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  var tl=gsap.timeline({scrollTrigger:{
+    trigger:".robortImg1",
+    start:"100% 90%",
+    end:"105% 0%",
+    scrub:true,
+    markers:true,
+  }})
+
+  tl.to(".robortImg",{
+    top:"135%",
+    left:"35%",
+    height:"30vw",
+    width:"30vw"
+  })
+</script>
 @stack('script')
 
 </html>

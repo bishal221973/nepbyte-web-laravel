@@ -11,6 +11,7 @@
 
     <div class="d-flex align-items-center">
         <img src="{{asset('robort.png')}}" class="robortImg" alt="AI Background">
+        <img src="{{asset('robort.png')}}" class="robortImg1" alt="AI Background">
         <div class="hero-content">
 
             <h1 class="ai-title">
@@ -39,7 +40,7 @@
     </div>
     
 </section>
-
+<x-half-circle-component/>
 
 @endsection
 

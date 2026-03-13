@@ -715,6 +715,13 @@ body {
 }
 
 /* =================================================== */
+.robortImg1{
+    width: 40vw;
+    opacity: 0;
+    z-index: 9 !important;
+}
 .robortImg{
     width: 40vw;
+    position: absolute;
+    z-index: 9 !important;
 }
