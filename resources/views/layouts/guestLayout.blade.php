@@ -31,15 +31,15 @@
   gsap.registerPlugin(ScrollTrigger);
 
   var tl=gsap.timeline({scrollTrigger:{
-    trigger:".robortImg1",
-    start:"100% 90%",
-    end:"125% 20%",
-    scrub:true,
+    trigger:".main-ai-container",
+    start:"0% 60%",
+    end:"75% 80%",
+    scrub:1.5,
     markers:true,
   }})
 
   tl.to(".robortImg",{
-    top:"135%",
+    top:"130%",
     left:"35%",
     height:"30vw",
     width:"30vw"

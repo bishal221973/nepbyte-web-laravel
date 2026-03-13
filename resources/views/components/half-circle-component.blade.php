@@ -1,4 +1,4 @@
-<div style="background-color:#000; height:80vh; display:flex; justify-content:center; align-items:flex-end;z-index:-1">
+<div class="main-ai-container" style="background-color:#000; height:80vh; display:flex; justify-content:center; align-items:flex-end;z-index:-1">
     <div class="circle2">
         <div class="circle1">
       <!-- <div class="circle3">
