@@ -33,7 +33,7 @@
   var tl=gsap.timeline({scrollTrigger:{
     trigger:".robortImg1",
     start:"100% 90%",
-    end:"105% 0%",
+    end:"125% 20%",
     scrub:true,
     markers:true,
   }})
@@ -44,7 +44,34 @@
     height:"30vw",
     width:"30vw"
   })
+
+  tl.to(".ai-card",{
+    bottom:0,
+    left:"10%",
+  })
+  tl.to(".ai-card1",{
+    bottom:"38%",
+    left:"22%",
+  })
+
+  tl.to(".ai-card2",{
+    bottom:"55%",
+    left:"42%",
+  })
+
+
+  tl.to(".ai-card3",{
+    bottom:"38%",
+    right:"22%",
+  })
+
+
+  tl.to(".ai-card4",{
+    bottom:0,
+    right:"10%",
+  })
 </script>
+
 @stack('script')
 
 </html>

@@ -24,7 +24,7 @@
         background-color: #fff;
         z-index: 1;
         position: absolute;
-        bottom: 0;
+        bottom: 10%;
         left: 10%;
         transform: rotate(290deg);
     }

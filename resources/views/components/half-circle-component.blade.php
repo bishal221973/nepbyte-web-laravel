@@ -8,31 +8,31 @@
 </div>
 <!-- <div class="ai-cards"></div> -->
 </div>
-<div class="ai-card">
+<div class="ai-card" id="card1">
     <div class="card-icon">🤖</div>
     <h3>AI Automation</h3>
     <p>Automate tasks and workflows with intelligent AI systems.</p>
 </div>
 
-<div class="ai-card1">
+<div class="ai-card1" id="card2">
     <div class="card-icon">📊</div>
     <h3>Data Analytics</h3>
     <p>Understand insights with powerful machine learning models.</p>
 </div>
 
-<div class="ai-card2">
+<div class="ai-card2" id="card3">
     <div class="card-icon">⚡</div>
     <h3>Fast Processing</h3>
     <p>Lightning-fast AI processing for modern applications.</p>
 </div>
 
-<div class="ai-card3">
+<div class="ai-card3" id="card4">
     <div class="card-icon">🔐</div>
     <h3>Secure AI</h3>
     <p>Enterprise-grade AI security and protection.</p>
 </div>
 
-<div class="ai-card4">
+<div class="ai-card4" id="card5">
     <div class="card-icon">🌐</div>
     <h3>Global AI</h3>
     <p>Deploy AI services anywhere in the world.</p>
@@ -189,30 +189,30 @@
 
 .ai-card{
     bottom:0;
-    left:8%;
-    transform:rotate(-20deg);
+    left:50%;
+    transform:rotate(-78deg);
 }
 
 .ai-card1{
-    bottom:35%;
-    left:22%;
-    transform:rotate(-10deg);
+    bottom:0;
+    left:50%;
+    transform:rotate(-40deg);
 }
 
 .ai-card2{
-    bottom:55%;
-    left:42%;
+    bottom:0;
+    left:50%;
 }
 
 .ai-card3{
-    bottom:35%;
-    right:22%;
-    transform:rotate(10deg);
+    bottom:0;
+    right:50%;
+    transform:rotate(40deg);
 }
 
 .ai-card4{
     bottom:0;
-    right:8%;
-    transform:rotate(20deg);
+    right:50%;
+    transform:rotate(78deg);
 }
 </style>
