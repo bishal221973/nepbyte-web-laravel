@@ -40,7 +40,10 @@
     </div>
     
 </section>
-<x-half-circle-component/>
+<div style="position: relative;overflow:hidden">
+    <x-half-circle-component/>
+<!-- <x-ai-card/> -->
+</div>
 
 @endsection
 

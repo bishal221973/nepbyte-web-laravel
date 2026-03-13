@@ -1,13 +1,42 @@
 <div style="background-color:#000; height:80vh; display:flex; justify-content:center; align-items:flex-end;z-index:-1">
-  <div class="circle2">
-    <div class="circle1">
+    <div class="circle2">
+        <div class="circle1">
       <!-- <div class="circle3">
-        Hello
-      </div> -->
+          Hello
+        </div> -->
     </div>
-  </div>
+</div>
+<!-- <div class="ai-cards"></div> -->
+</div>
+<div class="ai-card">
+    <div class="card-icon">🤖</div>
+    <h3>AI Automation</h3>
+    <p>Automate tasks and workflows with intelligent AI systems.</p>
 </div>
 
+<div class="ai-card1">
+    <div class="card-icon">📊</div>
+    <h3>Data Analytics</h3>
+    <p>Understand insights with powerful machine learning models.</p>
+</div>
+
+<div class="ai-card2">
+    <div class="card-icon">⚡</div>
+    <h3>Fast Processing</h3>
+    <p>Lightning-fast AI processing for modern applications.</p>
+</div>
+
+<div class="ai-card3">
+    <div class="card-icon">🔐</div>
+    <h3>Secure AI</h3>
+    <p>Enterprise-grade AI security and protection.</p>
+</div>
+
+<div class="ai-card4">
+    <div class="card-icon">🌐</div>
+    <h3>Global AI</h3>
+    <p>Deploy AI services anywhere in the world.</p>
+</div>
 <style>
 /* Outer Semi-circle */
 .circle2 {
@@ -20,6 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    z-index: 2;
 }
 
 /* Middle Semi-circle */
@@ -78,5 +108,111 @@
             0 0 45px #383361,
             0 0 55px #383361;
     }
+}
+
+.ai-cards{
+    width: 200px;
+    height: 300px;
+    background-color: #fff;
+    position: absolute;
+    /* bottom: 0; */
+}
+
+
+
+.ai-card,
+.ai-card1,
+.ai-card2,
+.ai-card3,
+.ai-card4{
+    width:230px;
+    height:260px;
+    position:absolute;
+    z-index:1;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    border-radius:18px;
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:#fff;
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5);
+
+    transition:0.4s;
+}
+
+/* hover effect */
+.ai-card:hover,
+.ai-card1:hover,
+.ai-card2:hover,
+.ai-card3:hover,
+.ai-card4:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.7),
+        0 0 20px rgba(120,120,255,0.4);
+}
+
+/* icon */
+.card-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+/* title */
+.ai-card h3,
+.ai-card1 h3,
+.ai-card2 h3,
+.ai-card3 h3,
+.ai-card4 h3{
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+/* text */
+.ai-card p,
+.ai-card1 p,
+.ai-card2 p,
+.ai-card3 p,
+.ai-card4 p{
+    font-size:14px;
+    color:#d2d2ff;
+}
+
+/* positioning around arc */
+
+.ai-card{
+    bottom:0;
+    left:8%;
+    transform:rotate(-20deg);
+}
+
+.ai-card1{
+    bottom:35%;
+    left:22%;
+    transform:rotate(-10deg);
+}
+
+.ai-card2{
+    bottom:55%;
+    left:42%;
+}
+
+.ai-card3{
+    bottom:35%;
+    right:22%;
+    transform:rotate(10deg);
+}
+
+.ai-card4{
+    bottom:0;
+    right:8%;
+    transform:rotate(20deg);
 }
 </style>
