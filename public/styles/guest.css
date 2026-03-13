@@ -716,13 +716,18 @@ body {
 
 /* =================================================== */
 .robortImg1{
-    width: 40vw;
+    width: 30vw;
     opacity: 0;
     z-index: 9 !important;
 }
 .robortImg{
-    width: 40vw;
+    width: 30vw;
     position: absolute;
     z-index: 9 !important;
     /* top: 0; */
+}
+.ai-project-list{
+    min-height: 90vh;
+    background: #04050A;
+    height:90vh;
 }

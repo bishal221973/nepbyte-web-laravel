@@ -9,7 +9,7 @@
     <img src="{{asset('herobg.png')}}" class="hero-bg" alt="AI Background">
     <div class="hero-overlay"></div>
 
-    <div class="d-flex align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
         <img src="{{asset('robort.png')}}" class="robortImg" alt="AI Background">
         <img src="{{asset('robort.png')}}" class="robortImg1" alt="AI Background">
         <div class="hero-content">
@@ -26,12 +26,14 @@
                 is human + AI
             </h1>
 
-            <p class="hero-subtitle">
+           <!-- <div class="d-felx justify-content-center"> -->
+             <p class="hero-subtitle d-block">
                 Build smarter products faster with AI-powered development,
                 automation and intelligent workflows.
             </p>
-
-            <div class="hero-buttons">
+           <!-- </div> -->
+<!--  -->
+<div class="hero-buttons">
                 <a href="#" class="btn-primary">Explore Solutions</a>
                 <a href="#" class="btn-outline">Contact Us</a>
             </div>
@@ -44,6 +46,7 @@
     <x-half-circle-component/>
 <!-- <x-ai-card/> -->
 </div>
+<div class="ai-project-list"></div>
 
 @endsection
 
@@ -81,12 +84,12 @@
         position: relative;
         z-index: 3;
         text-align: center;
-        max-width: 80vw;
+        width: 50vw;
         margin-top: -100px;
     }
 
     .ai-title {
-        font-size: 80px;
+        font-size: 60px;
         font-weight: 700;
         color: #d0d0d0;
         margin: 0;
@@ -98,12 +101,16 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
+    
     .hero-subtitle {
         margin-top: 25px;
         color: #bbb;
-        font-size: 20px;
+        font-size: 17px;
         line-height: 1.6;
+        /* width: 30vw; */
+        display: block;
+        padding:0 100px;
+        text-align: center;
     }
 
     .hero-buttons {

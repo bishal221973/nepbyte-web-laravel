@@ -35,14 +35,14 @@
     start:"0% 60%",
     end:"75% 80%",
     scrub:1.5,
-    markers:true,
+    markers:false,
   }})
 
   tl.to(".robortImg",{
-    top:"130%",
-    left:"35%",
-    height:"30vw",
-    width:"30vw"
+    top:"135%",
+    left:"40%",
+    height:"20vw",
+    width:"20vw"
   })
 
   tl.to(".ai-card",{
@@ -70,6 +70,26 @@
     bottom:0,
     right:"10%",
   })
+
+
+
+
+  var tl1=gsap.timeline({scrollTrigger:{
+    trigger:".ai-project-list",
+    start:"0% 60%",
+    end:"75% 80%",
+    scrub:1.5,
+    markers:true,
+  }})
+
+    tl1.to(".robortImg",{
+    top:"185%",
+    left:"5%",
+    height:"35vw",
+    width:"35vw",
+    opacity:0.1
+  })
+
 </script>
 
 @stack('script')
