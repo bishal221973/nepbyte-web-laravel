@@ -42,11 +42,68 @@
     </div>
     
 </section>
-<div style="position: relative;overflow:hidden">
+<div style="position: relative;overflow:hidden" class="half-card">
     <x-half-circle-component/>
 <!-- <x-ai-card/> -->
 </div>
-<div class="ai-project-list"></div>
+<div class="ai-project-list">
+    <img src="{{asset('aibg.jpg')}}" class="ai-bg" alt="">
+    <div class="ai-list-container">
+        <h1>Turn Manual Work Into Smart System</h1>
+
+        <div class="row g-4">
+  <div class="col-lg-4 col-md-6">
+    <div class="glass-card1 p-3">
+      <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Lead Automation">
+      <h5 class="text-white">Lead Automation</h5>
+      <p class="text-white-50">Automate your lead collection, follow-ups, and analytics seamlessly.</p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-6">
+    <div class="glass-card1 p-3">
+      <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Customer Insights">
+      <h5 class="text-white">Customer Insights</h5>
+      <p class="text-white-50">Gain real-time insights about customer behavior and engagement.</p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-6">
+    <div class="glass-card1 p-3">
+      <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Sales Reporting">
+      <h5 class="text-white">Sales Reporting</h5>
+      <p class="text-white-50">Generate automated reports to track sales performance efficiently.</p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-6">
+    <div class="glass-card1 p-3">
+      <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Email Campaigns">
+      <h5 class="text-white">Email Campaigns</h5>
+      <p class="text-white-50">Create personalized campaigns to nurture leads effectively.</p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-6">
+    <div class="glass-card1 p-3">
+      <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Integration">
+      <h5 class="text-white">Integration</h5>
+      <p class="text-white-50">Easily integrate with CRM, email, and other business tools.</p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-6">
+    <div class="glass-card1 p-3">
+      <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Analytics">
+      <h5 class="text-white">Analytics</h5>
+      <p class="text-white-50">Track and analyze all lead activities with advanced dashboards.</p>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+</div>
 
 @endsection
 
@@ -149,4 +206,23 @@
         background: linear-gradient(180deg,#000,rgba(),#fff);
         min-height: 50vh;
     }
+</style>
+
+<style>
+.glass-card1 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass-card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.text-white-50 {
+    color: rgba(255,255,255,0.7);
+}
 </style>

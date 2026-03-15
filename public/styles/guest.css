@@ -730,4 +730,22 @@ body {
     min-height: 90vh;
     background: #04050A;
     height:90vh;
+    position: relative;
+}
+.ai-bg{
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+}
+.ai-list-container{
+    width: 60vw;
+    position: absolute;
+    left: 40vw;
+    top: 0;
+    padding: 5% 10vh;
+}
+.ai-list-container h1{
+    color: #fff;
+    font-size: 50px;
+    width: 80%;
 }

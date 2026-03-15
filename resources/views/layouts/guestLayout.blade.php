@@ -31,18 +31,20 @@
   gsap.registerPlugin(ScrollTrigger);
 
   var tl=gsap.timeline({scrollTrigger:{
-    trigger:".main-ai-container",
-    start:"0% 60%",
-    end:"75% 80%",
-    scrub:1.5,
-    markers:false,
+    trigger:".ai-hero",
+    start:"bottom 70%",
+    end:"bottom 50%",
+    // duration:5,
+    scrub:1,
+    markers:true,
   }})
 
   tl.to(".robortImg",{
     top:"135%",
     left:"40%",
     height:"20vw",
-    width:"20vw"
+    width:"20vw",
+    duration:5
   })
 
   tl.to(".ai-card",{
@@ -79,15 +81,15 @@
     start:"0% 60%",
     end:"75% 80%",
     scrub:1.5,
-    markers:true,
+    markers:false,
   }})
 
     tl1.to(".robortImg",{
     top:"185%",
     left:"5%",
     height:"35vw",
-    width:"35vw",
-    opacity:0.1
+    width:"30vw",
+    opacity:0.9
   })
 
 </script>
