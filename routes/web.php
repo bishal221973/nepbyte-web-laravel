@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 Route::get('strategy',[FrontController::class,'strategy'])->name('front.strategy');
 Route::get('development',[FrontController::class,'development'])->name('front.development');
-Route::get('brands',[FrontController::class,'brand'])->name('front.brand');
+Route::get('brands-development',[FrontController::class,'brand'])->name('front.brand');
 Route::get('ai-automation',[FrontController::class,'ai'])->name('front.ai');
