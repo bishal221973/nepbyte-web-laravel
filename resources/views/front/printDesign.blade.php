@@ -9,25 +9,6 @@
 
 
 
-        {{-- <div class="hero-container">
-         
-            <div class="hero-content">
-                <h1 class="ai-title">
-                    Printing & Advertising Projects <span>That Captivate Audiences</span>
-                </h1>
-
-                <p class="ai-subtitle">
-                    Creative, impactful, and memorable—our printing and advertising projects grab attention and connect with
-                    your audience, making every campaign truly unforgettable.
-                </p>
-
-                <div class="hero-btns">
-                    <a href="#" class="btn-primary-custom btn-brand-left">Brows Our Projects</a>
-                </div>
-            </div>
-
-        </div> --}}
-
         <div class="row ">
             <div class="col-lg-6">
                 <div class=" ">
@@ -48,8 +29,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="bubbles">
-                    <div class="card1">2D Design</div>
-                    <div class="card2">3D Design</div>
+                    <div class="card1">2D & 3D Design</div>
+                    {{-- <div class="card2">3D Design</div> --}}
                     <div class="card3">Hoardings</div>
                     <div class="card4">Flex Print</div>
                     <div class="card5">Digital Boards</div>
@@ -57,7 +38,7 @@
                     <div class="card7">Event Branding</div>
                     <div class="card8">App Design</div>
                     <div class="card9">Web Design</div>
-                    <div class="card10">Web Design</div>
+                    {{-- <div class="card10">Web Design</div> --}}
                 </div>
             </div>
         </div>
@@ -67,24 +48,119 @@
 
     <section class="brand-sub-content">
 
-        <div class="container pb-5">
-
-            
-            <div class="d-flex justify-content-center">
-                
-                <img src="{{asset('print.png')}}" style="width: 20vw" alt="abcd">
+        <div class="container" style="z-index: 99999">
+            <div class="">
+                <a href="#" class="project-menus active">All Projects</a>
             </div>
-          
 
+
+
+            <div class="row g-4 mt-3">
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
         </div>
 
     </section>
 @endsection
 
 @push('script')
-   <script src="{{asset('gsap/print.js')}}"></script>
+    <script src="{{ asset('gsap/print.js') }}"></script>
 @endpush
 <style>
+    .brand-project-card {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .brand-project-image {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        transform: rotate(180deg);
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .bubbles {
+        z-index: 10;
+    }
+
     .bubbles div {
         border-radius: 50%;
         display: flex;
@@ -95,6 +171,7 @@
         position: absolute;
         z-index: 1;
     }
+
     .bubbles div:nth-child(1) {
         height: 150px;
         width: 150px;
@@ -104,6 +181,11 @@
         padding: 10px;
         z-index: 1;
 
+    }
+
+    .bubbles div:nth-child(1):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
     }
 
     .bubbles div:nth-child(2) {
@@ -117,6 +199,11 @@
 
     }
 
+    .bubbles div:nth-child(2):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
+    }
+
     .bubbles div:nth-child(3) {
         height: 120px;
         width: 120px;
@@ -126,6 +213,11 @@
         padding: 10px;
         z-index: 2;
 
+    }
+
+    .bubbles div:nth-child(3):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
     }
 
     .bubbles div:nth-child(4) {
@@ -139,6 +231,11 @@
 
     }
 
+    .bubbles div:nth-child(4):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
+    }
+
     .bubbles div:nth-child(5) {
         height: 150px;
         width: 150px;
@@ -148,6 +245,11 @@
         padding: 10px;
         z-index: 3;
 
+    }
+
+    .bubbles div:nth-child(5):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
     }
 
     .bubbles div:nth-child(6) {
@@ -161,6 +263,11 @@
 
     }
 
+    .bubbles div:nth-child(6):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
+    }
+
     .bubbles div:nth-child(7) {
         height: 130px;
         width: 130px;
@@ -170,6 +277,11 @@
         padding: 10px;
         z-index: 1;
 
+    }
+
+    .bubbles div:nth-child(7):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
     }
 
     .bubbles div:nth-child(8) {
@@ -183,6 +295,11 @@
 
     }
 
+    .bubbles div:nth-child(8):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
+    }
+
     .bubbles div:nth-child(9) {
         height: 130px;
         width: 130px;
@@ -192,6 +309,11 @@
         padding: 10px;
         z-index: 1;
 
+    }
+
+    .bubbles div:nth-child(9):hover {
+        background-color: #00d2ff !important;
+        cursor: pointer;
     }
 
     .bubbles div:nth-child(10) {
@@ -213,7 +335,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        overflow: visible;
         padding-bottom: 15vh;
     }
 
@@ -312,16 +434,9 @@
     .brand-sub-content {
         background: #fff;
         position: relative;
-        padding-top: 120px;
-        height: 100vh;
-        z-index: 0 !important;
-    }
-
-    .brand-project {
-        background: #f2f2f2;
-        position: relative;
-        padding-top: 120px;
-        height: 100vh;
+        padding-top: 10px;
+        z-index: 1;
+        padding-bottom: 50px
     }
 
     .brand-sub-content::before {
@@ -333,7 +448,7 @@
         height: 200px;
         background: #fff;
         transform: skewY(-5deg);
-        z-index: 0 !important;
+        z-index: -1 !important;
     }
 
     .brand-sub-content::after {
@@ -345,6 +460,7 @@
         height: 200px;
         background: #fff;
         transform: skewY(5deg);
+        z-index: -1 !important;
     }
 
     .section-title {
@@ -405,5 +521,18 @@
 
     .btn-brand-left {
         position: absolute
+    }
+
+    .project-menus {
+        padding: 10px 20px;
+        background-color: #ccc;
+        text-decoration: none;
+        border-radius: 5px;
+        color: #000
+    }
+
+    .project-menus.active {
+        background-color: #00d2ff;
+        color: #fff;
     }
 </style>
