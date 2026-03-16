@@ -111,8 +111,8 @@
                 {{-- <img src="" alt=""> --}}
             </div>
 
-            <div class="d-flex gap-3 prand-project-lists" style="padding-left: 200px">
-                <div class="col-lg-4" style="z-index: 999">
+            <div class="row" >
+                <div class="col-lg-3 mb-3" style="z-index: 999">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -130,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -148,60 +148,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" style="z-index: 999">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" style="z-index: 999">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" style="z-index: 999">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" style="z-index: 999">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" style="z-index: 999">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" style="z-index: 999">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
 
@@ -242,18 +189,18 @@
             y: -200,
             duration: 1
         })
-        gsap.to(".prand-project-lists",{
-            transform:"translateX(-55%)",
-            scrollTrigger:{
-                trigger:".brand-project",
-                scroller:"body",
-                markers:false,
-                start:"top 0%",
-                end:"top -150%",
-                scrub: 1,
-                pin:true
-            }
-        })
+        // gsap.to(".prand-project-lists",{
+        //     transform:"translateX(-55%)",
+        //     scrollTrigger:{
+        //         trigger:".brand-project",
+        //         scroller:"body",
+        //         markers:false,
+        //         start:"top 0%",
+        //         end:"top -150%",
+        //         scrub: 1,
+        //         pin:true
+        //     }
+        // })
     </script>
 @endpush
 
@@ -352,14 +299,12 @@
         background: #fff;
         position: relative;
         padding-top: 120px;
-        height: 100vh;
     }
 
     .brand-project {
         background: #f2f2f2;
         position: relative;
         padding-top: 120px;
-        height: 100vh;
     }
 
     .brand-sub-content::before {
