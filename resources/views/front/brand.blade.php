@@ -10,6 +10,7 @@
 
 
         <div class="hero-container">
+            {{-- @include('front.path') --}}
 
             <div class="hero-content">
                 <h1 class="ai-title">
