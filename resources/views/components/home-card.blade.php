@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<div class="glass-card main-card animate__animated animate__backInUp">
+<a href={{route('front.marketing')}} class="glass-card text-decoration-none main-card animate__animated animate__backInUp">
     <div class="d-flex align-items-center w-100 h-100">
         <div class="d-block w-100">
             <div class="d-flex w-100 justify-content-center relative">
@@ -104,7 +104,7 @@
             </small>
         </div>
     </div>
-</div>
+</a>
 
 <a href="{{ route('front.development') }}" class="glass-card text-decoration-none sub-main-card animate__animated animate__backInLeft">
     <div class="d-flex align-items-center w-100 h-100">

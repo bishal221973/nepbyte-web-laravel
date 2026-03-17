@@ -22,3 +22,4 @@ Route::get('development',[FrontController::class,'development'])->name('front.de
 Route::get('brands-development',[FrontController::class,'brand'])->name('front.brand');
 Route::get('ai-automation',[FrontController::class,'ai'])->name('front.ai');
 Route::get('print-design',[FrontController::class,'printDesign'])->name('front.print-design');
+Route::get('marketing',[FrontController::class,'marketing'])->name('front.marketing');

@@ -101,7 +101,7 @@
     </section>
 
     <section class="brand-project">
-        <img src="{{asset('bg.png')}}" class="brand-project-image" alt="">
+        {{-- <img src="{{asset('bg.png')}}" class="brand-project-image" alt=""> --}}
         <div class="container pb-5" >
 
             <div class="row text-center mb-5">

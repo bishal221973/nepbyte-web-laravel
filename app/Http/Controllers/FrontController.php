@@ -24,9 +24,15 @@ class FrontController extends Controller
     public function ai()
     {
         return view(view: 'front.ai');
-        }
-        
-        public function printDesign(){
+    }
+
+    public function printDesign()
+    {
         return view(view: 'front.printDesign');
+    }
+
+    public function marketing()
+    {
+        return view(view: 'front.marketing');
     }
 }
