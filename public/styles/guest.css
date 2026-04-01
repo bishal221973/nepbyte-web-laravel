@@ -1,6 +1,6 @@
 .page-title{
     font-size: 30px;
-    color: #2F409F;
+    color: #789ec3;
 }
 body {
     /* background-image: url("/images/bg.png"); */
@@ -33,7 +33,7 @@ body {
     text-shadow: 0 0 1px #fff, 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff
 }
 .nav-start-project {
-    background: linear-gradient(90deg, #2DACF7 0%, #1B8ED1 100%);
+    background: linear-gradient(90deg, #8eb4da 0%, #97bee4 100%);
     color: #fff;
     padding: 10px 20px;
     border-radius: 6px;
@@ -141,7 +141,7 @@ body {
 .footer-glass h3{
     font-size: 30px;
     font-weight: bold;
-    color: #2F409F;
+    color: #fff;
 }
 .footer-glass1 {
     background: linear-gradient(180deg, rgba(163,185,252,0.1),rgba(255,255,255,0.5), rgba(255,255,255,1));
@@ -252,34 +252,35 @@ body {
     color: #f2f2f2;
 }
 .funnel-btn{
-    background: linear-gradient(to right, #2563eb, #3b82f6);
+    background: linear-gradient(to right, #789ec3, #a2c6eb);
     border: none;
-    transition: all .3s ease;
+    transition: transform 0.5s ease !important;
 }
 
 .funnel-btn:hover{
-    background: linear-gradient(to right, #1d4ed8, #2563eb);
-    /* transform: translateY(-2px); */
+    transform: scale(1.1);
+    transform: translateY(-10px);
 }
 .strategy-btn{
-    background: #ffffff !important;
-    border: none;
-    transition: all .3s ease;
+    background: transparent !important;
+    border: 1px solid #a2c6eb !important;
+    color: #f2f2f2 !important;
+    transition: transform 0.5s ease !important;
 }
 
 .strategy-btn:hover{
-    background: #f8f9fa;
-    /* transform: translateY(-2px); */
+    transform: scale(1.1);
+    transform: translateY(-10px);
 }
 
 
 .divider-glass{
-     background: rgba(255, 255, 255, 0.3);
+     background: rgba(255, 255, 255, 0.5);
     /* border-radius: 5px; */
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); */
-    backdrop-filter: blur(10px);
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); */
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(1px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     position: relative;
     overflow: hidden; /* important for pseudo-elements */
     padding: 30px 10%;
@@ -303,6 +304,7 @@ body {
   flex: 1;
 }
 
+
 .step-circle {
   width: 60px;
   height: 60px;
@@ -321,14 +323,18 @@ body {
 }
 
 .step-circle.active {
-  background: linear-gradient(135deg,#2DACF7,#1B8ED1);
-  box-shadow: 0 0 20px rgba(45,172,247,0.6);
+  background: linear-gradient(135deg,#789ec3,#7ea7cf);
+  box-shadow: 0 0 20px #789ec3;
 }
 
 .step-content {
   margin-top: 1rem;
+  transition: 1s !important;
+  cursor: pointer;
 }
-
+.step-content:hover{
+    transform: translateY(-10px);
+}
 .step-desc-box {
   width: 96%;
   margin-left: 2%;
@@ -393,7 +399,7 @@ body {
 .circle1{
     height: 20px;
     width: 20px;
-    background-color: rgba(0, 0, 255, 0.584);
+    background-color: #789ec3;
     border-radius: 50%;
 }
 

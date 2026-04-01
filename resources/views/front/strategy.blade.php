@@ -31,7 +31,7 @@
 
             <div class="mt-5">
 
-                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft">
+                <div class="d-flex list-container align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         01
@@ -39,7 +39,7 @@
                     <h5 class="text-white fw-bold mb-0">Framework for Profit</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft"
+                <div class="d-flex list-container align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft"
                     style="animation-delay: 0.2s">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
@@ -48,7 +48,7 @@
                     <h5 class="text-white fw-bold mb-0">Data Driven Execution</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft"
+                <div class="d-flex list-container align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft"
                     style="animation-delay: 0.4s">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
@@ -91,11 +91,11 @@
     <div class="divider-glass" style="z-index: 999">
         <div class="mt-10">
             <!-- <hr> -->
-            <h3 class="page-title fw-bold text-center capitalize">
+            <h3 class="text-dark fw-bold text-center capitalize">
                 <span>What is a </span>
                 <span class="font-bold">Social Funnel ?</span>
             </h3>
-            <small class="d-block text-white text-center" style="letter-spacing: 1px;">A Stractured journy that moves your
+            <small class="d-block text-secondary text-center" style="letter-spacing: 1px;">A Stractured journy that moves your
                 audience from discovery to loyalty.</small>
         </div>
 
@@ -141,41 +141,7 @@
 
 
 
-        {{-- <div class="relative  fixed-bg" style="z-index:999999">
-            <div class="h-full w-full bg-[rgba(0,0,0,0.7)] absolute"></div>
-            <div class="relative z-10 flex px-[100px] items-center justify-center h-full text-white text-3xl font-bold"
-                style="z-index: 999999999">
-                <div class="row w-100 ">
-                    <div class="col-md-4 borde-right">
-                        <div class="d-flex justify-content-center">
-                            <div class="d-block">
-                                <h5 class="text-center main-val">3.8X</h5>
-                                <small class="d-block text-center text-[14px]" style="letter-spacing: 2px;">Average
-                                    ROAS</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 borde-right">
-                        <div class="d-flex justify-content-center">
-                            <div class="d-block">
-                                <h5 class="text-center main-val">40%</h5>
-                                <small class="d-block text-center text-[14px]" style="letter-spacing: 2px;">Conversion rate
-                                    increase</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="d-flex justify-content-center">
-                            <div class="d-block">
-                                <h5 class="text-center main-val">20%</h5>
-                                <small class="d-block text-center text-[14px]" style="letter-spacing: 2px;">Lower cost per
-                                    leads</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        
 
 
         <div class="mt-5">
@@ -186,7 +152,7 @@
                 <span>Meets Funnel </span>
                 <span class="font-bold">Architecture</span>
             </h3>
-            <small class="d-block text-white text-center" style="letter-spacing: 1px;">We Integrate Content and Social
+            <small class="d-block text-secondary text-center" style="letter-spacing: 1px;">We Integrate Content and Social
                 Strategies with a custom sales funnel system, but for growth.</small>
         </div>
         <div class="footer-glass py-8 px-[10%] mt-5">
@@ -195,27 +161,27 @@
                     <div class="circle1"></div>
                     <span class="block text-gray-700">Social</span>
                 </div>
-                <i class="fa fa-arrow-right text-white"></i>
+                <i class="fa fa-arrow-right text-secondary"></i>
                 <div class="d-flex align-items-center gap-3">
                     <div class="circle1"></div>
                     <span class="block text-gray-700">Lead Capture</span>
                 </div>
-                <i class="fa fa-arrow-right text-white"></i>
+                <i class="fa fa-arrow-right text-secondary"></i>
                 <div class="d-flex align-items-center gap-3">
                     <div class="circle1"></div>
                     <span class="block text-gray-700">Email</span>
                 </div>
-                <i class="fa fa-arrow-right text-white"></i>
+                <i class="fa fa-arrow-right text-secondary"></i>
                 <div class="d-flex align-items-center gap-3">
                     <div class="circle1"></div>
                     <span class="block text-gray-700">Retarget</span>
                 </div>
-                <i class="fa fa-arrow-right text-white"></i>
+                <i class="fa fa-arrow-right text-secondary"></i>
                 <div class="d-flex align-items-center gap-3">
                     <div class="circle1"></div>
                     <span class="block text-gray-700">Conversion</span>
                 </div>
-                <i class="fa fa-arrow-right text-white"></i>
+                <i class="fa fa-arrow-right text-secondary"></i>
                 <div class="d-flex align-items-center gap-3">
                     <div class="circle1"></div>
                     <span class="block text-gray-700">Upsell</span>

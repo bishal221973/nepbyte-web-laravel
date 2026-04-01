@@ -16,15 +16,15 @@
 
                 {{-- Content --}}
                 <div class="step-content">
-                    <h5 class="text-white">{{ $step['title'] }}</h5>
+                    <h5 class="">{{ $step['title'] }}</h5>
 
                     <div class="step-desc-box">
-                        <p class="fw-bold text-white">{{ $step['description'] }}</p>
+                        <p class="fw-bold text-secondary">{{ $step['description'] }}</p>
 
                         <ul style="list-style: none" class="m-0 p-0 text-start">
                             @foreach ($step['lists'] ?? [] as $list)
                                 <li style="font-size: 13px">
-                                    <small class="text-white">
+                                    <small class="text-secondary">
                                         <i class="fa-solid fa-angles-right text-orange me-1"></i>
                                         {{ $list }}
                                     </small>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="d-flex justify-content-center mt-3 mt-[2%]">
         <div class="main-title animate__animated animate__zoomIn">
-            <h4 class="">Complete Business Engine</h4>
+            <h2 class="text-white">Complete Business Engine</h4>
 
         </div>
     </div>
