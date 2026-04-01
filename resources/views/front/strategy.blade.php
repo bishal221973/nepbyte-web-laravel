@@ -2,7 +2,7 @@
 @section('content')
     <x-breadcrumb title="Our Strategy" page="Strategy" />
 
-    <div id="fixedContent" class="w-100 row align-items-center m-0" style="padding: 0px 10%;position: relative;">
+    <div id="fixedContent1" class="w-100 row align-items-center m-0" style="padding: 0px 10%;position: relative;">
         <div class="col-md-6">
             <h1 class="strategy-title uppercase animate__animated animate__zoomIn">
                 <span class="fw-bold">Sales Funnel </span>
@@ -89,13 +89,14 @@
     </div>
     <div id="placeholder"></div>
     <div class="divider-glass" style="z-index: 999">
-        <div class="mt-10">
+        <div class="mt-10" data-aos="zoom-in-up">
             <!-- <hr> -->
             <h3 class="text-dark fw-bold text-center capitalize">
                 <span>What is a </span>
                 <span class="font-bold">Social Funnel ?</span>
             </h3>
-            <small class="d-block text-secondary text-center" style="letter-spacing: 1px;">A Stractured journy that moves your
+            <small class="d-block text-secondary text-center" style="letter-spacing: 1px;">A Stractured journy that moves
+                your
                 audience from discovery to loyalty.</small>
         </div>
 
@@ -141,10 +142,10 @@
 
 
 
-        
 
 
-        <div class="mt-5">
+
+        <div class="mt-5" data-aos="zoom-in">
             <!-- <hr> -->
             <h3 class="page-title fw-bold text-center">
                 <span>Where </span>
@@ -155,7 +156,7 @@
             <small class="d-block text-secondary text-center" style="letter-spacing: 1px;">We Integrate Content and Social
                 Strategies with a custom sales funnel system, but for growth.</small>
         </div>
-        <div class="footer-glass py-8 px-[10%] mt-5">
+        <div class="footer-glass py-8 px-[10%] mt-5" data-aos="zoom-out">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-3">
                     <div class="circle1"></div>
@@ -189,21 +190,21 @@
             </div>
         </div>
 
-         <div class="mt-5">
-      <!-- <hr> -->
-      <h3 class="page-title  text-center">
-        <span>Ready to build a revenue system___Not just a website ? </span>
-      </h3>
-      <div class="d-flex justify-content-center gap-5 my-5 animate__animated animate__bounceInDown">
+        <div class="mt-5">
+            <!-- <hr> -->
+            <h3 class="page-title  text-center" data-aos="flip-up">
+                <span>Ready to build a revenue system___Not just a website ? </span>
+            </h3>
+            <div class="d-flex justify-content-center gap-5 my-5 animate__animated animate__bounceInDown">
 
-                <button class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
+                <button data-aos="fade-right" class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
                     Get Funnel Blueprint
                 </button>
-                <button class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
+                <button data-aos="fade-left" class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
                     Book strategy call
                 </button>
             </div>
-    </div>
+        </div>
     </div>
 @endsection
 @push('script')

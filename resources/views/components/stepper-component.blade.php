@@ -7,7 +7,7 @@
     <div class="steps-container">
 
         @foreach ($steps as $index => $step)
-            <div class="step-item">
+            <div class="step-item" data-aos="fade-up" data-aos-delay="{{ $index * 200 }}">
 
                 {{-- Circle --}}
                 <div class="step-circle {{ $activeStep >= $index + 1 ? 'active' : '' }}">
@@ -15,10 +15,10 @@
                 </div>
 
                 {{-- Content --}}
-                <div class="step-content">
+                <div class="step-content" >
                     <h5 class="">{{ $step['title'] }}</h5>
 
-                    <div class="step-desc-box">
+                    <div class="step-desc-box1">
                         <p class="fw-bold text-secondary">{{ $step['description'] }}</p>
 
                         <ul style="list-style: none" class="m-0 p-0 text-start">
