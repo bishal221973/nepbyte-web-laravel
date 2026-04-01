@@ -4,7 +4,7 @@
     <x-breadcrumb title="Brand Development" page="Branding" />
 
     <img src="{{ asset('brandBg.png') }}" class="hero-bg" alt="Brand Background">
-    <div class="hero-overlay"></div>
+    {{-- <div class="hero-overlay"></div> --}}
     <section class="ai-hero">
 
 
@@ -37,7 +37,7 @@
 
         <div class="container pb-5">
 
-            <div class="row text-center mb-5">
+            <div class="row text-center mb-5" data-aos="zoom-in-up">
                 <h2 class="section-title">Our Branding Services</h2>
                 <p class="section-subtitle">
                     Everything you need to build a memorable brand
@@ -46,7 +46,7 @@
 
             <div class="row g-4">
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-card">
                         <i class="fa-solid fa-pen-nib"></i>
                         <h4>Logo Design</h4>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
                     <div class="brand-card">
                         <i class="fa-solid fa-palette"></i>
                         <h4>Brand Identity</h4>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="300">
                     <div class="brand-card">
                         <i class="fa-solid fa-bullhorn"></i>
                         <h4>Brand Strategy</h4>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="400">
                     <div class="brand-card">
                         <i class="fa-solid fa-pen-nib"></i>
                         <h4>Logo Design</h4>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="500">
                     <div class="brand-card">
                         <i class="fa-solid fa-palette"></i>
                         <h4>Brand Identity</h4>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="600">
                     <div class="brand-card">
                         <i class="fa-solid fa-bullhorn"></i>
                         <h4>Brand Strategy</h4>
@@ -104,7 +104,7 @@
         {{-- <img src="{{asset('bg.png')}}" class="brand-project-image" alt=""> --}}
         <div class="container pb-5" >
 
-            <div class="row text-center mb-5">
+            <div class="row text-center mb-5" data-aos="zoom-in-up">
                 <h2 class="section-title">Our Branding Services</h2>
                 <p class="section-subtitle">
                     Everything you need to build a memorable brand
@@ -113,7 +113,7 @@
             </div>
 
             <div class="row" >
-                <div class="col-lg-3 mb-3" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="200">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="300">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999">
+                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="400">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -209,22 +209,24 @@
     .ai-hero {
         height: 80vh;
         width: 100%;
-        position: relative;
+        position:sticky !important;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         padding-bottom: 15vh;
+        top: 0 !important
     }
 
     .hero-bg {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-        z-index: -2;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; 
+    object-fit: cover;
+    object-position: right;
+    opacity: 0.1;
     }
 
     .hero-overlay {
@@ -252,7 +254,7 @@
     }
 
     .ai-title span {
-        color: #00d2ff;
+        color: #fff;
     }
 
     .ai-subtitle {
@@ -270,12 +272,13 @@
     }
 
     .btn-primary-custom {
-        background: #00d2ff;
+        background: #789ec3;
         padding: 14px 30px;
         border-radius: 30px;
-        color: #000;
+        color: #f2f2f2;
         font-weight: 600;
         text-decoration: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     .btn-outline-custom {
@@ -300,6 +303,8 @@
         background: #fff;
         position: relative;
         padding-top: 120px;
+        position: sticky !important;
+        top: -100px !important;
     }
 
     .brand-project {
@@ -322,6 +327,7 @@
     .section-title {
         font-size: 40px;
         font-weight: 700;
+        color: #789ec3;
     }
 
     .section-subtitle {
@@ -338,20 +344,22 @@
         background: white;
         padding: 40px;
         border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 30px #789ec36e;
         text-align: center;
         transition: 0.3s;
+        cursor: pointer;
     }
 
     .brand-card i {
         font-size: 40px;
-        color: #00d2ff;
+        color: #789ec3;
         margin-bottom: 20px;
     }
 
     .brand-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 20px 40px #789ec3;
+        background-color: #a1d0ff
     }
 
     .brand-image {
