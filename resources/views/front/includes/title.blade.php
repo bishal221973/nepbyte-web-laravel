@@ -6,8 +6,8 @@
     <style>
 
         .nav-title {
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            /* font-weight: bold; */
         }
         .letter {
             display: inline-block;
@@ -22,7 +22,7 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Wrap every letter in a span
-        const text = document.querySelector('.nav-title');
+        const text = document.querySelector('.nav-title1');
         text.innerHTML = text.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
         // Continuous bounce animation with staggered wave

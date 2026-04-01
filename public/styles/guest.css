@@ -3,18 +3,15 @@
     color: #2F409F;
 }
 body {
-    background-image: url("/images/bg.png");
-    background-size: cover; /* fills the screen */
-    background-position: center; /* centers the image */
-    background-repeat: no-repeat; /* prevents tiling */
+    /* background-image: url("/images/bg.png"); */
+    background-color: #789ec3 !important;
 }
 .navbar-container {
     padding: 10px 10%;
 }
 .navbar {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(120, 158, 195, 0.2);
     border-radius: 8px;
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -172,7 +169,7 @@ body {
 }
 
 .card1 img{
-    height: 50px;
+    height: 6vh;
     width: auto;
     display: block;
     background: none;

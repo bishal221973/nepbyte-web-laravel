@@ -9,7 +9,7 @@
         <div class="hero-overlay"></div>
 
         <div class="d-flex justify-content-between align-items-center">
-            <img src="{{ asset('robort.png') }}" class="robortImg" alt="AI Background">
+            <img src="{{ asset('robort.png') }}" class="robortImg z-[9999]"  alt="AI Background">
             <img src="{{ asset('robort.png') }}" class="robortImg1" alt="AI Background">
             <div class="hero-content">
 
@@ -41,7 +41,7 @@
         </div>
 
     </section>
-    <div style="position: relative;overflow:hidden" class="half-card">
+    <div style="position: relative;overflow:hidden;z-index:-1" class="half-card">
         <x-half-circle-component />
         <!-- <x-ai-card/> -->
     </div>

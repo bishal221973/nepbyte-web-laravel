@@ -392,7 +392,7 @@
         justify-content: center;
         gap: 20px;
         position: absolute;
-        top: 64vh;
+        top: 70vh;
         left: 41vw;
         z-index: 9999 !important;
         width: 250px;
