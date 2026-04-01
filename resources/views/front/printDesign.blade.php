@@ -4,7 +4,7 @@
     <x-breadcrumb title="Our creative Design Portfolio" page="Print & Design" />
 
     <img src="{{ asset('printBg.png') }}" class="hero-bg" alt="Brand Background">
-    <div class="hero-overlay"></div>
+    {{-- <div class="hero-overlay"></div> --}}
     <section class="ai-hero">
 
 
@@ -56,7 +56,7 @@
 
 
             <div class="row g-4 mt-3">
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="200">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="300">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="400">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="500">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="600">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="700">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -119,7 +119,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="800">
+                    <div class="brand-project-card">
+                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
+                        <div class="px-3 py-4">
+                            <h4>Branding</h4>
+                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4" data-aos="zoom-in-up" data-aos-delay="900">
                     <div class="brand-project-card">
                         <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
                         <div class="px-3 py-4">
@@ -144,9 +153,18 @@
         border-radius: 10px;
         overflow: hidden;
         background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: #789ec39d 0px 5px 15px;
+        transition: 1s !important;
+        cursor: pointer;
+    }
+    .brand-project-card:hover{
+        box-shadow: #789ec3 5px 10px 25px 12px;
+        transform: translateY(-15px) !important;
     }
 
+    .brand-project-card h4{
+        color: #789ec3;
+    }
     .brand-project-image {
         position: absolute;
         height: 100vh;
@@ -180,28 +198,33 @@
         right: 5vw;
         padding: 10px;
         z-index: 1;
+        transition: 0.5s !important
 
     }
 
     .bubbles div:nth-child(1):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(2) {
         height: 130px;
         width: 130px;
-        background-color: #00d2ff;
+        background-color: #9accff;
         top: 4.5vh;
         right: 13vw;
         padding: 10px;
         z-index: 2;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(2):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(3) {
@@ -212,28 +235,34 @@
         right: 21vw;
         padding: 10px;
         z-index: 2;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(3):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(4) {
         height: 120px;
         width: 120px;
-        background-color: #00d2ff;
+        background-color: #9accff;
         top: 12vh;
         right: 27vw;
         padding: 10px;
         z-index: 1;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(4):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(5) {
@@ -244,12 +273,15 @@
         right: 18vw;
         padding: 10px;
         z-index: 3;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(5):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(6) {
@@ -260,12 +292,15 @@
         right: 10vw;
         padding: 10px;
         z-index: 2;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(6):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(7) {
@@ -276,12 +311,15 @@
         right: 20vw;
         padding: 10px;
         z-index: 1;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(7):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(8) {
@@ -292,28 +330,34 @@
         right: 25vw;
         padding: 10px;
         z-index: 0;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(8):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(9) {
         height: 130px;
         width: 130px;
-        background-color: #00d2ff;
+        background-color: #9accff;
         top: 36vh;
         right: 26vw;
         padding: 10px;
         z-index: 1;
+        transition: 0.8s !important
+
 
     }
 
     .bubbles div:nth-child(9):hover {
-        background-color: #00d2ff !important;
+        background-color: #789ec3 !important;
         cursor: pointer;
+        border: #fff 1px solid;
     }
 
     .bubbles div:nth-child(10) {
@@ -324,6 +368,8 @@
         right: 5vw;
         padding: 10px;
         z-index: 2;
+        transition: 0.8s !important
+
 
     }
 </style>
@@ -346,7 +392,8 @@
         object-fit: cover;
         top: 0;
         left: 0;
-        z-index: -2;
+        /* z-index: 2; */
+        opacity: 0.08;
     }
 
     .hero-overlay {
@@ -392,14 +439,15 @@
         justify-content: center;
         gap: 20px;
         position: absolute;
-        top: 70vh;
+        top: 64vh;
         left: 41vw;
         z-index: 9999 !important;
         width: 250px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     .btn-primary-custom {
-        background: #ff0000;
+        background: #789ec3;
         padding: 14px 30px;
         border-radius: 30px;
         color: #000;
@@ -410,7 +458,7 @@
     }
 
     .btn-primary-custom:hover {
-        background: #00d2ff;
+        background: #789ec3;
     }
 
     .btn-outline-custom {
@@ -532,7 +580,7 @@
     }
 
     .project-menus.active {
-        background-color: #00d2ff;
+        background-color: #789ec3;
         color: #fff;
     }
 </style>

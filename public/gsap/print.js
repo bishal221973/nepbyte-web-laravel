@@ -1,104 +1,14 @@
-gsap.to(".bubble", {
-    y: 20,
-    duration: 2,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
-    stagger: 0.2,
-});
-gsap.from(".card1", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card2", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card3", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card4", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card5", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card6", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card7", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card8", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card9", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-gsap.from(".card10", {
-    y: 200,
-    scale: 3,
-    opacity: 0,
-    duration: 1,
-});
-(gsap.from(".ai-title", {
-    x: -300,
-    opacity: 0,
-    duration: 1,
-}),
-    gsap.from(".ai-subtitle", {
-        x: -200,
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-    }));
-gsap.from(".btn-brand-left", {
-    scale: 0,
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-});
-gsap.from(".btn-brand-right", {
-    x: 300,
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-});
+
 
 // =============================================
 var tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".brand-sub-content",
-        start: "top 70%",
-        end: "top 10%",
+        start: "top 60%",
+        end: "top 40%",
         // duration:5,
         scrub: 1,
-        markers: true,
+        markers: false,
     },
 });
 
@@ -107,9 +17,9 @@ tl.to(".card1", {
     left: "16%",
     height: "40px",
     width: "135px",
-    duration: 5,
+    duration: 1,
     zIndex: 9999,
-    borderRadius: 5,
+    borderRadius: 2,
     backgroundColor: "#ccc",
 });
 tl.to(".card3", {
