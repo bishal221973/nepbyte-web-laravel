@@ -4,7 +4,7 @@
     <x-breadcrumb title="Brand Development" page="Branding" />
 
     <img src="{{ asset('brandBg.png') }}" class="hero-bg" alt="Brand Background">
-    <div class="hero-overlay"></div>
+    {{-- <div class="hero-overlay"></div> --}}
     <section class="ai-hero">
 
         <canvas style="position: absolute" id="canvas"></canvas>
@@ -541,7 +541,8 @@
         object-fit: cover;
         top: 0;
         left: 0;
-        z-index: -2;
+        /* z-index: -2; */
+        opacity: 0.1 !important;
     }
 
     .hero-overlay {
