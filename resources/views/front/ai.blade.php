@@ -6,22 +6,22 @@
     <section class="ai-hero">
 
         <img src="{{ asset('herobg.png') }}" class="hero-bg" alt="AI Background">
-        <div class="hero-overlay"></div>
+        {{-- <div class="hero-overlay"></div> --}}
 
         <div class="d-flex justify-content-between align-items-center">
             <img src="{{ asset('robort.png') }}" class="robortImg z-[9999]"  alt="AI Background">
             <img src="{{ asset('robort.png') }}" class="robortImg1" alt="AI Background">
             <div class="hero-content">
 
-                <h1 class="ai-title">
+                <h1 class="ai-title text-white">
                     The future
                 </h1>
 
-                <h1 class="ai-title">
+                <h1 class="ai-title text-white">
                     of development
                 </h1>
 
-                <h1 class="ai-title highlight">
+                <h1 class="ai-title highlight text-white">
                     is human + AI
                 </h1>
 
@@ -41,7 +41,7 @@
         </div>
 
     </section>
-    <div style="position: relative;overflow:hidden;z-index:-1" class="half-card">
+    <div style="position: relative;overflow:hidden;z-index:-1;" class="half-card">
         <x-half-circle-component />
         <!-- <x-ai-card/> -->
     </div>
@@ -118,11 +118,11 @@
     .hero-bg {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 90.5vh;
         object-fit: cover;
-        z-index: -1;
+        /* z-index: -1; */
         top: 0 !important;
-        /* opacity: 0.5; */
+        opacity: 0.1;
     }
 
     .hero-overlay {
