@@ -788,3 +788,7 @@ body {
     position: sticky !important;
     top: 0 !important;
 }
+.my-radius {
+  border-bottom-right-radius: 100% 350px;
+  border-bottom-left-radius: 100% 350px;
+}

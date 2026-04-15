@@ -35,4 +35,8 @@ class FrontController extends Controller
     {
         return view(view: 'front.marketing');
     }
+
+    public function production(){
+        return view('front.production');
+    }
 }
