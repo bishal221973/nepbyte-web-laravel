@@ -39,4 +39,7 @@ class FrontController extends Controller
     public function production(){
         return view('front.production');
     }
+    public function productionShow(){
+        return view('front.productionShow');
+    }
 }

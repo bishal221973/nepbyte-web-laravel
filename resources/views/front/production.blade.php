@@ -33,12 +33,12 @@
                 <div class="container" style="position: absolute;left:4%;top:-100px">
                     <div class="row">
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <div class="cont-container">
+                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
                                 <img src="{{ asset('images/wedding.jpeg') }}" alt="">
                                 <div class="content-overlay">
                                     <h5>Wedding</h5>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
                             <div class="cont-container">

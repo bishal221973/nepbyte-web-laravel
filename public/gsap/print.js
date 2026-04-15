@@ -1,20 +1,16 @@
-
-
 // =============================================
 var tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".brand-sub-content",
-        start: "top 60%",
-        end: "top 40%",
-        // duration:5,
+        start: "top 50%",
+        end: "top 30%",
         scrub: 1,
-        markers: false,
+        markers: true,
     },
 });
-
 tl.to(".card1", {
-    top: "100.2%",
-    left: "16%",
+    y: 650,
+    x: -1025,
     height: "40px",
     width: "135px",
     duration: 1,
@@ -23,8 +19,8 @@ tl.to(".card1", {
     backgroundColor: "#ccc",
 });
 tl.to(".card3", {
-   top: "100.2%",
-    left: "27%",
+    y: 655,
+    x: -790,
     height: "40px",
     width: "90px",
     duration: 5,
@@ -33,8 +29,8 @@ tl.to(".card3", {
     backgroundColor: "#ccc",
 });
 tl.to(".card4", {
-   top: "100.2%",
-    left: "35%",
+    y: 650,
+    x: -555,
     height: "40px",
     width: "90px",
     duration: 5,
@@ -44,8 +40,8 @@ tl.to(".card4", {
 });
 
 tl.to(".card5", {
-    top: "100.2%",
-    left: "43%",
+    y: 590,
+    x: -310,
     height: "40px",
     width: "125px",
     duration: 5,
@@ -54,8 +50,8 @@ tl.to(".card5", {
     backgroundColor: "#ccc",
 });
 tl.to(".card6", {
-    top: "100.2%",
-    left: "53.5%",
+   y: 572,
+    x: -260,
     height: "40px",
     width: "155px",
     duration: 5,
@@ -64,8 +60,8 @@ tl.to(".card6", {
     backgroundColor: "#ccc",
 });
 tl.to(".card7", {
-    top: "100.2%",
-    left: "65.5%",
+     y: 538,
+    x: -225,
     height: "40px",
     width: "130px",
     duration: 5,
@@ -74,8 +70,8 @@ tl.to(".card7", {
     backgroundColor: "#ccc",
 });
 tl.to(".card8", {
-    top: "100.2%",
-    left: "76%",
+    y: 442,
+    x: 55,
     height: "40px",
     width: "105px",
     duration: 5,
@@ -84,31 +80,12 @@ tl.to(".card8", {
     backgroundColor: "#ccc",
 });
 tl.to(".card9", {
-   top: "100.2%",
-    left: "85%",
+    y: 494,
+    x: 265,
     height: "40px",
     width: "110px",
     duration: 5,
     zIndex: 9999,
     borderRadius: 5,
     backgroundColor: "#ccc",
-});
-
-
-// =============================================
-gsap.from(".brand-sub-content", {
-    y: -200,
-    duration: 1,
-});
-gsap.to(".prand-project-lists", {
-    transform: "translateX(-55%)",
-    scrollTrigger: {
-        trigger: ".brand-project",
-        scroller: "body",
-        markers: false,
-        start: "top 0%",
-        end: "top -150%",
-        scrub: 1,
-        pin: true,
-    },
 });
