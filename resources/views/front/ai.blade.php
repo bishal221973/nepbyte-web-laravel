@@ -8,12 +8,14 @@
         <img src="{{ asset('herobg.png') }}" class="hero-bg" alt="AI Background">
         {{-- <div class="hero-overlay"></div> --}}
 
-        <div class="d-flex justify-content-between align-items-center">
-            <img src="{{ asset('robort.png') }}" class="robortImg z-[9999]"  alt="AI Background">
+        <div class="ai-hero">
+            <img src="{{ asset('robort.gif') }}" class="robortImg z-[9999]" alt="AI Background">
             <img src="{{ asset('robort.png') }}" class="robortImg1" alt="AI Background">
-            <div class="hero-content">
+            <div class="hero-content" style="position: relative">
+                <img src="{{ asset('ai.webp') }}"  style="position: absolute;z-index: -1;transform:scale(2);opacity:.1" alt="AI Background">
 
-                <h1 class="ai-title text-white">
+               <div style="z-index: 99">
+                 <h1 class="ai-title text-white">
                     The future
                 </h1>
 
@@ -36,25 +38,26 @@
                     <a href="#" class="btn-primary">Explore Solutions</a>
                     <a href="#" class="btn-outline">Contact Us</a>
                 </div>
+               </div>
 
             </div>
         </div>
 
     </section>
-    <div style="position: relative;overflow:hidden;z-index:-1;" class="half-card">
+    <div style="position: relative;overflow:hidden;z-index:1;" class="half-card">
         <x-half-circle-component />
         <!-- <x-ai-card/> -->
     </div>
     <div class="ai-project-list">
-        <img src="{{ asset('aibg.jpg') }}" class="ai-bg" alt="">
+        {{-- <img src="{{ asset('aibg.jpg') }}" class="ai-bg" alt=""> --}}
         <div class="ai-list-container">
-            <h1>Turn Manual Work Into Smart System</h1>
+            <h1 class="text-white mb-5">Turn Manual Work Into Smart System</h1>
 
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
                         <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Lead Automation">
-                        <h5 class="text-white">Lead Automation</h5>
+                        <h5 class="">Lead Automation</h5>
                         <p class="text-white-50">Automate your lead collection, follow-ups, and analytics seamlessly.</p>
                     </div>
                 </div>
@@ -106,6 +109,15 @@
 @endsection
 
 <style>
+    .robortImg {
+        position: absolute;
+        top: 35%;
+        left: 10%;
+        transform: scale(1.4);
+        width: 200px;
+        z-index: 10;
+    }
+
     .ai-hero {
         /* position: relative; */
         height: 70vh;
@@ -144,7 +156,8 @@
     }
 
     .ai-title {
-        font-size: 60px;
+    font-size: clamp(32px, 5vw, 60px);
+
         font-weight: 700;
         color: #d0d0d0;
         margin: 0;
@@ -234,22 +247,19 @@
         var tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".ai-hero",
-                start: "bottom 70%",
-                end: "bottom 50%",
-                // duration:5,
-                scrub: 1,
-                markers: true,
+                start: "80% 70%",
+                end: "bottom 10%",
+                scrub: 1.5,
+                markers: false,
             }
         })
 
         tl.to(".robortImg", {
-            top: "135%",
-            left: "40%",
-            height: "20vw",
-            width: "20vw",
-            duration: 5
+            x: 350,
+            y: 750,
+            scale: 1,
+            duration: 2
         })
-
         tl.to(".ai-card", {
             bottom: 0,
             left: "10%",
@@ -290,11 +300,11 @@
         })
 
         tl1.to(".robortImg", {
-            top: "185%",
-            left: "5%",
+            top: 900,
+            left: -250,
             height: "35vw",
+            scale:1.3,
             width: "30vw",
-            opacity: 0.9
         })
     </script>
 @endpush
