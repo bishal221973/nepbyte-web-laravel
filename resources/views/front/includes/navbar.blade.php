@@ -8,3 +8,7 @@
 </div>
 
 
+<a href="{{route('front.team')}}" class="text-decoration-none" style="position: absolute;right:4%;top:10px;height:50px;width:50px;background-color:transparent;border:0;padding:0;border-radius:50%">
+    <img src="{{asset('images/team.png')}}" style="height: 100%;width:100%;object-fit:cover" alt="">
+    <h5 class="text-white">Team</h5>
+</a>

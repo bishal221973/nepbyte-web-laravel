@@ -59,12 +59,8 @@
                                 <div class="d-block text-white" style="font-size: 20px">
                                     Reach
                                 </div>
-
-
                             </div>
                         </div>
-
-
                     </div>
                     <img src="{{ asset('ads/post.png') }}" alt="">
                     <img src="{{ asset('ads/123.png') }}" class="client-profile" alt="">
@@ -121,9 +117,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </section>
 
     <section class="bg-white" style="margin-top: -7vh;overflow-x:hidden;padding:0 10%">
@@ -136,286 +129,44 @@
         </div>
 
         <div class="mt-5">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row grid" data-masonry='{"percentPosition": true }' >
+                <div class="col-lg-4 mb-4 grid-item">
+                    <x-marketing-card>
+                        <iframe
+                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02aAqAFMZfF5PRXL2SCMTFMZuLbccyn6rfdQBY6635osAK6dma5BHe2uJjmHRnNQPyl&show_text=true&width=500"
+                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no"
+                            frameborder="0" allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </x-marketing-card>
                 </div>
-                 <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 mb-4 grid-item">
+                    <x-marketing-card>
+                        <iframe
+                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid0E3bTjhVi6yhE8RDSBx31hESLA99Wr4V7GWWD7s5FeMgndwP9C7UDCh3q6QH7KphBl&show_text=true&width=500"
+                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no"
+                            frameborder="0" allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </x-marketing-card>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="col-lg-4 mb-4 grid-item">
+                    <x-marketing-card>
+                        <iframe
+                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02kG668gpzDSz4bi1Jor2To93eJBp1Fc9tryEgh1nLpyvFHYwdAxadFc8D4ppJ3zWMl&show_text=true&width=500"
+                            width="500" height="668" style="border:none;overflow:hidden" scrolling="no"
+                            frameborder="0" allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </x-marketing-card>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="glass-card px-3">
-                        <div class="d-block w-100 ">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img src="{{ asset('ads/123.png') }}"
-                                        style="height: 50px;width:50px;border-radius:50%" alt="">
-                                    <div class="d-block">
-                                        <h4 class="m-0 p-0">Lit & Glow</h4>
-                                        <small>Skincare Brand</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <small>Reach</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Engagement</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                                 <div class="d-block">
-                                    <small>Leads</small>
-                                    <h5 class="fw-bold">83K</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{-- <div class="col-lg-4 mb-4 grid-item">
+                    <x-marketing-card>
+                        <iframe
+                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02evhLeXfU9PHZLEmw6p2neAAMdcqf6PDnqVwLGP8MnhUS37qwyMNJcruP6HxjLM3Ul&show_text=true&width=500"
+                            width="500" height="668" style="border:none;overflow:hidden" scrolling="no"
+                            frameborder="0" allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </x-marketing-card>
+                </div> --}}
             </div>
         </div>
     </section>

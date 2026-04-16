@@ -5,7 +5,7 @@ var tl = gsap.timeline({
         start: "top 50%",
         end: "top 30%",
         scrub: 1,
-        markers: true,
+        markers: false,
     },
 });
 tl.to(".card1", {
