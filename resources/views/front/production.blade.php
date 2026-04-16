@@ -41,44 +41,44 @@
                             </a>
                         </div>
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <div class="cont-container">
+                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
                                 <img src="{{ asset('images/event.jpg') }}" alt="">
                                 <div class="content-overlay">
                                     <h5>Corporate Events</h5>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <div class="cont-container">
+                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
                                 <img src="{{ asset('images/custom.jpg') }}" alt="">
                                 <div class="content-overlay">
                                     <h5>Branding</h5>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <div class="cont-container">
+                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
                                 <img src="{{ asset('images/singer.jpg') }}" alt="">
                                 <div class="content-overlay">
                                     <h5>Music</h5>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <div class="cont-container">
+                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
                                 <img src="{{ asset('images/commercial.jpg') }}" alt="">
                                 <div class="content-overlay">
                                     <h5>Commercial</h5>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <div class="cont-container">
+                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
                                 <img src="{{ asset('images/ai.jpg') }}" alt="">
                                 <div class="content-overlay">
                                     <h5>Digital Ads</h5>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
