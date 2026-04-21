@@ -16,7 +16,7 @@
 
                <div style="z-index: 99">
                  <h1 class="ai-title text-white">
-                    The future
+                    {{-- The future
                 </h1>
 
                 <h1 class="ai-title text-white">
@@ -24,13 +24,13 @@
                 </h1>
 
                 <h1 class="ai-title highlight text-white">
-                    is human + AI
+                    is human + AI --}}
+                    Streamlining workflows to unlock human creativity.
                 </h1>
 
                 <!-- <div class="d-felx justify-content-center"> -->
                 <p class="hero-subtitle d-block">
-                    Build smarter products faster with AI-powered development,
-                    automation and intelligent workflows.
+                    Delete the busy work. Automate your tasks so you can lead your company.
                 </p>
                 <!-- </div> -->
                 <!--  -->

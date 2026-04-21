@@ -14,12 +14,12 @@
 
             <div class="hero-content">
                 <h1 class="ai-title">
-                    Build Your <span>Powerful Brand</span>
+                    {{-- Build Your <span>Powerful Brand</span> --}}
+                    Crafting identities that command premium positioning.
                 </h1>
 
                 <p class="ai-subtitle">
-                    We create strategic brand identities that connect with people,
-                    build trust and grow businesses.
+                    Don't just be seen—be remembered. We build brands that command authority.
                 </p>
 
                 <div class="hero-btns">

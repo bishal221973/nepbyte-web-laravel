@@ -9,15 +9,13 @@
                 <span>Strategy</span>
             </h1>
             <h1 class="strategy-sub-title animate__animated animate__zoomIn">
-                <span>That </span>
+                {{-- <span>That </span>
                 <span class="fw-bold">Converts Visitors </span>
-                <span>into Customers </span>
+                <span>into Customers </span> --}}
+                Architecting roadmaps for long-term scalability.
             </h1>
 
-            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">We architect structured
-                revenue systems that transform traffic
-                into
-                predictable growth.</span>
+            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">From guessing to growing. We build the blueprint for your scale.</span>
 
             <div class="flex gap-5 my-10 animate__animated animate__bounceInDown">
 

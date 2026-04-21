@@ -11,11 +11,9 @@
         <div class="row w-100" style="padding: 0 10%;margin-top:13vh">
 
 
-            <h1 style="font-size: 70px;" class="text-center text-white" data-aos="zoom-in-up">Content Production for Impactful Storytelling</h1>
+            <h1 style="font-size: 70px;" class="text-center text-white" data-aos="zoom-in-up">High-impact storytelling designed to stop the scroll.</h1>
 
-            <p class="text-white text-center mt-5" data-aos="flip-up" style="padding: 0 20%">We craft compelling visual and digital content
-                designed to engage, inspire, and deliver results. From concept to execution, our team ensures every piece
-                reflects your brand and communicates your message effectively.</p>
+            <p class="text-white text-center mt-5" data-aos="flip-up" style="padding: 0 20%">Stop the scroll. Turn casual viewers into loyal customers with cinematic storytelling.</p>
         </div>
 
 

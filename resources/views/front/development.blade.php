@@ -1,7 +1,7 @@
 @extends('layouts.guestLayout')
 @section('content')
-<x-breadcrumb title="Technology that Scales your business" page="Development" />
-
+<x-breadcrumb title="High-performance digital backbones and custom apps." page="Development" />
+<span class="text-white d-block text-center">Digital foundations that don't break. Fast, sleek, and built to convert.</span>
 <!-- <img src="{{asset('herobg.png')}}" class="herobg" alt=""> -->
 <div id="fixedContent12" class="w-100  align-items-center m-0" style="padding: 0px 10%;position: relative;overflow-x:hidden">
     

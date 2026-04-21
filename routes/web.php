@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\FrontController;
+use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view(view: 'front.home');
+    $brands=Brands::latest()->get();
+    return view('front.home',[
+        'brands'=>$brands
+    ]);
 });
 Route::get('strategy', [FrontController::class, 'strategy'])->name('front.strategy');
 Route::get('development', [FrontController::class, 'development'])->name('front.development');

@@ -9,13 +9,13 @@
                 Strategy
             </h5>
 
-            {{-- <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <div class="glass-hr" style="position: relative; top: 5px"></div>
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
-            </small> --}}
+                Action Plan
+            </small>
         </div>
     </div>
 </a>
@@ -36,7 +36,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
+                Brand Identity
             </small>
         </div>
     </div>
@@ -57,7 +57,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
+                Visual Assets
             </small>
         </div>
     </div>
@@ -70,7 +70,7 @@
             </div>
 
             <h5 class="menu-title text-white font-weight-bold" style="position: relative; top: 5px">
-                Content Production
+                Production
             </h5>
 
             <div class="d-flex justify-content-center">
@@ -78,7 +78,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Content Production
+                Photo/Videography
             </small>
         </div>
     </div>
@@ -100,7 +100,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
+                Digital Marketing
             </small>
         </div>
     </div>
@@ -122,7 +122,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
+                System Web App
             </small>
         </div>
     </div>
@@ -144,7 +144,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
+                Automation Excellence
             </small>
         </div>
     </div>
@@ -163,11 +163,11 @@
 
             {{-- <div class="d-flex justify-content-center">
                 <div class="glass-hr" style="position: relative; top: 5px"></div>
-            </div>
+            </div> --}}
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Research & Plan
-            </small> --}}
+                Growth Analytics
+            </small> 
         </div>
     </div>
 </div>

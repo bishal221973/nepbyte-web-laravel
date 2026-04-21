@@ -1,17 +1,18 @@
 @extends('layouts.guestLayout')
 
 @section('content')
-    <x-breadcrumb title="Brand Development" page="Branding" />
+    <x-breadcrumb title="Marketing" page="Marketing" />
 
     <img src="{{ asset('brandBg.png') }}" class="hero-bg" alt="Brand Background">
     {{-- <div class="hero-overlay"></div> --}}
     <section class="ai-hero">
 
         <canvas style="position: absolute" id="canvas"></canvas>
-        <div class="row w-100" style="padding: 0 10%;margin-top:13vh">
+        <div class="row w-100" style="padding: 20px 10%;margin-top:30vh">
             <div class="col-lg-6">
-                <h1 class="text-white fw-bold " style="font-size: 50px;width:100%">Digital Marketing That Actually Performs
-                </h1>
+                <h1 class="text-white fw-bold">Data-driven growth focused on ROI, not vanity.</h1>
+                <span class="text-white fw-bold " style="width:100%">ROI over "Likes." We deploy marketing that actually moves the needle.
+                </span>
 
                 <ul class="m-0 px-3 mt-5">
                     <li class="text-white mb-2">Search Engine Optimization (SEO)</li>

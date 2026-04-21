@@ -21,7 +21,54 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center">
                 <x-search-component />
-                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Create</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Leading Brands</button>
+            </div>
+
+            <div class="card mb-4">
+
+                <div class="card-body p-0">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px;background-color: #789EC3">#</th>
+                                <th style="background-color: #789EC3">Logo</th>
+                                <th style="background-color: #789EC3">Name</th>
+                                <th style="background-color: #789EC3">URL</th>
+                                <th style="width: 40px;background-color: #789EC3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($brands as $item)
+                                <tr class="align-middle">
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>
+                                        {{-- {{$item->logo}} --}}
+                                        <img src="/storage/{{ $item->logo }}" style="width: 50px" alt="">
+                                    </td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>
+                                        @if ($item?->url)
+                                        <a href="{{$item->url}}" target="__blank">Open URL</a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a href="{{ route('leading-brands.edit', $item) }}"
+                                                class="btn text-warning shadow-none">Edit</a>
+                                            <form action="{{route('leading-brands.destroy',$item)}}" method="POST" onsubmit="return confirm('Are you sure ?')">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn text-danger shadow-none" type="submit">Delete</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
             </div>
         </div>
     </div>
@@ -31,36 +78,53 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create Leading Brands</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{$brand?->id ? 'Update' : 'Create'}} Leading Brands</h5>
                 </div>
-                <form action="{{ route('leading-brands.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ $brand?->id ? route('leading-brands.update',$brand) : route('leading-brands.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                <div class="modal-body">
+                    @isset($brand?->id)
+                        @method('PUT')
+                    @endisset
+                    <div class="modal-body">
 
                         <div class="form-group mb-3">
                             <label for="">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" placeholder="Brand name" name="name"
-                                value="{{ old('name') }}">
+                                value="{{ old('name', $brand?->name) }}">
                             @error('name')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+                        <div class="form-group mb-3">
+                            <label for="">URL</label>
+                            <input type="text" class="form-control" placeholder="URL" name="url"
+                                value="{{ old('url', $brand?->url) }}">
+                            @error('url')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
                         <div class="mb-3">
-                            <label>Logo</label>
+                            <label>Logo <span class="text-danger">*</span></label>
                             <div class="d-flex align-items-end">
                                 <div class="">
-                                    <img id="preview" src="#" alt="Preview" class="img-thumbnail"
-                                        style="max-height:150px;min-height:150px;width:150px;border-radius:50%;object-fit:cover">
+                                    @if ($brand->id)
+                                        <img id="preview" src="/storage/{{$brand->logo}}" alt="Preview" class="img-thumbnail"
+                                            style="max-height:150px;min-height:150px;width:150px;border-radius:50%;object-fit:cover">
+                                    @else
+                                        <img id="preview" src="{{asset('gallery.png')}}" alt="Preview" class="img-thumbnail"
+                                            style="max-height:150px;min-height:150px;width:150px;border-radius:50%;object-fit:cover">
+                                    @endif
+
                                 </div>
                                 <!-- Input group -->
                                 {{-- <div class="input-group" style="width: 150px"> --}}
-                                    <input type="hidden" class="form-control" placeholder="Choose file..." id="fileName"
-                                        readonly>
+                                <input type="hidden" class="form-control" placeholder="Choose file..." id="fileName"
+                                    readonly>
 
-                                    <button class="btn btn-info btn-outline-secondary" style="height:35px" type="button"
-                                        onclick="document.getElementById('logoInput').click()">
-                                        Browse
-                                    </button>
+                                <button class="brows-button btn btn-primary btn-outline-secondary text-white" style="height:35px" type="button"
+                                    onclick="document.getElementById('logoInput').click()">
+                                    Browse
+                                </button>
                                 {{-- </div> --}}
 
                             </div>
@@ -78,19 +142,34 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">{{$brand?->id ? 'Update' : 'Save'}}</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 @endsection
+
+<style>
+    .brows-button{
+        position: relative;
+    }
+</style>
 @if ($errors->any())
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        $('#exampleModal').modal('show');
-    });
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            $('#exampleModal').modal('show');
+        });
+    </script>
+@endif
+
+@if ($brand?->id)
+    <script>
+        // alert('Hello')
+        document.addEventListener("DOMContentLoaded", function() {
+            $('#exampleModal').modal('show');
+        });
+    </script>
 @endif
 
 <script id="z7m4qp">
