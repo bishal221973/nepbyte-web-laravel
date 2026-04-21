@@ -15,16 +15,20 @@
                 Architecting roadmaps for long-term scalability.
             </h1>
 
-            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">From guessing to growing. We build the blueprint for your scale.</span>
+            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">From guessing to growing. We
+                build the blueprint for your scale.</span>
 
             <div class="flex gap-5 my-10 animate__animated animate__bounceInDown">
 
-                <button class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
+                <a href="#strategyInfo" class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
                     Get Funnel Blueprint
-                </button>
-                <button class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
+                </a>
+                {{-- <button class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
                     Book strategy call
-                </button>
+                </button> --}}
+                <a class="btn strategy-btn fw-bold px-4 py-3 rounded shadow" href="https://wa.me/9779814668499?text=Hello%2C%20I%E2%80%99m%20interested%20in%20booking%20a%20strategy%20call%20to%20discuss%20my%20project." target="_blank">
+                    Message on WhatsApp
+                </a>
             </div>
 
             <div class="mt-5">
@@ -86,7 +90,7 @@
         </div>
     </div>
     <div id="placeholder"></div>
-    <div class="divider-glass" style="z-index: 999">
+    <div class="divider-glass" id="strategyInfo" style="z-index: 999">
         <div class="mt-10" data-aos="zoom-in-up">
             <!-- <hr> -->
             <h3 class="text-dark fw-bold text-center capitalize">
@@ -195,12 +199,16 @@
             </h3>
             <div class="d-flex justify-content-center gap-5 my-5 animate__animated animate__bounceInDown">
 
-                <button data-aos="fade-right" class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
+                {{-- <button data-aos="fade-right" class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
                     Get Funnel Blueprint
                 </button>
                 <button data-aos="fade-left" class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
                     Book strategy call
-                </button>
+                </button> --}}
+
+                 <a class="btn strategy-btn fw-bold px-4 py-3 rounded shadow" href="https://wa.me/9779814668499?text=Hello%2C%20I%E2%80%99m%20interested%20in%20booking%20a%20strategy%20call%20to%20discuss%20my%20project." target="_blank">
+                    Message on WhatsApp
+                </a>
             </div>
         </div>
     </div>

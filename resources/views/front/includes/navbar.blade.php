@@ -32,7 +32,7 @@
     .navbar-container {
         /* position: sticky;
     top: 0; */
-        z-index: 99999;
+        z-index: 99999999;
         background-color: transparent;
         transition: all 0.4s ease;
     }

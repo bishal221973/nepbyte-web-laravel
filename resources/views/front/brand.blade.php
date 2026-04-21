@@ -24,7 +24,7 @@
 
                 <div class="hero-btns">
                     <a href="#" class="btn-primary-custom btn-brand-left">Start Your Brand</a>
-                    <a href="#" class="btn-outline-custom btn-brand-right">View Portfolio</a>
+                    <a href="#brandPortfolio" class="btn-outline-custom btn-brand-right">View Portfolio</a>
                 </div>
             </div>
 
@@ -100,55 +100,50 @@
 
     </section>
 
-    <section class="brand-project">
+    <section class="brand-project" id="brandPortfolio">
         {{-- <img src="{{asset('bg.png')}}" class="brand-project-image" alt=""> --}}
-        <div class="container pb-5" >
+        <div class="container pb-5">
 
             <div class="row text-center mb-5" data-aos="zoom-in-up">
-                <h2 class="section-title">Our Branding Services</h2>
+                <h2 class="section-title">Our Branding Portfolio</h2>
                 <p class="section-subtitle">
-                    Everything you need to build a memorable brand
+                    A showcase of our branding work and impact.
                 </p>
                 {{-- <img src="" alt=""> --}}
             </div>
 
-            <div class="row" >
+            <div class="row">
                 <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
+                        <img src="{{ asset('brands/b1.jpg') }}" class="brand-image" style="height:400px;object-fit:fill" alt="Branding">
+
+                        <div class="brand-overlay">
+                            <h4>Medha School Management System</h4>
                             <p>Unique and memorable logo designs that represent your brand identity.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
+                        {{-- <img src="{{ asset('brands/b1.jpg') }}" class="brand-image" alt="Branding"> --}}
+                       <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1212328817446281%2F&show_text=false&width=267&t=0" width="100%" height="400px"  style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                        <div class="brand-overlay">
+                            <h4>Medha School Management System</h4>
                             <p>Unique and memorable logo designs that represent your brand identity.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
+                        {{-- <img src="{{ asset('brands/b1.jpg') }}" class="brand-image" alt="Branding"> --}}
+                      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F26837005105907482%2F&show_text=false&width=267&t=0" width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                        <div class="brand-overlay">
+                            <h4>Medha School Management System</h4>
                             <p>Unique and memorable logo designs that represent your brand identity.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="400">
-                    <div class="brand-project-card">
-                        <img src="{{ asset('brands/brand.jpeg') }}" class="brand-image" alt="">
-                        <div class="px-3 py-4">
-                            <h4>Branding</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
+
 
 
             </div>
@@ -209,7 +204,7 @@
     .ai-hero {
         height: 80vh;
         width: 100%;
-        position:sticky !important;
+        position: sticky !important;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -220,13 +215,14 @@
 
     .hero-bg {
         position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%; 
-    object-fit: cover;
-    object-position: right;
-    opacity: 0.1;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: right;
+        opacity: 0.1;
+        z-index: -1;
     }
 
     .hero-overlay {
@@ -372,7 +368,8 @@
         overflow: hidden;
         background-color: #fff
     }
-    .brand-project-image{
+
+    .brand-project-image {
         position: absolute;
         height: 100vh;
         width: 100vw;
@@ -380,5 +377,60 @@
         transform: rotate(180deg);
         opacity: 0.2;
         z-index: 0;
+    }
+
+
+
+
+
+
+    .brand-project-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .brand-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    /* Overlay */
+    .brand-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        color: #fff;
+        background: linear-gradient(to top, rgba(120, 158, 195, 1), rgba(120, 158, 195, 0.9), rgba(120, 158, 195, 0.8), rgba(120, 158, 195, 0.7), transparent);
+        z-index: 2;
+    }
+
+    /* Hover Effects */
+    .brand-project-card:hover .brand-image {
+        transform: scale(1.05);
+    }
+
+    .brand-project-card:hover .brand-overlay {
+        background: linear-gradient(to top, rgba(120, 158, 195, 1), rgba(120, 158, 195, 0.8), rgba(120, 158, 195, 0.7), transparent);
+
+    }
+
+    /* Text Styling */
+    .brand-overlay h4 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .brand-overlay p {
+        margin-top: 6px;
+        font-size: 14px;
+        opacity: 0.9;
     }
 </style>
