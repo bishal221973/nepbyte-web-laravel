@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view(view: 'front.home');
 });
-Route::get('strategy',[FrontController::class,'strategy'])->name('front.strategy');
-Route::get('development',[FrontController::class,'development'])->name('front.development');
-Route::get('brands-development',[FrontController::class,'brand'])->name('front.brand');
-Route::get('ai-automation',[FrontController::class,'ai'])->name('front.ai');
-Route::get('print-design',[FrontController::class,'printDesign'])->name('front.print-design');
-Route::get('marketing',[FrontController::class,'marketing'])->name('front.marketing');
-Route::get('content-production',[FrontController::class,'production'])->name('front.production');
-Route::get('content-production/show',[FrontController::class,'productionShow'])->name('front.productionShow');
-Route::get('our-team',[FrontController::class,'team'])->name('front.team');
+Route::get('strategy', [FrontController::class, 'strategy'])->name('front.strategy');
+Route::get('development', [FrontController::class, 'development'])->name('front.development');
+Route::get('brands-development', [FrontController::class, 'brand'])->name('front.brand');
+Route::get('ai-automation', [FrontController::class, 'ai'])->name('front.ai');
+Route::get('print-design', [FrontController::class, 'printDesign'])->name('front.print-design');
+Route::get('marketing', [FrontController::class, 'marketing'])->name('front.marketing');
+Route::get('content-production', [FrontController::class, 'production'])->name('front.production');
+Route::get('content-production/show', [FrontController::class, 'productionShow'])->name('front.productionShow');
+Route::get('our-team', [FrontController::class, 'team'])->name('front.team');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('admin')->group(function () {
+    Route::resource('leading-brands', BrandsController::class);
+});
