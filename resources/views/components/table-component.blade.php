@@ -23,6 +23,9 @@
             <button class="btn btn-light export-btn" id="exportPrint">
                 <i class="bi bi-printer"></i> Print
             </button>
+            @isset($actions)
+                {{ $actions }}
+            @endisset
         </div>
 
     </div>
@@ -48,76 +51,76 @@
 
 <style>
     /* Card */
-.card {
-    border-radius: 12px;
-    overflow: hidden;
-}
+    .card {
+        border-radius: 12px;
+        overflow: hidden;
+    }
 
-/* Table Header */
-.table-header th {
-    background: linear-gradient(135deg, #789EC3, #5a86b6);
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px;
-}
+    /* Table Header */
+    .table-header th {
+        background: linear-gradient(135deg, #789EC3, #5a86b6);
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+        padding: 12px;
+    }
 
-/* Table rows */
-.table tbody tr {
-    transition: 0.2s;
-}
+    /* Table rows */
+    .table tbody tr {
+        transition: 0.2s;
+    }
 
-.table tbody tr:hover {
-    background-color: #f5f9ff;
-}
+    .table tbody tr:hover {
+        background-color: #f5f9ff;
+    }
 
-/* Search */
-.search-wrapper {
-    position: relative;
-    width: 260px;
-}
+    /* Search */
+    .search-wrapper {
+        position: relative;
+        width: 260px;
+    }
 
-.search-wrapper input {
-    border-radius: 30px;
-    padding: 8px 15px 8px 42px;
-    border: 1px solid #e0e0e0;
-    background-color: #f9fbfd;
-    transition: 0.3s;
-}
+    .search-wrapper input {
+        border-radius: 30px;
+        padding: 8px 15px 8px 42px;
+        border: 1px solid #e0e0e0;
+        background-color: #f9fbfd;
+        transition: 0.3s;
+    }
 
-.search-wrapper input:focus {
-    background-color: #fff;
-    border-color: #789EC3;
-    box-shadow: 0 0 8px rgba(120, 158, 195, 0.3);
-}
+    .search-wrapper input:focus {
+        background-color: #fff;
+        border-color: #789EC3;
+        box-shadow: 0 0 8px rgba(120, 158, 195, 0.3);
+    }
 
-/* Search icon */
-.search-icon {
-    position: absolute;
-    top: 50%;
-    left: 14px;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 14px;
-}
+    /* Search icon */
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 14px;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 14px;
+    }
 
-/* Export buttons */
-.export-btn {
-    border-radius: 25px;
-    padding: 6px 14px;
-    font-size: 13px;
-    border: 1px solid #e0e0e0;
-    transition: 0.2s;
-}
+    /* Export buttons */
+    .export-btn {
+        border-radius: 25px;
+        padding: 6px 14px;
+        font-size: 13px;
+        border: 1px solid #e0e0e0;
+        transition: 0.2s;
+    }
 
-.export-btn i {
-    margin-right: 5px;
-}
+    .export-btn i {
+        margin-right: 5px;
+    }
 
-/* Hover effects */
-.export-btn:hover {
-    background-color: #789EC3;
-    color: #fff;
-    border-color: #789EC3;
-}
+    /* Hover effects */
+    .export-btn:hover {
+        background-color: #789EC3;
+        color: #fff;
+        border-color: #789EC3;
+    }
 </style>

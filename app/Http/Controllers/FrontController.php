@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BrandingService;
 use App\Models\Brands;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,10 @@ class FrontController extends Controller
 
     public function brand()
     {
-        return view(view: 'front.brand');
+         $brandServices = BrandingService::latest()->where('is_parent', true)->get();
+        return view('front.brand',[
+            'brandServices'=>$brandServices
+        ]);
     }
 
     public function ai()

@@ -213,78 +213,29 @@
     const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
     sparkline3.render();
 </script>
+
 <script>
 $(document).ready(function () {
 
     let table = $('#myTable').DataTable({
-        dom: 'B t<"d-flex justify-content-between p-2"lip>',
-
+        dom: 'B t<"d-flex justify-content-between p-2"lip>', // 👈 IMPORTANT (add B)
+        
         buttons: [
             {
                 extend: 'excel',
-                className: 'buttons-excel d-none',
-                exportOptions: {
-                    columns: ':visible',
-                    format: {
-                        body: function (data, row, column, node) {
-
-                            // 🖼 Handle image export
-                            if (data.includes('<img')) {
-                                let img = $(data).attr('src');
-                                return img ? window.location.origin + img : '';
-                            }
-
-                            return data;
-                        }
-                    }
-                }
+                className: 'buttons-excel d-none'
             },
-
             {
                 extend: 'csv',
-                className: 'buttons-csv d-none',
-                exportOptions: {
-                    format: {
-                        body: function (data) {
-                            if (data.includes('<img')) {
-                                let img = $(data).attr('src');
-                                return img ? window.location.origin + img : '';
-                            }
-                            return data;
-                        }
-                    }
-                }
+                className: 'buttons-csv d-none'
             },
-
             {
                 extend: 'pdf',
-                className: 'buttons-pdf d-none',
-                exportOptions: {
-                    format: {
-                        body: function (data) {
-                            if (data.includes('<img')) {
-                                return "Logo Image"; // PDF can't embed image easily
-                            }
-                            return data;
-                        }
-                    }
-                }
+                className: 'buttons-pdf d-none'
             },
-
             {
                 extend: 'print',
-                className: 'buttons-print d-none',
-                exportOptions: {
-                    format: {
-                        body: function (data) {
-                            if (data.includes('<img')) {
-                                let img = $(data).attr('src');
-                                return '<img src="' + img + '" style="width:50px"/>';
-                            }
-                            return data;
-                        }
-                    }
-                }
+                className: 'buttons-print d-none'
             }
         ]
     });

@@ -42,3 +42,57 @@
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('css/adminlte.css')}}" />
     <link rel="stylesheet" href="{{asset('DataTables/datatables.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+/* Small Toggle */
+.mini-switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+}
+
+.mini-switch input {
+    display: none;
+}
+
+.mini-switch span {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.25s;
+}
+
+.mini-switch span::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    top: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.25s;
+}
+
+/* Active */
+.mini-switch input:checked + span {
+    background: #789EC3;
+}
+
+.mini-switch input:checked + span::before {
+    transform: translateX(16px);
+}
+
+/* Optional hover */
+.mini-switch span:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+</style>

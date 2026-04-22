@@ -19,12 +19,14 @@
     </div>
     <div class="app-content">
         <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-center">
-                <x-search-component />
-                <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add Leading Brands</button>
-            </div>
+           
 
             <x-table-component :headers="['#', 'Logo', 'Name', 'URL', 'Action']">
+                <x-slot name="actions">
+                    <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add
+                        Leading
+                        Brands</button>
+                </x-slot>
                 @foreach ($brands as $item)
                     <tr class="align-middle">
                         <td>{{ $loop->iteration }}</td>
@@ -158,8 +160,8 @@
 @if ($brand?->id)
     @push('script')
         <script>
-        document.getElementById("btnAdd").click();
-    </script>
+            document.getElementById("btnAdd").click();
+        </script>
     @endpush
 @endif
 

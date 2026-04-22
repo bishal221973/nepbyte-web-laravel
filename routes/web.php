@@ -40,5 +40,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('leading-brands', BrandsController::class);
     Route::prefix('brands')->group(function () {
         Route::resource('branding-services', BrandingServiceController::class);
+        Route::post('/leading-brands/{id}/toggle-status', [BrandingServiceController::class, 'toggleStatus'])
+            ->name('leading-brands.toggle-status');
     });
 });
