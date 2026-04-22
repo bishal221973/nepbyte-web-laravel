@@ -72,24 +72,24 @@
 
                 <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="400">
                     <div class="brand-card">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <h4>Logo Design</h4>
+                        <i class="fa-solid fa-users"></i>
+                        <h4>Brand Consulting</h4>
                         <p>Unique and memorable logo designs that represent your brand identity.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="500">
                     <div class="brand-card">
-                        <i class="fa-solid fa-palette"></i>
-                        <h4>Brand Identity</h4>
+                        <i class="fa-solid fa-ticket"></i>
+                        <h4>Rebranding</h4>
                         <p>Complete branding system including colors, typography and style guides.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="600">
                     <div class="brand-card">
-                        <i class="fa-solid fa-bullhorn"></i>
-                        <h4>Brand Strategy</h4>
+                        <i class="fa-solid fa-message"></i>
+                        <h4>Brand Style Guide</h4>
                         <p>Strategic positioning to make your brand stand out in the market.</p>
                     </div>
                 </div>

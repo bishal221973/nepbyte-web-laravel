@@ -8,11 +8,10 @@
     <section class="ai-hero">
 
         <canvas style="position: absolute" id="canvas"></canvas>
-        <div class="row w-100" style="padding: 20px 10%;margin-top:30vh">
+        <div class="row w-100" style="padding: 0 10%;margin-top:13vh">
             <div class="col-lg-6">
-                <h1 class="text-white fw-bold">Data-driven growth focused on ROI, not vanity.</h1>
-                <span class="text-white fw-bold " style="width:100%">ROI over "Likes." We deploy marketing that actually moves the needle.
-                </span>
+                <h1 class="text-white fw-bold " style="font-size: 50px;width:100%">Digital Marketing That Actually Performs
+                </h1>
 
                 <ul class="m-0 px-3 mt-5">
                     <li class="text-white mb-2">Search Engine Optimization (SEO)</li>
@@ -74,45 +73,19 @@
                 <div class="" style="margin-top: 50px">
                     <div class="my-carosel animate__animated animate__zoomIn">
                         <div class="group">
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo1.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo4.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
+                            @foreach ($brands as $brand)
+                                <a target="__blank" title="{{ $brand->name }}" href="{{ $brand->url }}" class="card1">
+                                    <img src="/storage/{{ $brand?->logo }}" alt="">
+                                </a>
+                            @endforeach
                         </div>
 
                         <div class="group" aria-hidden>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo1.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo4.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
+                            @foreach ($brands as $brand)
+                                <a target="__blank" title="{{ $brand->name }}" href="{{ $brand->url }}" class="card1">
+                                    <img src="/storage/{{ $brand?->logo }}" alt="">
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -130,13 +103,13 @@
         </div>
 
         <div class="mt-5">
-            <div class="row grid" data-masonry='{"percentPosition": true }' >
+            <div class="row grid" data-masonry='{"percentPosition": true }'>
                 <div class="col-lg-4 mb-4 grid-item">
                     <x-marketing-card>
                         <iframe
                             src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02aAqAFMZfF5PRXL2SCMTFMZuLbccyn6rfdQBY6635osAK6dma5BHe2uJjmHRnNQPyl&show_text=true&width=500"
-                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no"
-                            frameborder="0" allowfullscreen="true"
+                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </x-marketing-card>
                 </div>
@@ -144,8 +117,8 @@
                     <x-marketing-card>
                         <iframe
                             src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid0E3bTjhVi6yhE8RDSBx31hESLA99Wr4V7GWWD7s5FeMgndwP9C7UDCh3q6QH7KphBl&show_text=true&width=500"
-                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no"
-                            frameborder="0" allowfullscreen="true"
+                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </x-marketing-card>
                 </div>
@@ -293,7 +266,7 @@
         object-fit: cover;
         top: 0;
         left: 0;
-        /* z-index: -2; */
+        z-index: -1;
         opacity: 0.1 !important;
     }
 

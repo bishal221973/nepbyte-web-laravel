@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brands;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -33,7 +34,10 @@ class FrontController extends Controller
 
     public function marketing()
     {
-        return view(view: 'front.marketing');
+        $brands=Brands::latest()->get();
+        return view('front.marketing',[
+            'brands'=>$brands
+        ]);
     }
 
     public function production(){

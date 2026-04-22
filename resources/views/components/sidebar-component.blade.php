@@ -1,8 +1,8 @@
- <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-     <div class="sidebar-brand">
+ <aside class="app-sidebar  shadow" style="background-color: #789EC3" data-bs-theme="dark">
+     <div class="" style="height: 100px">
          <a href="./index.html" class="brand-link">
-             {{-- <img src="./assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" /> --}}
-             <span class="brand-text fw-light">Surkhet Soft</span>
+             <img src="{{ asset('logo.jpg') }}" alt="AdminLTE Logo" class="" style="height: 100px" />
+             {{-- <span class="brand-text fw-light">Surkhet Soft</span> --}}
          </a>
      </div>
      <div class="sidebar-wrapper">
@@ -10,20 +10,46 @@
              <!--begin::Sidebar Menu-->
              <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation"
                  aria-label="Main navigation" data-accordion="false" id="navigation">
-                
+
                  <li class="nav-item">
-                     <a href="{{route('home')}}" class="nav-link {{request()->route()->getName()  == 'home' ? 'active' : ''}}">
+                     <a href="{{ route('home') }}"
+                         class="nav-link {{ request()->route()->getName() == 'home' ? 'active' : '' }}">
                          <i class="nav-icon bi bi-speedometer"></i>
-                         <p>Home</p> 
+                         <p>Home</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{route('leading-brands.index')}}" class="nav-link {{request()->route()->getName()  == 'leading-brands.index' ? 'active' : ''}}">
+                     <a href="{{ route('leading-brands.index') }}"
+                         class="nav-link {{ request()->route()->getName() == 'leading-brands.index' ? 'active' : '' }}">
                          <i class="nav-icon bi bi-speedometer"></i>
-                         <p>Leading Brands</p> 
+                         <p>Leading Brands</p>
                      </a>
                  </li>
-                 
+                 <li class="nav-item">
+                     <a href="#" class="nav-link">
+                         <i class="nav-icon bi bi-box-seam-fill"></i>
+                         <p>
+                             Brands
+                             <i class="nav-arrow bi bi-chevron-right"></i>
+                         </p>
+                     </a>
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="{{route('branding-services.index')}}" class="nav-link">
+                                 <i class="nav-icon bi bi-circle"></i>
+                                 <p>Brand Services</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="./widgets/info-box.html" class="nav-link">
+                                 <i class="nav-icon bi bi-circle"></i>
+                                 <p>Brand Portfolio</p>
+                             </a>
+                         </li>
+                         
+                     </ul>
+                 </li>
+
              </ul>
              <!--end::Sidebar Menu-->
          </nav>

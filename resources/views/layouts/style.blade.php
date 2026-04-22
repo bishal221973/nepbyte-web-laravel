@@ -41,3 +41,4 @@
 
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('css/adminlte.css')}}" />
+    <link rel="stylesheet" href="{{asset('DataTables/datatables.css')}}" />

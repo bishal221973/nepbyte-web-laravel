@@ -132,7 +132,7 @@
         width: 100%;
         height: 90.5vh;
         object-fit: cover;
-        /* z-index: -1; */
+        z-index: -1;
         top: 0 !important;
         opacity: 0.1;
     }

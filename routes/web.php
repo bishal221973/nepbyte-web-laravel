@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandingServiceController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\FrontController;
 use App\Models\Brands;
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $brands=Brands::latest()->get();
-    return view('front.home',[
-        'brands'=>$brands
+    $brands = Brands::latest()->get();
+    return view('front.home', [
+        'brands' => $brands
     ]);
 });
 Route::get('strategy', [FrontController::class, 'strategy'])->name('front.strategy');
@@ -37,4 +38,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::prefix('admin')->group(function () {
     Route::resource('leading-brands', BrandsController::class);
+    Route::prefix('brands')->group(function () {
+        Route::resource('branding-services', BrandingServiceController::class);
+    });
 });
