@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center">
                 <x-search-component />
-                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Leading Brands</button>
+                <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add Leading Brands</button>
             </div>
 
             <x-table-component :headers="['#', 'Logo', 'Name', 'URL', 'Action']">
@@ -156,12 +156,11 @@
 @endif
 
 @if ($brand?->id)
-    <script>
-        // alert('Hello')
-        document.addEventListener("DOMContentLoaded", function() {
-            $('#exampleModal').modal('show');
-        });
+    @push('script')
+        <script>
+        document.getElementById("btnAdd").click();
     </script>
+    @endpush
 @endif
 
 <script id="z7m4qp">

@@ -57,7 +57,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Visual Assets
+                Creative print and Design
             </small>
         </div>
     </div>
@@ -100,7 +100,7 @@
             </div>
 
             <small class="title-description d-block text-center text-secondary" style="position: relative; top: 5px">
-                Digital Marketing
+                your digital presence.
             </small>
         </div>
     </div>
