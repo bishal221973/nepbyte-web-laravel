@@ -41,7 +41,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="./widgets/info-box.html" class="nav-link">
+                             <a href="{{route('brand-portfolio.index')}}" class="nav-link">
                                  <i class="nav-icon bi bi-circle"></i>
                                  <p>Brand Portfolio</p>
                              </a>

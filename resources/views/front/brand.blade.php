@@ -46,17 +46,16 @@
 
             <div class="row g-4">
                 @foreach ($brandServices as $item)
-                    
-                <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="brand-card">
-                        {!!$item->icon!!}
-                        <h4>{{$item->name}}</h4>
-                        <p>{{$item->description}}</p>
+                    <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="brand-card">
+                            {!! $item->icon !!}
+                            <h4>{{ $item->name }}</h4>
+                            <p>{{ $item->description }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
-                
+
 
             </div>
 
@@ -69,45 +68,73 @@
         <div class="container pb-5">
 
             <div class="row text-center mb-5" data-aos="zoom-in-up">
-                <h2 class="section-title">Our Branding Portfolio</h2>
-                <p class="section-subtitle">
-                    A showcase of our branding work and impact.
-                </p>
+                <small style="color: #789EC3;background-color:#789EC320;width:200px;border-radius:50px;font-size:14px"
+                    class="mx-auto d-block">DESIGN CAPABILITIES</small>
+                <h2 class="section-title1">Our Diversified <span style="color: #789ec3;">Design </span>Portfolio</h2>
+
+                <div class="d-flex justify-content-center gap-2">
+                    {{-- @foreach ($brandServices as $item)
+                        <a href="#" class="btn border py-1 selectCategory {{ $loop->first ? 'selectCategoryActive' : '' }}">
+                            <small>{{ $item->name }}</small>
+                        </a>
+                    @endforeach --}}
+                    @foreach ($brandServices as $item)
+    <a href="javascript:void(0)"
+       class="btn border py-1 selectCategory {{ $loop->first ? 'selectCategoryActive' : '' }}"
+       data-id="{{ $item->id }}">
+        <small>{{ $item->name }}</small>
+    </a>
+@endforeach
+                </div>
                 {{-- <img src="" alt=""> --}}
             </div>
 
-            <div class="row">
-                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="row px-5">
+                {{-- @foreach ($brandPortfolios as $brandPortfolio)
+                    
+                <div class="col-lg-4 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="brand-project-card">
-                        <img src="{{ asset('brands/b1.jpg') }}" class="brand-image" style="height:400px;object-fit:fill" alt="Branding">
+                        <div style="overflow: hidden">
+                            <img src="/storage/{{$brandPortfolio->image}}" class="brand-image"
+                            alt="Branding">
+                        </div>
 
-                        <div class="brand-overlay">
-                            <h4>Medha School Management System</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
+                        <div class="p-3">
+                            <h4>{{$brandPortfolio->name}}</h4>
+                            <p>{{$brandPortfolio->description}}</p>
+                            <div class="d-flex align-items-center gap-2">
+                                <span>
+                                    {!!$brandPortfolio->service?->icon!!}
+                                </span>
+                                <small>{{$brandPortfolio->service->name}}</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="brand-project-card">
-                        {{-- <img src="{{ asset('brands/b1.jpg') }}" class="brand-image" alt="Branding"> --}}
-                       <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1212328817446281%2F&show_text=false&width=267&t=0" width="100%" height="400px"  style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                        <div class="brand-overlay">
-                            <h4>Medha School Management System</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3" style="z-index: 999" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="brand-project-card">
-                        {{-- <img src="{{ asset('brands/b1.jpg') }}" class="brand-image" alt="Branding"> --}}
-                      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F26837005105907482%2F&show_text=false&width=267&t=0" width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                        <div class="brand-overlay">
-                            <h4>Medha School Management System</h4>
-                            <p>Unique and memorable logo designs that represent your brand identity.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                 --}}
 
+                 @foreach ($brandPortfolios as $brandPortfolio)
+    <div class="col-lg-4 mb-3 portfolio-item"
+         data-service="{{ $brandPortfolio->branding_service_id }}"
+         style="z-index: 999">
+
+        <div class="brand-project-card">
+            <div style="overflow: hidden">
+                <img src="/storage/{{$brandPortfolio->image}}" class="brand-image">
+            </div>
+
+            <div class="p-3">
+                <h4>{{$brandPortfolio->name}}</h4>
+                <p>{{$brandPortfolio->description}}</p>
+                <div class="d-flex align-items-center gap-2">
+                    <span>{!!$brandPortfolio->service?->icon!!}</span>
+                    <small>{{$brandPortfolio->service->name}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
 
 
             </div>
@@ -290,6 +317,13 @@
         color: #789ec3;
     }
 
+
+    .section-title1 {
+        font-size: 40px;
+        font-weight: 700;
+
+    }
+
     .section-subtitle {
         color: #777;
         margin-top: 10px;
@@ -322,11 +356,6 @@
         background-color: #a1d0ff
     }
 
-    .brand-image {
-        width: 100%;
-        height: 27vh;
-    }
-
     .brand-project-card {
         border-radius: 10px;
         overflow: hidden;
@@ -356,8 +385,8 @@
     }
 
     .brand-image {
+        height: 250px;
         width: 100%;
-        height: 300px;
         object-fit: cover;
         display: block;
         transition: transform 0.4s ease;
@@ -397,4 +426,44 @@
         font-size: 14px;
         opacity: 0.9;
     }
+
+    .selectCategoryActive {
+        background-color: #789EC3 !important;
+        color: #fff !important;
+    }
 </style>
+@push('script')
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".selectCategory");
+    const items = document.querySelectorAll(".portfolio-item");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            // active button UI
+            buttons.forEach(b => b.classList.remove("selectCategoryActive"));
+            this.classList.add("selectCategoryActive");
+
+            const id = this.getAttribute("data-id");
+
+            items.forEach(item => {
+                if (item.getAttribute("data-service") == id) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+        });
+    });
+
+    // 👉 trigger first category by default
+    if (buttons.length) {
+        buttons[0].click();
+    }
+
+});
+    </script>
+@endpush

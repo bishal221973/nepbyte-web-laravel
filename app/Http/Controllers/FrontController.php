@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BrandingService;
+use App\Models\BrandPortfolio;
 use App\Models\Brands;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,11 @@ class FrontController extends Controller
 
     public function brand()
     {
-          $brandServices = BrandingService::where('is_parent', true)->where('status',true)->orderBy('position','asc')->get();
-        return view('front.brand',[
-            'brandServices'=>$brandServices
+        $brandServices = BrandingService::where('is_parent', true)->where('status', true)->orderBy('position', 'asc')->get();
+        $brandPortfolios = BrandPortfolio::with('service')->where('status', true)->latest()->get();
+        return view('front.brand', [
+            'brandServices' => $brandServices,
+            'brandPortfolios'=>$brandPortfolios
         ]);
     }
 
@@ -38,20 +41,23 @@ class FrontController extends Controller
 
     public function marketing()
     {
-        $brands=Brands::latest()->get();
-        return view('front.marketing',[
-            'brands'=>$brands
+        $brands = Brands::latest()->get();
+        return view('front.marketing', [
+            'brands' => $brands
         ]);
     }
 
-    public function production(){
+    public function production()
+    {
         return view('front.production');
     }
-    public function productionShow(){
+    public function productionShow()
+    {
         return view('front.productionShow');
     }
 
-     public function team(){
+    public function team()
+    {
         return view('front.team');
     }
 }

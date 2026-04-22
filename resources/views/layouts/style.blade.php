@@ -95,4 +95,5 @@
 .mini-switch span:hover {
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
+
 </style>
