@@ -29,7 +29,7 @@
                      <a href="#" class="nav-link">
                          <i class="nav-icon bi bi-box-seam-fill"></i>
                          <p>
-                             Brands
+                             Brandings
                              <i class="nav-arrow bi bi-chevron-right"></i>
                          </p>
                      </a>
@@ -41,9 +41,15 @@
                              </a>
                          </li>
                          <li class="nav-item">
+                             <a href="{{route('brand-category.index')}}" class="nav-link">
+                                 <i class="nav-icon bi bi-circle"></i>
+                                 <p>Categories</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
                              <a href="{{route('brand-portfolio.index')}}" class="nav-link">
                                  <i class="nav-icon bi bi-circle"></i>
-                                 <p>Brand Portfolio</p>
+                                 <p>Projects</p>
                              </a>
                          </li>
                          

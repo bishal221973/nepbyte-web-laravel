@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BrandCategory;
 use App\Models\BrandingService;
 use App\Models\BrandPortfolio;
 use App\Models\Brands;
@@ -22,10 +23,12 @@ class FrontController extends Controller
     public function brand()
     {
         $brandServices = BrandingService::where('is_parent', true)->where('status', true)->orderBy('position', 'asc')->get();
-        $brandPortfolios = BrandPortfolio::with('service')->where('status', true)->latest()->get();
+        $brandPortfolios = BrandPortfolio::with('category')->where('status', true)->latest()->get();
+        $brandCategories = BrandCategory::where('status', true)->latest()->get();
         return view('front.brand', [
             'brandServices' => $brandServices,
-            'brandPortfolios'=>$brandPortfolios
+            'brandPortfolios'=>$brandPortfolios,
+            'brandCategories'=>$brandCategories
         ]);
     }
 

@@ -21,21 +21,17 @@
         <div class="container-fluid">
 
 
-            <x-table-component :headers="['#', 'Image','Category','Name', 'Description', 'Status', 'Action']">
+            <x-table-component :headers="['#', 'Name', 'Status', 'Action']">
                 <x-slot name="actions">
-                    <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">New
-                        Design</button>
+                    <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add
+                        Leading
+                        Brands</button>
                 </x-slot>
-                @foreach ($brandPortfolios as $item)
+                @foreach ($brandCategories as $item)
                     <tr style="padding: 0" data-id="{{ $item->id }}">
                         <td style="padding: 0"><span style="display: block;text-align:start">{{ $loop->iteration }}</span>
                         </td>
-                        <td style="padding: 0">
-                            <img src="/storage/{{$item->image}}" style="width:80px " alt="hello">
-                        </td>
-                        <td style="padding: 0">{{ $item?->category?->title }}</td>
-                        <td style="padding: 0">{{ $item->name }}</td>
-                        <td style="padding: 0">{{ $item->description }}</td>
+                        <td style="padding: 0">{{ $item->title }}</td>
                         <td style="padding: 0">
                             <label class="mini-switch">
                                 <input type="checkbox" class="status-toggle" data-id="{{ $item->id }}"
@@ -45,10 +41,10 @@
                         </td>
                         <td style="padding: 0">
                             <div class="d-flex">
-                                <a href="{{ route('brand-portfolio.edit', $item) }}" style="margin-top: 10px"
+                                <a href="{{ route('brand-category.edit', $item) }}" style="margin-top: 10px"
                                     class="btn text-warning shadow-none">Edit</a>
 
-                                <form action="{{ route('brand-portfolio.destroy', $item) }}" method="POST"
+                                <form action="{{ route('brand-category.destroy', $item) }}" method="POST"
                                     onsubmit="return confirm('Are you sure ?')">
                                     @csrf
                                     @method('delete')
@@ -68,93 +64,33 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ $brandPortfolio?->id ? 'Update' : 'Create' }} Design
+                    <h5 class="modal-title" id="exampleModalLabel">{{ $brandCategory?->id ? 'Update' : 'Create' }} Category
                     </h5>
                 </div>
                 <form
-                    action="{{ $brandPortfolio?->id ? route('brand-portfolio.update', $brandPortfolio) : route('brand-portfolio.store') }}"
+                    action="{{ $brandCategory?->id ? route('brand-category.update', $brandCategory) : route('brand-category.store') }}"
                     method="POST" enctype="multipart/form-data">
                     @csrf
-                    @isset($brandPortfolio?->id)
+                    @isset($brandCategory?->id)
                         @method('PUT')
                     @endisset
                     <div class="modal-body">
 
                         <div class="form-group mb-3">
-                            <label for="">Select Category <span class="text-danger">*</span></label>
-                            <select name="branding_service_id" id="" class="form-control form-select">
-                                <option value="">Select Category</option>
-                                @foreach ($brandServices as $pItem)
-                                    <option value="{{ $pItem?->id }}" {{$brandPortfolio?->branding_service_id == $pItem->id ? 'selected' : ''}}>{{ $pItem?->title }}</option>
-                                @endforeach
-                            </select>
-                            @error('name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="">Name</label>
-                            <input type="text" class="form-control" placeholder="Name" name="name"
-                                value="{{ old('name', $brandPortfolio?->name) }}">
-                            @error('name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                       
-
-                        <div class="form-group mb-3">
-                            <label for="">Description</label>
-                            <textarea class="form-control" placeholder="Description" name="description">{{ old('description', $brandPortfolio->description) }}</textarea>
-                            @error('description')
+                            <label for="">Category <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Category" name="title"
+                                value="{{ old('title', $brandCategory?->title) }}">
+                            @error('title')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
 
-                         <div class="mb-3">
-                            <label>Image <span class="text-danger">*</span></label>
-                            <div class="d-flex align-items-end">
-                                <div class="">
-                                    @if ($brandPortfolio->id)
-                                        <img id="preview" src="/storage/{{ $brandPortfolio->image }}" alt="Preview"
-                                            class="img-thumbnail"
-                                            style="max-height:150px;min-height:150px;width:150px;border-radius:50%;object-fit:cover">
-                                    @else
-                                        <img id="preview" src="{{ asset('gallery.png') }}" alt="Preview"
-                                            class="img-thumbnail"
-                                            style="max-height:150px;min-height:150px;width:150px;border-radius:50%;object-fit:cover">
-                                    @endif
-
-                                </div>
-                                <!-- Input group -->
-                                {{-- <div class="input-group" style="width: 150px"> --}}
-                                <input type="hidden" class="form-control" placeholder="Choose file..." id="fileName"
-                                    readonly>
-
-                                <button class="brows-button btn btn-primary btn-outline-secondary text-white"
-                                    style="height:35px" type="button"
-                                    onclick="document.getElementById('logoInput').click()">
-                                    Browse
-                                </button>
-                                {{-- </div> --}}
-
-                            </div>
-                            <!-- Hidden file input -->
-                            <input type="file" name="image" id="logoInput" accept="image/*" class="d-none"
-                                onchange="handleFile(this)">
-
-                            <!-- Image Preview -->
-
-
-                            @error('image')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit"
-                            class="btn btn-primary">{{ $brandPortfolio?->id ? 'Update' : 'Save' }}</button>
+                            class="btn btn-primary">{{ $brandCategory?->id ? 'Update' : 'Save' }}</button>
                     </div>
                 </form>
             </div>
@@ -175,7 +111,7 @@
     @endpush
 @endif
 
-@if ($brandPortfolio?->id)
+@if ($brandCategory?->id)
     @push('script')
         <script>
             document.getElementById("btnAdd").click();
@@ -208,8 +144,11 @@
             let id = checkbox.data('id');
             let status = checkbox.is(':checked') ? 1 : 0;
 
+            let url = "{{ route('brand.category.toggle-status', ':id') }}";
+            url = url.replace(':id', id);
+
             $.ajax({
-                url: `/admin/brands/brand-portfolio/${id}/toggle-status`,
+                url: url,
                 type: 'POST',
                 data: {
                     _token: '{{ csrf_token() }}',
@@ -244,7 +183,7 @@
 
                     // 🔥 Send to server
                     $.ajax({
-                        url: "{{ route('branding-services.sort') }}",
+                        url: "{{ route('brand-category.sort') }}",
                         type: "POST",
                         data: {
                             _token: "{{ csrf_token() }}",
@@ -287,7 +226,7 @@
                     });
 
                     $.ajax({
-                        url: "{{ route('branding-services.sort') }}",
+                        url: "{{ route('brand-category.sort') }}",
                         type: "POST",
                         data: {
                             _token: "{{ csrf_token() }}",

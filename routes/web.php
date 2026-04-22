@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandCategoryController;
 use App\Http\Controllers\BrandingServiceController;
 use App\Http\Controllers\BrandPortfolioController;
 use App\Http\Controllers\BrandsController;
@@ -42,12 +43,19 @@ Route::prefix('admin')->group(function () {
     Route::prefix('brands')->group(function () {
         Route::resource('branding-services', BrandingServiceController::class);
         Route::post('/leading-brands/{id}/toggle-status', [BrandingServiceController::class, 'toggleStatus'])
-        ->name('leading-brands.toggle-status');
-        
+            ->name('leading-brands.toggle-status');
         Route::post('/branding-services/sort', [BrandingServiceController::class, 'sort'])
-        ->name('branding-services.sort');
+            ->name('branding-services.sort');
+
+
         Route::resource('brand-portfolio', BrandPortfolioController::class);
         Route::post('/brand-portfolio/{id}/toggle-status', [BrandPortfolioController::class, 'toggleStatus'])
-        ->name('brand.portfolio.toggle-status');
+            ->name('brand.portfolio.toggle-status');
+
+             Route::resource('brand-category', BrandCategoryController::class);
+        Route::post('/brand-category/{id}/toggle-status', [BrandCategoryController::class, 'toggleStatus'])
+            ->name('brand.category.toggle-status');
+            Route::post('/branding-category/sort', [BrandCategoryController::class, 'sort'])
+            ->name('brand-category.sort');
     });
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BrandCategory;
 use App\Models\BrandingService;
 use App\Models\BrandPortfolio;
 use Illuminate\Http\Request;
@@ -11,8 +12,8 @@ class BrandPortfolioController extends Controller
 {
     public function index()
     {
-        $brandPortfolios = BrandPortfolio::with('service')->latest()->get();
-        $brandServices = BrandingService::where('is_parent', true)->where('status', true)->orderBy('position', 'asc')->get();
+        $brandPortfolios = BrandPortfolio::with('category')->latest()->get();
+        $brandServices = BrandCategory::where('status', true)->orderBy('position', 'asc')->get();
         return view('admin/brands/portfolio', [
             'brandService' => new BrandingService(),
             'brandServices' => $brandServices,
@@ -34,8 +35,8 @@ class BrandPortfolioController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('brands', 'public');
         }
+        $data['brand_category_id'] = $data['branding_service_id'];
         BrandPortfolio::create($data);
-        $brandServices = BrandingService::where('is_parent', true)->where('status', true)->orderBy('position', 'asc')->get();
         return redirect()->back()->with('success', "New brand portfolio have been created.");
     }
 
@@ -59,8 +60,8 @@ class BrandPortfolioController extends Controller
 
     public function edit($id)
     {
-        $brandPortfolios = BrandPortfolio::with('service')->latest()->get();
-        $brandServices = BrandingService::where('is_parent', true)->where('status', true)->orderBy('position', 'asc')->get();
+        $brandPortfolios = BrandPortfolio::with('category')->latest()->get();
+        $brandServices = BrandCategory::where('status', true)->orderBy('position', 'asc')->get();
         $brandPortfolio = BrandPortfolio::find($id);
         return view('admin/brands/portfolio', [
             'brandService' => new BrandingService(),
@@ -80,7 +81,7 @@ class BrandPortfolioController extends Controller
         ]);
         $brandPortfolio = BrandPortfolio::find($id);
 
-
+        $data['brand_category_id'] = $data['branding_service_id'];
         if ($request->hasFile('image')) {
             if ($brandPortfolio->image) {
                 Storage::delete($brandPortfolio->image);
@@ -99,9 +100,9 @@ class BrandPortfolioController extends Controller
         $brandPortfolio = BrandPortfolio::find($id);
 
 
-            if ($brandPortfolio->image) {
-                Storage::delete($brandPortfolio->image);
-            }
+        if ($brandPortfolio->image) {
+            Storage::delete($brandPortfolio->image);
+        }
         // return $data;
         $brandPortfolio->delete();
         // return $brandPortfolio;
