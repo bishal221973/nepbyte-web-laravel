@@ -28,8 +28,9 @@
                         Brands</button>
                 </x-slot>
                 @foreach ($brandServices as $item)
-                    <tr style="padding: 0">
-                        <td style="padding: 0"><span style="display: block;text-align:start">{{ $loop->iteration }}</span></td>
+                    <tr style="padding: 0" data-id="{{ $item->id }}">
+                        <td style="padding: 0"><span style="display: block;text-align:start">{{ $loop->iteration }}</span>
+                        </td>
                         <td style="padding: 0">{{ $item->name }}</td>
                         <td style="padding: 0">{!! $item->icon !!}</td>
                         <td style="padding: 0">{{ $item->description }}</td>
@@ -176,4 +177,80 @@
 
         });
     </script>
+@endpush
+@push('script')
+    {{-- <script>
+        $(document).ready(function() {
+
+            $("#myTable tbody").sortable({
+                cursor: "move",
+                opacity: 0.7,
+                update: function() {
+
+                    let order = [];
+
+                    $("#myTable tbody tr").each(function(index) {
+                        order.push({
+                            id: $(this).data("id"),
+                            position: index + 1
+                        });
+                    });
+
+                    // 🔥 Send to server
+                    $.ajax({
+                        url: "{{ route('branding-services.sort') }}",
+                        type: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            order: order
+                        },
+                        success: function() {
+                            console.log("Order updated");
+                        }
+                    });
+                }
+            }).disableSelection();
+
+        });
+    </script> --}}
+
+    <script>
+$(document).ready(function () {
+
+    $("#myTable tbody").sortable({
+        cursor: "move",
+        opacity: 0.8,
+
+        // 🔥 FIX: prevent shrinking
+        helper: function(e, ui) {
+            ui.children().each(function() {
+                $(this).width($(this).width());
+            });
+            return ui;
+        },
+
+        update: function () {
+
+            let order = [];
+
+            $("#myTable tbody tr").each(function (index) {
+                order.push({
+                    id: $(this).data("id"),
+                    position: index + 1
+                });
+            });
+
+            $.ajax({
+                url: "{{ route('branding-services.sort') }}",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    order: order
+                }
+            });
+        }
+    }).disableSelection();
+
+});
+</script>
 @endpush

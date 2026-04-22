@@ -20,7 +20,7 @@ class FrontController extends Controller
 
     public function brand()
     {
-         $brandServices = BrandingService::latest()->where('is_parent', true)->get();
+          $brandServices = BrandingService::where('is_parent', true)->where('status',true)->orderBy('position','asc')->get();
         return view('front.brand',[
             'brandServices'=>$brandServices
         ]);

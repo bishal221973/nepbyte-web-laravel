@@ -9,7 +9,7 @@ class BrandingServiceController extends Controller
 {
     public function index()
     {
-        $brandServices = BrandingService::latest()->where('is_parent', true)->get();
+        $brandServices = BrandingService::where('is_parent', true)->orderBy('position','asc')->get();
         return view('admin/brands/service', [
             'brandService' => new BrandingService(),
             'brandServices' => $brandServices
@@ -51,7 +51,7 @@ class BrandingServiceController extends Controller
 
     public function edit($id){
         $brandService=BrandingService::find($id);
-        $brandServices=BrandingService::latest()->where('is_parent',true)->get();
+         $brandServices = BrandingService::where('is_parent', true)->orderBy('position','asc')->get();
         return view('admin/brands/service',[
             'brandService'=>new BrandingService(),
             'brandServices'=>$brandServices,
@@ -82,4 +82,14 @@ class BrandingServiceController extends Controller
 
 
     }
+
+    public function sort(Request $request)
+{
+    foreach ($request->order as $item) {
+        \App\Models\BrandingService::where('id', $item['id'])
+            ->update(['position' => $item['position']]);
+    }
+
+    return response()->json(['success' => true]);
+}
 }
