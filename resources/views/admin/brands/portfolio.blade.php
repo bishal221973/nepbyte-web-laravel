@@ -5,12 +5,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Leading Brands</h3>
+                    <h3 class="mb-0">Projects</h3>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Leading Brands</li>
+                        <li class="breadcrumb-item active" aria-current="page">Brands</li>
+                        <li class="breadcrumb-item active" aria-current="page">Projects</li>
                     </ol>
                 </div>
             </div>
@@ -23,8 +24,7 @@
 
             <x-table-component :headers="['#', 'Image','Category','Name', 'Description', 'Status', 'Action']">
                 <x-slot name="actions">
-                    <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">New
-                        Design</button>
+                    <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add Project</button>
                 </x-slot>
                 @foreach ($brandPortfolios as $item)
                     <tr style="padding: 0" data-id="{{ $item->id }}">
