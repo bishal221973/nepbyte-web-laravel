@@ -15,12 +15,16 @@
             <!-- FILTER BUTTONS -->
             <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
 
-                <a href="javascript:void(0)" class="btn border py-1 selectCategory selectCategoryActive" data-id="all">
+                <a href="javascript:void(0)"
+                   class="btn border py-1 selectCategory selectCategoryActive"
+                   data-id="all">
                     <small>All</small>
                 </a>
 
                 @foreach ($brandCategories as $item)
-                    <a href="javascript:void(0)" class="btn border py-1 selectCategory" data-id="{{ $item->id }}">
+                    <a href="javascript:void(0)"
+                       class="btn border py-1 selectCategory"
+                       data-id="{{ $item->id }}">
                         <small>{{ $item->title }}</small>
                     </a>
                 @endforeach
@@ -28,23 +32,29 @@
             </div>
         </div>
 
-        <!-- PORTFOLIO GRID -->
+        <!-- GRID -->
         <div class="row px-2 px-md-5">
 
             @foreach ($brandPortfolios as $brandPortfolio)
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item"
-                    data-category="{{ $brandPortfolio->brand_category_id }}">
+                     data-category="{{ $brandPortfolio->brand_category_id }}">
 
                     <div class="brand-project-card">
 
                         <div class="img-wrapper">
-                            <img src="/storage/{{ $brandPortfolio->image }}" class="brand-image">
-                        </div>
 
-                        <div class="p-3">
-                            <h4>{{ $brandPortfolio->name }}</h4>
-                            <p>{{ $brandPortfolio->description }}</p>
-                            <small>{{ $brandPortfolio->category->name }}</small>
+                            <img src="/storage/{{ $brandPortfolio->image }}" class="brand-image">
+
+                            <!-- DARK OVERLAY -->
+                            <div class="overlay"></div>
+
+                            <!-- HIDDEN CONTENT -->
+                            <div class="card-content">
+                                <small class="text-white">{{ $brandPortfolio?->category?->title }}</small>
+                                <h4 class="text-white">{{ $brandPortfolio->name }}</h4>
+                                <p class="text-white">{{ $brandPortfolio->description }}</p>
+                            </div>
+
                         </div>
 
                     </div>
@@ -60,151 +70,167 @@
 
 <style>
     /* TAG */
-    .tag-line {
-        color: #789ec3;
-        background: #789ec320;
-        width: 200px;
-        border-radius: 50px;
-        font-size: 14px;
-        padding: 6px 10px;
-    }
+.tag-line {
+    color: #789ec3;
+    background: #789ec320;
+    width: 200px;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 6px 10px;
+}
 
-    /* TITLE */
-    .section-title1 span {
-        color: #789ec3;
-    }
+/* TITLE */
+.section-title1 span {
+    color: #789ec3;
+}
 
-    /* FILTER BUTTON */
-    .selectCategory {
-        background: #f1f1f1;
-        transition: 0.3s;
-        border-radius: 6px;
-    }
+/* FILTER BUTTON */
+.selectCategory {
+    background: #f1f1f1;
+    border-radius: 6px;
+    transition: 0.3s;
+}
 
-    .selectCategoryActive {
-        background: #789ec3 !important;
-        color: #fff !important;
-    }
+.selectCategoryActive {
+    background: #789ec3 !important;
+    color: #fff !important;
+}
 
-    /* CARD */
-    .brand-project-card {
-        border-radius: 12px;
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0 5px 20px rgba(120, 158, 195, 0.25);
-        transition: all 0.4s ease;
-    }
+/* CARD */
+.brand-project-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(120, 158, 195, 0.25);
+    transition: 0.4s;
+}
 
-    /* HOVER EFFECT */
-    .brand-project-card:hover {
-        transform: translateY(-12px) scale(1.02);
-        box-shadow: 0 25px 45px rgba(120, 158, 195, 0.35);
-    }
+/* IMAGE WRAPPER */
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
 
-    /* IMAGE */
-    .img-wrapper {
-        overflow: hidden;
-    }
+/* IMAGE */
+.brand-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: 0.6s ease;
+}
 
-    .brand-image {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-    }
+/* DARK OVERLAY (TOP → BOTTOM) */
+.overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+    transition: 0.6s ease;
+}
 
-    .brand-project-card:hover .brand-image {
-        transform: scale(1.15);
-    }
+/* WHITE CONTENT (BOTTOM → TOP) */
+.card-content {
+    position: absolute;
+    bottom: -100%;
+    left: 2%;
+    width: 96%;
+    background: #789EC3;
+    padding: 15px;
+    z-index: 2;
+    transition: 0.6s ease;
+}
 
-    /* TEXT HOVER */
-    .brand-project-card h4 {
-        transition: 0.3s;
-    }
+/* HOVER EFFECT */
+.brand-project-card:hover .overlay {
+    top: 0;
+}
 
-    .brand-project-card:hover h4 {
-        color: #789ec3;
-        transform: translateX(5px);
-    }
+.brand-project-card:hover .card-content {
+    bottom: 10px;
+    border-radius: 10px
+}
 
-    /* GRID ANIMATION HELP */
-    .portfolio-item {
-        will-change: transform, opacity;
-    }
+.brand-project-card:hover .brand-image {
+    transform: scale(1.1);
+}
+
+/* ITEM PERFORMANCE */
+.portfolio-item {
+    will-change: transform, opacity;
+}
 </style>
+
 @push('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-            const buttons = document.querySelectorAll(".selectCategory");
-            const items = document.querySelectorAll(".portfolio-item");
+    const buttons = document.querySelectorAll(".selectCategory");
+    const items = document.querySelectorAll(".portfolio-item");
 
-            function animateIn(filteredItems) {
-                gsap.fromTo(filteredItems, {
-                    opacity: 0,
-                    y: 30,
-                    scale: 0.95
-                }, {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.5,
-                    stagger: 0.08,
-                    ease: "power3.out"
-                });
+    function showItems(filtered) {
+        gsap.fromTo(filtered,
+            {
+                opacity: 0,
+                y: 30,
+                scale: 0.95
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.5,
+                stagger: 0.08,
+                ease: "power3.out"
             }
+        );
+    }
 
-            function filter(category) {
+    function filter(category) {
 
-                let filtered = [];
+        let filtered = [];
 
-                items.forEach(item => {
+        items.forEach(item => {
+            const cat = item.getAttribute("data-category");
 
-                    const itemCat = item.getAttribute("data-category");
-
-                    if (category === "all" || category == itemCat) {
-                        item.style.display = "block";
-                        filtered.push(item);
-                    } else {
-                        item.style.display = "none";
-                    }
-
-                });
-
-                animateIn(filtered);
+            if (category === "all" || category == cat) {
+                item.style.display = "block";
+                filtered.push(item);
+            } else {
+                item.style.display = "none";
             }
+        });
 
-            buttons.forEach(btn => {
-                btn.addEventListener("click", function() {
+        showItems(filtered);
+    }
 
-                    // active button
-                    buttons.forEach(b => b.classList.remove("selectCategoryActive"));
-                    this.classList.add("selectCategoryActive");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
 
-                    const category = this.getAttribute("data-id");
+            buttons.forEach(b => b.classList.remove("selectCategoryActive"));
+            this.classList.add("selectCategoryActive");
 
-                    // exit animation first
-                    gsap.to(items, {
-                        opacity: 0,
-                        y: 20,
-                        scale: 0.98,
-                        duration: 0.2,
-                        stagger: 0.03,
-                        onComplete: () => {
-                            filter(category);
-                        }
-                    });
+            const category = this.getAttribute("data-id");
 
-                });
+            gsap.to(items, {
+                opacity: 0,
+                y: 20,
+                scale: 0.98,
+                duration: 0.2,
+                stagger: 0.03,
+                onComplete: () => filter(category)
             });
 
-            // default load
-            if (buttons.length) {
-                buttons[0].click();
-            }
-
         });
-    </script>
+    });
+
+    // default load
+    if (buttons.length) buttons[0].click();
+
+});
+</script>
 @endpush
