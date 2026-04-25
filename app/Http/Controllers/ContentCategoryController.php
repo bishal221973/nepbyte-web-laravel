@@ -9,23 +9,23 @@ use Illuminate\Support\Str;
 class ContentCategoryController extends Controller
 {
     function generateUniqueSlug($model, $field, $value, $ignoreId = null)
-{
-    $slug = Str::slug($value);
-    $originalSlug = $slug;
-    $count = 1;
+    {
+        $slug = Str::slug($value);
+        $originalSlug = $slug;
+        $count = 1;
 
-    while (
-        $model::where($field, $slug)
+        while (
+            $model::where($field, $slug)
             ->when($ignoreId, function ($query) use ($ignoreId) {
                 $query->where('id', '!=', $ignoreId);
             })
             ->exists()
-    ) {
-        $slug = $originalSlug . '-' . $count++;
-    }
+        ) {
+            $slug = $originalSlug . '-' . $count++;
+        }
 
-    return $slug;
-}
+        return $slug;
+    }
     public function index()
     {
         $brandServices = ContentCategory::orderBy('position', 'asc')->get();
@@ -96,11 +96,12 @@ class ContentCategoryController extends Controller
         $category->update($data);
 
         return redirect()->route('content-category.index')->with('success', 'Category updated successfully');
-        }
-        
-        public function destroy($id){
-            $category = ContentCategory::findOrFail($id);
-            $category->delete();
-            return redirect()->route('content-category.index')->with('success', 'Category removed successfully');
+    }
+
+    public function destroy($id)
+    {
+        $category = ContentCategory::findOrFail($id);
+        $category->delete();
+        return redirect()->route('content-category.index')->with('success', 'Category removed successfully');
     }
 }

@@ -72,7 +72,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="{{ route('brand-portfolio.index') }}" class="nav-link">
+                             <a href="{{ route('content-image.index') }}" class="nav-link">
                                  <i class="nav-icon bi bi-circle"></i>
                                  <p>Images</p>
                              </a>
