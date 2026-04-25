@@ -34,7 +34,7 @@ Route::get('ai-automation', [FrontController::class, 'ai'])->name('front.ai');
 Route::get('print-design', [FrontController::class, 'printDesign'])->name('front.print-design');
 Route::get('marketing', [FrontController::class, 'marketing'])->name('front.marketing');
 Route::get('content-production', [FrontController::class, 'production'])->name('front.production');
-Route::get('content-production/show', [FrontController::class, 'productionShow'])->name('front.productionShow');
+Route::get('content-production/{contentCategory:slug}', [FrontController::class, 'productionShow'])->name('front.productionShow');
 Route::get('our-team', [FrontController::class, 'team'])->name('front.team');
 
 Auth::routes();

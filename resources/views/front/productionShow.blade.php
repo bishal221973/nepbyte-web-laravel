@@ -1,9 +1,10 @@
 @extends('layouts.guestLayout')
 
 @section('content')
-<x-breadcrumb title="Wedding Gallery" page="Content Production" />
+<x-breadcrumb title="{{$contentCategory?->name}}" page="Content Production" />
 
 <section class="ai-hero">
+    {{-- {{$contentCategory?->name}} --}}
 
     <canvas id="canvas"></canvas>
 
@@ -11,18 +12,9 @@
 
         <div class="masonry" id="lightgallery">
 
-            @php
-                $images = [
-                    'wedding.jpeg','event.jpg','custom.jpg','singer.jpg','commercial.jpg','ai.jpg',
-                    'wedding.jpeg','event.jpg','custom.jpg','singer.jpg','commercial.jpg','ai.jpg',
-                    'wedding.jpeg','event.jpg','custom.jpg','singer.jpg','commercial.jpg','ai.jpg',
-                    'wedding.jpeg','event.jpg','custom.jpg','singer.jpg','commercial.jpg','ai.jpg',
-                ];
-            @endphp
-
-            @foreach ($images as $img)
-                <a href="{{ asset('images/'.$img) }}" class="gallery-item">
-                    <img src="{{ asset('images/'.$img) }}" loading="lazy">
+            @foreach ($contentCategory->contentImages as $img)
+                <a href="{{ asset('storage/' . $img->image) }}" class="gallery-item">
+                    <img src="{{ asset('storage/' . $img->image) }}" loading="lazy" alt="">
                 </a>
             @endforeach
 
@@ -73,11 +65,11 @@ canvas {
     transition: transform 0.3s ease;
 }
 
-/* image base style */
+/* ✅ FIXED IMAGE (NO CROP) */
 .gallery-item img {
     width: 100%;
+    height: auto; /* 🔥 important */
     display: block;
-    object-fit: cover;
     border-radius: 14px;
 }
 
@@ -113,25 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!gallery) return;
 
-    // LightGallery init
     lightGallery(gallery, {
         selector: 'a',
         speed: 400,
         download: false,
         thumbnail: true,
         zoom: true
-    });
-
-    // 🎯 RANDOM HEIGHT PER IMAGE (TRUE ZIG-ZAG EFFECT)
-    const images = document.querySelectorAll(".gallery-item img");
-
-    images.forEach((img) => {
-
-        const randomHeight = Math.floor(Math.random() * (420 - 200 + 1)) + 200;
-
-        img.style.height = randomHeight + "px";
-        img.style.objectFit = "cover";
-
     });
 
 });

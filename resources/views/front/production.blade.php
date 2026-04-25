@@ -11,9 +11,11 @@
         <div class="row w-100" style="padding: 0 10%;margin-top:13vh">
 
 
-            <h1 style="font-size: 70px;" class="text-center text-white" data-aos="zoom-in-up">High-impact storytelling designed to stop the scroll.</h1>
+            <h1 style="font-size: 70px;" class="text-center text-white" data-aos="zoom-in-up">High-impact storytelling
+                designed to stop the scroll.</h1>
 
-            <p class="text-white text-center mt-5" data-aos="flip-up" style="padding: 0 20%">Stop the scroll. Turn casual viewers into loyal customers with cinematic storytelling.</p>
+            <p class="text-white text-center mt-5" data-aos="flip-up" style="padding: 0 20%">Stop the scroll. Turn casual
+                viewers into loyal customers with cinematic storytelling.</p>
         </div>
 
 
@@ -26,58 +28,29 @@
     </div>
     <div class="bg-white" style="width: 100vw">
         <div style="margin-top:-100px;height:550px;width:100vw;background-color:#f2f2f2;" class=" m-0 p-0 my-radius">
-            <div class="" style="position: relative;">
+            <div class="" style="position: relative;width:10vw">
 
-                <div class="container" style="position: absolute;left:4%;top:-100px">
+                <div class="" style="position: absolute;left:0;width:100vw;top:-100px;padding:0 10vw">
                     <div class="row">
-                        <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
-                                <img src="{{ asset('images/wedding.jpeg') }}" alt="">
-                                <div class="content-overlay">
-                                    <h5>Wedding</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
-                                <img src="{{ asset('images/event.jpg') }}" alt="">
-                                <div class="content-overlay">
-                                    <h5>Corporate Events</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
-                                <img src="{{ asset('images/custom.jpg') }}" alt="">
-                                <div class="content-overlay">
-                                    <h5>Branding</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
-                                <img src="{{ asset('images/singer.jpg') }}" alt="">
-                                <div class="content-overlay">
-                                    <h5>Music</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
-                                <img src="{{ asset('images/commercial.jpg') }}" alt="">
-                                <div class="content-overlay">
-                                    <h5>Commercial</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 mb-3" data-aos="zoom-in">
-                            <a href="{{route('front.productionShow')}}" class="d-block cont-container">
-                                <img src="{{ asset('images/ai.jpg') }}" alt="">
-                                <div class="content-overlay">
-                                    <h5>Digital Ads</h5>
-                                </div>
-                            </a>
-                        </div>
+                        @foreach ($contentCategories as $contentCategory)
+                            <div class="col-md-4 mb-3" data-aos="zoom-in">
+                                <a href="{{ route('front.productionShow',$contentCategory) }}" class="d-block cont-container">
+
+                                    @if ($contentCategory->thumbnail)
+                                        <img src="{{ asset('storage/' . $contentCategory->thumbnail) }}" alt="">
+                                    @else
+                                        <img src="{{ asset('storage/' . optional($contentCategory->contentImages->first())->image) }}"
+                                            alt="">
+                                    @endif
+
+                                    <div class="content-overlay">
+                                        <h5>{{ $contentCategory->name }}</h5>
+                                    </div>
+
+                                </a>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -87,7 +60,8 @@
             <div class="bg-white my-radius"
                 style="padding: 50px 50px 200px 50px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;">
                 <i class="fa fa-star d-block mx-auto" data-aos="zoom-in" style="color:#6CBEE1"></i>
-                <small class="d-block text-center text-uppercase mt-2" data-aos="zoom-in" style="letter-spacing:3px;color:#6CBEE1">About
+                <small class="d-block text-center text-uppercase mt-2" data-aos="zoom-in"
+                    style="letter-spacing:3px;color:#6CBEE1">About
                     us</small>
                 <h2 class="text-center" data-aos="zoom-in" style="color: #444">Our business process road</h2>
 
@@ -134,8 +108,8 @@
                     {{-- <div class="flex justify-center animate__animated animate__bounceIn">
                         <img src="/images/border1.png" class="d-block mx-auto" style="width:200px;opacity: 0.5" alt="" />
                     </div> --}}
-    
-    
+
+
                     <div class="my-carosel animate__animated animate__zoomIn">
                         <div class="group">
                             <div class="card1">
@@ -157,7 +131,7 @@
                                 <img src="{{ asset('logos/logo3.png') }}" alt="">
                             </div>
                         </div>
-    
+
                         <div class="group" aria-hidden>
                             <div class="card1">
                                 <img src="{{ asset('logos/logo1.png') }}" alt="">
@@ -180,8 +154,8 @@
                         </div>
                     </div>
                     {{-- <img src="{{ asset('file.enc') }}" class="nav-logo" alt=""> --}}
-    
-    
+
+
                     {{-- <hr>
     
                     <small class="d-block text-center">
@@ -191,7 +165,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @push('script')
