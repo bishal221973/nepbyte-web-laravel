@@ -4,6 +4,7 @@ use App\Http\Controllers\BrandCategoryController;
 use App\Http\Controllers\BrandingServiceController;
 use App\Http\Controllers\BrandPortfolioController;
 use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\ContentCategoryController;
 use App\Http\Controllers\FrontController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
@@ -52,10 +53,20 @@ Route::prefix('admin')->group(function () {
         Route::post('/brand-portfolio/{id}/toggle-status', [BrandPortfolioController::class, 'toggleStatus'])
             ->name('brand.portfolio.toggle-status');
 
-             Route::resource('brand-category', BrandCategoryController::class);
+        Route::resource('brand-category', BrandCategoryController::class);
         Route::post('/brand-category/{id}/toggle-status', [BrandCategoryController::class, 'toggleStatus'])
             ->name('brand.category.toggle-status');
-            Route::post('/branding-category/sort', [BrandCategoryController::class, 'sort'])
+        Route::post('/branding-category/sort', [BrandCategoryController::class, 'sort'])
             ->name('brand-category.sort');
+    });
+
+     Route::prefix('content-productions')->group(function () {
+        Route::resource('content-category', ContentCategoryController::class);
+        Route::post('/leading-brands/{id}/toggle-status', [ContentCategoryController::class, 'toggleStatus'])
+            ->name('content-category.toggle-status');
+        
+
+
+       
     });
 });
