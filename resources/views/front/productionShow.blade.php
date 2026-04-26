@@ -17,6 +17,7 @@
                     <img src="{{ asset('storage/' . $img->image) }}" loading="lazy" alt="">
                 </a>
             @endforeach
+            
 
         </div>
 

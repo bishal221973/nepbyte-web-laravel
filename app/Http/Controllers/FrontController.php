@@ -55,15 +55,16 @@ class FrontController extends Controller
     public function production()
     {
         $contentCategories = ContentCategory::orderBy('position', 'asc')->where('status', true)->get();
-
+        $brands = Brands::latest()->get();
         return view('front.production', [
-            'contentCategories' => $contentCategories
+            'contentCategories' => $contentCategories,
+            'brands' => $brands
         ]);
     }
     public function productionShow(ContentCategory $contentCategory)
     {
-        return view('front.productionShow',[
-            'contentCategory'=>$contentCategory->load('contentImages')
+        return view('front.productionShow', [
+            'contentCategory' => $contentCategory->load('contentImages')
         ]);
     }
 

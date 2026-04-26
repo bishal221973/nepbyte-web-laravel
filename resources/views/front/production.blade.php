@@ -34,7 +34,8 @@
                     <div class="row">
                         @foreach ($contentCategories as $contentCategory)
                             <div class="col-md-4 mb-3" data-aos="zoom-in">
-                                <a href="{{ route('front.productionShow',$contentCategory) }}" class="d-block cont-container">
+                                <a href="{{ route('front.productionShow', $contentCategory) }}"
+                                    class="d-block cont-container">
 
                                     @if ($contentCategory->thumbnail)
                                         <img src="{{ asset('storage/' . $contentCategory->thumbnail) }}" alt="">
@@ -80,9 +81,8 @@
                         <div class="d-flex gap-3">
                             <h1 style="font-size: 90px;color:#6CBEE1">02.</h1>
                             <div class="d-block">
-                                <h3 style="">Create an Idea</h3>
-                                <span>What’s hard is to develop the habits that enable us to come up with great
-                                    ideas.</span>
+                                <h3 style="">Production Execution</h3>
+                                <span>We handle filming, photography, and content creation with precision.</span>
                             </div>
                         </div>
                     </div>
@@ -90,9 +90,8 @@
                         <div class="d-flex gap-3">
                             <h1 style="font-size: 90px;color:#6CBEE1">03.</h1>
                             <div class="d-block">
-                                <h3 style="">Create an Idea</h3>
-                                <span>What’s hard is to develop the habits that enable us to come up with great
-                                    ideas.</span>
+                                <h3 style="">Delivery & Growth</h3>
+                                <span>We deliver ready-to-publish content and maximize reach, engagement, and value.</span>
                             </div>
                         </div>
                     </div>
@@ -112,45 +111,19 @@
 
                     <div class="my-carosel animate__animated animate__zoomIn">
                         <div class="group">
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo1.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo4.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
+                            @foreach ($brands as $brand)
+                                <a target="__blank" title="{{ $brand->name }}" href="{{ $brand->url }}" class="card1">
+                                    <img src="/storage/{{ $brand?->logo }}" alt="">
+                                </a>
+                            @endforeach
                         </div>
 
                         <div class="group" aria-hidden>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo1.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo4.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo2.png') }}" alt="">
-                            </div>
-                            <div class="card1">
-                                <img src="{{ asset('logos/logo3.png') }}" alt="">
-                            </div>
+                            @foreach ($brands as $brand)
+                                <a target="__blank" title="{{ $brand->name }}" href="{{ $brand->url }}" class="card1">
+                                    <img src="/storage/{{ $brand?->logo }}" alt="">
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                     {{-- <img src="{{ asset('file.enc') }}" class="nav-logo" alt=""> --}}
