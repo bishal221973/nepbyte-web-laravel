@@ -7,6 +7,7 @@ use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\ContentCategoryController;
 use App\Http\Controllers\ContentImageController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\MarketingCategoryController;
 use App\Http\Controllers\TeamController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
@@ -71,5 +72,9 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::resource('team', TeamController::class);
+
+     Route::prefix('marketing')->group(function () {
+        Route::resource('marketting-category', MarketingCategoryController::class);
+    });
     
 });

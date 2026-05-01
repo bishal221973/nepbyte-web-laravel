@@ -78,7 +78,7 @@
         </a>
 
         <a href="https://www.facebook.com/surkhetsoft" class="text-decoration-none fab-item linkedin" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-tiktok"></i>
         </a>
 
     </div>
@@ -162,7 +162,7 @@
 .whatsapp { background: #25D366; }
 .facebook { background: #1877F2; }
 .instagram { background: #E4405F; }
-.linkedin { background: #0077B5; }
+.linkedin { background: #040404; }
 
 /* SHOW STATE */
 .fab-container.active .fab-item {
