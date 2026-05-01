@@ -1,245 +1,217 @@
-@extends('layouts.guestLayout')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-    <x-breadcrumb title="Our team" page="Our team" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('styles/guest.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/card.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @stack('style')
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css"
+        integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('team.css  ') }}">
+</head>
 
-    {{-- <img src="{{ asset('brandBg.png') }}" class="hero-bg" alt="Brand Background"> --}}
-    {{-- <div class="hero-overlay"></div> --}}
-    <section class="ai-hero">
+<body>
 
-        <div class="" style="margin-top: 5vh;padding:0">
-            <div class="">
-                {{-- <div class="flex justify-center animate__animated animate__bounceIn">
-                    <img src="/images/border1.png" class="d-block mx-auto" style="width:200px;opacity: 0.5" alt="" />
-                </div> --}}
+    <div class="team-poster">
+        <div class="overlay"></div>
 
+        <div class="header">
+            @include('front.includes.navbar')
+        </div>
 
-                <div class="my-carosel animate__animated animate__zoomIn">
-                    <div class="group">
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+        <div class="content-container">
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+            {{-- LEFT TEXT --}}
+            <div class="hero-content text-content">
+                <h1>CREATIVE</h1>
+                <h2>TEAM</h2>
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+                <p>
+                    "Lorem ipsum dolor Lorem thesi ipsum<br>
+                    Lorem ipsum dolor amet conse tetuer<br>
+                    adipiscing."
+                </p>
+            </div>
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+            {{-- RIGHT IMAGE --}}
+            @if (isset($teams[0]))
+                <div class="hero-content image-box">
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+                    <div class="name-container-main">
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+                        @if (!empty($teams[0]->image))
+                            <img src="/storage/{{ $teams[0]->image }}" alt="team">
+                        @else
+                            <div class="fallback">
+                                {{ getName($teams[0]->name) }}
+                            </div>
+                        @endif
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
-
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
+                        <!-- CENTER LIGHT OVERLAY -->
+                        <div class="spotlight"></div>
 
                     </div>
 
-                    <div class="group" aria-hidden>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+                    <h4>{{ $teams[0]->name }}</h4>
+                    <small>{{ $teams[0]->position }}</small>
+                </div>
+            @endif
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+        </div>
+        <div style="position: relative">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#789EC3" fill-opacity="1"
+                    d="M0,64L20,96C40,128,80,192,120,181.3C160,171,200,85,240,58.7C280,32,320,64,360,96C400,128,440,160,480,165.3C520,171,560,149,600,160C640,171,680,213,720,245.3C760,277,800,299,840,282.7C880,267,920,213,960,192C1000,171,1040,181,1080,208C1120,235,1160,277,1200,261.3C1240,245,1280,171,1320,160C1360,149,1400,203,1420,229.3L1440,256L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z">
+                </path>
+            </svg>
+            <div class="team-container">
+                @foreach ($teams as $index => $team)
+                    @if ($index === 0)
+                        @continue
+                    @endif
+                    <div class="member" style="width:100%">
+                        <div class="member-cntainer1">
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
+                            @if (!empty($team->image))
+                                <img src="/storage/{{ $team->image }}" class="name-container" alt="team">
+                            @else
+                                <div class="name-container">
+                                    {{ getName($team->name) }}
+                                </div>
+                            @endif
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
                         </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
 
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
-
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
-
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
-                        <div class="myCard">
-                            <img src="{{ asset('images/user.jpg') }}" alt="">
-
-                            <h5 class="text-center">Bishal Chaudhary</h5>
-                            <b class="d-block mx-auto w-100 text-center">Developer</b>
-                        </div>
+                        <h4>{{ $team->name }}</h4>
+                        <small>{{ $team->position }}</small>
                     </div>
+                @endforeach
+            </div>
+
+            <div class="p-5 bg-white">
+
+               
+                <div class="rounded-lg shadow-md py-5">
+                    <h1 class="fw-bold text-center" style="color: #789EC3">Get in touch with our creator-friendly <br> support team</h1>
+                    <small class="d-block text-center w-100 mt-4" style="color: #555">
+                        Our team is available 24 hours a day, 7 days a week to provide you with reliable support. Whether you have an <br>  inquiry or need assistance, don’t hesitate to contact us anytime.
+                    </small>
                 </div>
 
-                <div class="white-bg">
-                    <h1 class="text-center text-uppercase">Have some questions</h1>
-                    <div class="d-flex contact-info gap-3 justify-content-center">
-                        <div class="d-flex align-items-center">
-                            <i class="fa fa-phone"></i>
-                            <span>+977-9814668499</span>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fa fa-envelope"></i>
-                            <span>bishalcodeslaravel@gmail.com</span>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fa fa-location-dot"></i>
-                            <span>Nepalgunj, Banke</span>
-                        </div>
-                    </div>
-
-                    <div style="padding-right: 10%;position: relative;">
-                        {{-- <div class="half-circle-container"></div> --}}
-                        <div class="d-flex align-items-center">
-                            <div class="w-100">
-                                <img src="{{ asset('images/email.gif') }}" class="w-100" alt="">
+                <div class="row" style="padding: 0 10%">
+                    <div class="col-md-4 contact-cards">
+                        <div style="background-color: #f2f2f2" class="h-100  p-3 rounded shadow">
+                            <div class="circle mb-3">
+                                <i class="fa fa-location-dot"></i>
                             </div>
-                            <div class="w-100">
-                                <div class="bg-white rounded shadow p-3 mt-5">
-                                    <h3>Contact us</h3>
-                                    <small>Send your enquery</small>
+                            <h5 class="fw-bold text-center" style="color: #789EC3">Our Location</h5>
 
-                                    <hr class="text-secondary">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="">Full name</label>
-                                                <input type="text" class="form-control" placeholder="Full name">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="">Email</label>
-                                                <input type="email" class="form-control" placeholder="Email address">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mb-3">
-                                            <div class="form-group">
-                                                <label for="">Subject</label>
-                                                <input type="text" class="form-control" placeholder="Subject">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mb-3">
-                                            <div class="form-group">
-                                                <label for="">Subject</label>
-                                                <textarea class="form-control" rows="4" placeholder="Enter your message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 d-flex justify-content-end">
-                                            <button class="send-btn">Send message</button>
-                                        </div>
-                                    </div>
+                            <div class="d-block">
+                                <div>
+                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Bhaktapur, Nepal · Surkhet, Nepal · Lalitpur, Nepal · Kathmandu, Nepal</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+                     <div class="col-md-4 contact-cards">
+                        <div style="background-color: #f2f2f2" class="h-100  p-3 rounded shadow">
+                            <div class="circle mb-3">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <h5 class="fw-bold text-center" style="color: #789EC3">Help Center</h5>
+                            <div class="d-block">
+                                <div class="d-flex justify-content-center">
+                                    <small style="color:#696969;font-size:13px;" class="fw-bold">Surkhet : </small>
+                                    <small style="color:#696969;font-size:13px;">+977-9814668499,+977-9814668499</small>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <small style="color:#696969;font-size:13px;" class="fw-bold">Lalitpur : </small>
+                                    <small style="color:#696969;font-size:13px;">+977-9814668499,+977-9814668499</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 contact-cards ">
+                        <div style="background-color: #f2f2f2" class="h-100 p-3 rounded shadow">
+                            <div class="circle mb-3">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <h5 class="fw-bold text-center" style="color: #789EC3">Email Support</h5>
+                             <div class="d-block">
+                                <div class="d-flex justify-content-center">
+                                    <small style="color:#696969;font-size:13px;">info@surkhetsoft.com</small>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {{-- <img src="{{ asset('file.enc') }}" class="nav-logo" alt=""> --}}
 
+                <div class="d-flex" style="margin-top:80px">
+                    <x-contact-form/>
 
-                {{-- <hr>
+                <div style="padding: 0 10% 0 0;width:100%;position:relative;top:10px">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481470.5902866614!2d81.5802046363601!3d28.467356860960724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399877deb6525269%3A0x8b2be37f3048da53!2sSurkhet!5e0!3m2!1sen!2snp!4v1777652048247!5m2!1sen!2snp" style="border:0;width:100%;height:calc(100% - 25px);border-radius:10px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                </div>
 
-                <small class="d-block text-center">
-                    © 2024 Surkhet Soft. All rights reserved
-                </small> --}}
             </div>
+
         </div>
+    </div>
 
-    </section>
-@endsection
 
-<style>
-    .myCard {
-        width: 200px;
-    }
 
-    .myCard img {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        display: block;
-        margin: auto;
-        margin-bottom: 50px
-    }
+</body>
+<script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+<script>
+    const {
+        animate
+    } = anime;
+</script>
+<!-- GSAP & ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    .white-bg {
-        background-color: #f2f2f2;
-        width: 100%;
-        /* height: 100vh; */
-        position: absolute;
-        top: 330px;
-        z-index: -1;
-        padding-top: 160px;
-    }
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js"
+    integrity="sha512-n02TbYimj64qb98ed5WwkNiSw/i9Xlvv4Ehvhg0jLp3qMAMWCYUHbOMbppZ0vimtyiyw9NqNqxUZC4hq86f4aQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@stack('script')
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+</script>
+<script>
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry(elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
 
-    .myCard h5 {
-        color: #789EC3
-    }
+    // element argument can be a selector string
+    //   for an individual element
+    var msnry = new Masonry('.grid', {
+        // options
+    });
+</script>
 
-    .myCard b {
-        color: #999
-    }
-
-    .contact-info i {
-        color: #789EC3
-    }
-    .send-btn{
-        background-color: #789EC3;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        color: #fff;   
-    }
-   .half-circle-container {
-    height:200px;              /* half of width */
-    width: 500px;
-    background-color: transparent;
-    position: absolute;
-    left: calc(50vw - 250px);
-    top: 50px;
-
-    border-top-left-radius: 250px;
-    border-top-right-radius: 250px;
-
-    border: 5px solid #789EC3;
-    border-bottom: none;        /* remove bottom border */
-
-    z-index: -1;
-}
-</style>
+</html>

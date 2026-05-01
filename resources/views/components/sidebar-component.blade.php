@@ -80,6 +80,13 @@
 
                      </ul>
                  </li>
+                 <li class="nav-item">
+                     <a href="{{ route('team.index') }}"
+                         class="nav-link {{ request()->route()->getName() == 'team.index' ? 'active' : '' }}">
+                         <i class="nav-icon bi bi-speedometer"></i>
+                         <p>Teams</p>
+                     </a>
+                 </li>
 
              </ul>
              <!--end::Sidebar Menu-->

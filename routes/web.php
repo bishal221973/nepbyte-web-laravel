@@ -7,6 +7,7 @@ use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\ContentCategoryController;
 use App\Http\Controllers\ContentImageController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\TeamController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
 
@@ -61,14 +62,14 @@ Route::prefix('admin')->group(function () {
             ->name('brand-category.sort');
     });
 
-     Route::prefix('content-productions')->group(function () {
+    Route::prefix('content-productions')->group(function () {
         Route::resource('content-category', ContentCategoryController::class);
         Route::post('/leading-brands/{id}/toggle-status', [ContentCategoryController::class, 'toggleStatus'])
-        ->name('content-category.toggle-status');
-        
+            ->name('content-category.toggle-status');
+
         Route::resource('content-image', ContentImageController::class);
-
-
-       
     });
+
+    Route::resource('team', TeamController::class);
+    
 });

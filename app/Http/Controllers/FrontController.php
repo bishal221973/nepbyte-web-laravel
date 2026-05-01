@@ -8,6 +8,7 @@ use App\Models\BrandPortfolio;
 use App\Models\Brands;
 use App\Models\ContentCategory;
 use App\Models\ContentImage;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -70,6 +71,9 @@ class FrontController extends Controller
 
     public function team()
     {
-        return view('front.team');
+        $teams=Team::latest()->get();
+        return view('front.team',[
+            'teams'=>$teams
+        ]);
     }
 }
