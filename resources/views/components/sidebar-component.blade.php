@@ -105,7 +105,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="{{ route('content-image.index') }}" class="nav-link">
+                             <a href="{{ route('marketing.index') }}" class="nav-link">
                                  <i class="nav-icon bi bi-circle"></i>
                                  <p>Marketing</p>
                              </a>

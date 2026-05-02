@@ -119,7 +119,7 @@
 
                             <div class="d-block">
                                 <div>
-                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Bhaktapur, Nepal · Surkhet, Nepal · Lalitpur, Nepal · Kathmandu, Nepal</small>
+                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Surkhet, Nepal / Kathmandu, Nepal</small>
                                 </div>
                             </div>
                         </div>
@@ -132,13 +132,13 @@
                             <h5 class="fw-bold text-center" style="color: #789EC3">Help Center</h5>
                             <div class="d-block">
                                 <div class="d-flex justify-content-center">
-                                    <small style="color:#696969;font-size:13px;" class="fw-bold">Surkhet : </small>
-                                    <small style="color:#696969;font-size:13px;">+977-9814668499,+977-9814668499</small>
+                                    {{-- <small style="color:#696969;font-size:13px;" class="fw-bold">Surkhet : </small> --}}
+                                    <small style="color:#696969;font-size:13px;">+977-9864797152</small>
                                 </div>
-                                <div class="d-flex justify-content-center">
+                                {{-- <div class="d-flex justify-content-center">
                                     <small style="color:#696969;font-size:13px;" class="fw-bold">Lalitpur : </small>
                                     <small style="color:#696969;font-size:13px;">+977-9814668499,+977-9814668499</small>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

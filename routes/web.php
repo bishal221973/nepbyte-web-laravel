@@ -8,6 +8,7 @@ use App\Http\Controllers\ContentCategoryController;
 use App\Http\Controllers\ContentImageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MarketingCategoryController;
+use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\TeamController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,11 @@ Route::prefix('admin')->group(function () {
 
      Route::prefix('marketing')->group(function () {
         Route::resource('marketting-category', MarketingCategoryController::class);
+        Route::get('content', [MarketingController::class,'index'])->name('marketing.index');
+        Route::post('content/store', [MarketingController::class,'store'])->name('marketing.store');
+        Route::get('content/{marketing}/edit', [MarketingController::class,'edit'])->name('marketing.edit');
+        Route::put('content/{marketing}/update', [MarketingController::class,'update'])->name('marketing.update');
+        Route::delete('content/{marketing}/delete', [MarketingController::class,'delete'])->name('marketing.delete');
     });
     
 });
