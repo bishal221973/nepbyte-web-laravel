@@ -22,9 +22,9 @@
                         your audience, making every campaign truly unforgettable.
                     </p>
 
-                    <div class="hero-btns">
+                    {{-- <div class="hero-btns">
                         <a href="#" class="btn-primary-custom btn-brand-left">Brows Our Projects</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="col-lg-6">
@@ -146,7 +146,7 @@
 @endsection
 
 @push('script')
-    <script src="{{ asset('gsap/print.js') }}"></script>
+    {{-- <script src="{{ asset('gsap/print.js') }}"></script> --}}
 @endpush
 <style>
     .brand-project-card {

@@ -119,22 +119,22 @@
             </div>
 
             <hr>
-            <div class="container py-4">
-    <div class="row justify-content-center g-4 px-3">
+            <div class="container">
+                <div class="row justify-content-center  " style="margin-left: -30px">
 
-        @foreach ($marketings as $marketing)
-            <div class="col-12 col-md-6 col-lg-4 portfolio-item"
-                 data-category="{{ $marketing->marketing_category_id }}">
+                    @foreach ($marketings as $marketing)
+                        <div class="col-12 col-md-6 col-lg-4 portfolio-item"
+                            data-category="{{ $marketing->marketing_category_id }}">
 
-                <div class="iframe-wrapper">
-                    {!! $marketing->iframe !!}
+                            <div class="iframe-wrapper">
+                                {!! $marketing->iframe !!}
+                            </div>
+
+                        </div>
+                    @endforeach
+
                 </div>
-
             </div>
-        @endforeach
-
-    </div>
-</div>
         </div>
     </section>
 @endsection

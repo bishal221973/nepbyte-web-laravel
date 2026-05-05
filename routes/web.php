@@ -9,6 +9,7 @@ use App\Http\Controllers\ContentImageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MarketingCategoryController;
 use App\Http\Controllers\MarketingController;
+use App\Http\Controllers\PrintCategoryController;
 use App\Http\Controllers\TeamController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,13 @@ Route::prefix('admin')->group(function () {
             ->name('brand.category.toggle-status');
         Route::post('/branding-category/sort', [BrandCategoryController::class, 'sort'])
             ->name('brand-category.sort');
+
+
+            Route::resource('print-category', PrintCategoryController::class);
+        // Route::post('/brand-category/{id}/toggle-status', [BrandCategoryController::class, 'toggleStatus'])
+        //     ->name('brand.category.toggle-status');
+        // Route::post('/branding-category/sort', [BrandCategoryController::class, 'sort'])
+        //     ->name('brand-category.sort');
     });
 
     Route::prefix('content-productions')->group(function () {
