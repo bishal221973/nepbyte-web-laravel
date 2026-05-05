@@ -8,6 +8,8 @@ use App\Models\BrandPortfolio;
 use App\Models\Brands;
 use App\Models\ContentCategory;
 use App\Models\ContentImage;
+use App\Models\Marketing;
+use App\Models\MarketingCategory;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -48,8 +50,12 @@ class FrontController extends Controller
     public function marketing()
     {
         $brands = Brands::latest()->get();
+        $categories=MarketingCategory::latest()->get();
+        $marketings=Marketing::latest()->get();
         return view('front.marketing', [
-            'brands' => $brands
+            'brands' => $brands,
+            'categories'=>$categories,
+            'marketings'=>$marketings,
         ]);
     }
 

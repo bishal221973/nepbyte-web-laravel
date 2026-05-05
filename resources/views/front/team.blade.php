@@ -84,7 +84,7 @@
                         <div class="member-cntainer1">
 
                             @if (!empty($team->image))
-                                <img src="/storage/{{ $team->image }}" class="name-container" alt="team">
+                                <img src="/storage/{{ $team->image }}" class="image-container" alt="team">
                             @else
                                 <div class="name-container">
                                     {{ getName($team->name) }}

@@ -103,59 +103,107 @@
         </div>
 
         <div class="mt-5">
-            <div class="row grid" data-masonry='{"percentPosition": true }'>
-                <div class="col-lg-4 mb-4 grid-item">
-                    <x-marketing-card>
-                        <iframe
-                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02aAqAFMZfF5PRXL2SCMTFMZuLbccyn6rfdQBY6635osAK6dma5BHe2uJjmHRnNQPyl&show_text=true&width=500"
-                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                            allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </x-marketing-card>
-                </div>
-                <div class="col-lg-4 mb-4 grid-item">
-                    <x-marketing-card>
-                        <iframe
-                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid0E3bTjhVi6yhE8RDSBx31hESLA99Wr4V7GWWD7s5FeMgndwP9C7UDCh3q6QH7KphBl&show_text=true&width=500"
-                            width="500" height="629" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                            allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </x-marketing-card>
+            <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+
+                <a href="javascript:void(0)" class="btn border py-1 selectCategory selectCategoryActive" data-id="all">
+                    <small>All</small>
+                </a>
+
+                @foreach ($categories as $item)
+                    <a href="javascript:void(0)" class="btn border py-1 selectCategory" data-id="{{ $item->id }}">
+                        <small>{{ $item->name }}</small>
+                    </a>
+                @endforeach
+
+
+            </div>
+
+            <hr>
+            <div class="container py-4">
+    <div class="row justify-content-center g-4 px-3">
+
+        @foreach ($marketings as $marketing)
+            <div class="col-12 col-md-6 col-lg-4 portfolio-item"
+                 data-category="{{ $marketing->marketing_category_id }}">
+
+                <div class="iframe-wrapper">
+                    {!! $marketing->iframe !!}
                 </div>
 
-                <div class="col-lg-4 mb-4 grid-item">
-                    <x-marketing-card>
-                        <iframe
-                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02kG668gpzDSz4bi1Jor2To93eJBp1Fc9tryEgh1nLpyvFHYwdAxadFc8D4ppJ3zWMl&show_text=true&width=500"
-                            width="500" height="668" style="border:none;overflow:hidden" scrolling="no"
-                            frameborder="0" allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </x-marketing-card>
-                </div>
-                <div class="col-lg-4 mb-4 grid-item">
-                    <x-marketing-card>
-                        <iframe
-                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02kG668gpzDSz4bi1Jor2To93eJBp1Fc9tryEgh1nLpyvFHYwdAxadFc8D4ppJ3zWMl&show_text=true&width=500"
-                            width="500" height="668" style="border:none;overflow:hidden" scrolling="no"
-                            frameborder="0" allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </x-marketing-card>
-                </div>
-                {{-- <div class="col-lg-4 mb-4 grid-item">
-                    <x-marketing-card>
-                        <iframe
-                            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsurkhetsoft%2Fposts%2Fpfbid02evhLeXfU9PHZLEmw6p2neAAMdcqf6PDnqVwLGP8MnhUS37qwyMNJcruP6HxjLM3Ul&show_text=true&width=500"
-                            width="500" height="668" style="border:none;overflow:hidden" scrolling="no"
-                            frameborder="0" allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </x-marketing-card>
-                </div> --}}
             </div>
+        @endforeach
+
+    </div>
+</div>
         </div>
     </section>
 @endsection
 
 @push('script')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const buttons = document.querySelectorAll(".selectCategory");
+            const items = document.querySelectorAll(".portfolio-item");
+
+            function showItems(filtered) {
+                gsap.fromTo(filtered, {
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.95
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.5,
+                    stagger: 0.08,
+                    ease: "power3.out"
+                });
+            }
+
+            function filter(category) {
+
+                let filtered = [];
+
+                items.forEach(item => {
+                    const cat = item.getAttribute("data-category");
+
+                    if (category === "all" || category == cat) {
+                        item.style.display = "block";
+                        filtered.push(item);
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                showItems(filtered);
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", function() {
+
+                    buttons.forEach(b => b.classList.remove("selectCategoryActive"));
+                    this.classList.add("selectCategoryActive");
+
+                    const category = this.getAttribute("data-id");
+
+                    gsap.to(items, {
+                        opacity: 0,
+                        y: 20,
+                        scale: 0.98,
+                        duration: 0.2,
+                        stagger: 0.03,
+                        onComplete: () => filter(category)
+                    });
+
+                });
+            });
+
+            // default load
+            if (buttons.length) buttons[0].click();
+
+        });
+    </script>
     <script>
         let c = init("canvas"),
             w = (canvas.width = window.innerWidth),
@@ -254,9 +302,48 @@
         loop();
         setInterval(loop, 1000 / 60);
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelectorAll(".iframe-wrapper").forEach(wrapper => {
+
+                const iframe = wrapper.querySelector("iframe");
+                if (!iframe) return;
+
+                // Enable interaction only when user clicks
+                wrapper.addEventListener("click", function() {
+                    iframe.style.pointerEvents = "auto";
+                });
+
+                // Disable again when mouse leaves (IMPORTANT)
+                wrapper.addEventListener("mouseleave", function() {
+                    iframe.style.pointerEvents = "none";
+                });
+
+            });
+
+        });
+    </script>
 @endpush
 
 <style>
+    .iframe-wrapper iframe {
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .selectCategory {
+        background: #f1f1f1;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .selectCategoryActive {
+        background: #789ec3 !important;
+        color: #fff !important;
+    }
+
     .ai-hero {
         height: 80vh;
         width: 100%;
