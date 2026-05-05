@@ -161,7 +161,7 @@
                     </div>
                 </div>
 
-                <div class="d-flex" style="margin-top:80px">
+                <div class="d-flex" style="margin-top:80px;padding-right:10%;padding-left:5%;">
                     <x-contact-form />
 
 
