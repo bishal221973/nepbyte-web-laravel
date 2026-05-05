@@ -101,11 +101,13 @@
 
             <div class="p-5 bg-white">
 
-               
+
                 <div class="rounded-lg shadow-md py-5">
-                    <h1 class="fw-bold text-center" style="color: #789EC3">Get in touch with our creator-friendly <br> support team</h1>
+                    <h1 class="fw-bold text-center" style="color: #789EC3">Get in touch with our creator-friendly <br>
+                        support team</h1>
                     <small class="d-block text-center w-100 mt-4" style="color: #555">
-                        Our team is available 24 hours a day, 7 days a week to provide you with reliable support. Whether you have an <br>  inquiry or need assistance, don’t hesitate to contact us anytime.
+                        Our team is available 24 hours a day, 7 days a week to provide you with reliable support.
+                        Whether you have an <br> inquiry or need assistance, don’t hesitate to contact us anytime.
                     </small>
                 </div>
 
@@ -119,12 +121,13 @@
 
                             <div class="d-block">
                                 <div>
-                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Surkhet, Nepal / Kathmandu, Nepal</small>
+                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Surkhet,
+                                        Nepal / Kathmandu, Nepal</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <div class="col-md-4 contact-cards">
+                    <div class="col-md-4 contact-cards">
                         <div style="background-color: #f2f2f2" class="h-100  p-3 rounded shadow">
                             <div class="circle mb-3">
                                 <i class="fa fa-phone"></i>
@@ -142,28 +145,51 @@
                             </div>
                         </div>
                     </div>
-                     <div class="col-md-4 contact-cards ">
+                    <div class="col-md-4 contact-cards ">
                         <div style="background-color: #f2f2f2" class="h-100 p-3 rounded shadow">
                             <div class="circle mb-3">
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <h5 class="fw-bold text-center" style="color: #789EC3">Email Support</h5>
-                             <div class="d-block">
+                            <div class="d-block">
                                 <div class="d-flex justify-content-center">
                                     <small style="color:#696969;font-size:13px;">info@surkhetsoft.com</small>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="d-flex" style="margin-top:80px">
-                    <x-contact-form/>
+                    <x-contact-form />
 
-                <div style="padding: 0 10% 0 0;width:100%;position:relative;top:10px">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481470.5902866614!2d81.5802046363601!3d28.467356860960724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399877deb6525269%3A0x8b2be37f3048da53!2sSurkhet!5e0!3m2!1sen!2snp!4v1777652048247!5m2!1sen!2snp" style="border:0;width:100%;height:calc(100% - 25px);border-radius:10px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+
+                    {{-- <div style="padding: 0 10% 0 0;width:100%;position:relative;top:10px">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481470.5902866614!2d81.5802046363601!3d28.467356860960724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399877deb6525269%3A0x8b2be37f3048da53!2sSurkhet!5e0!3m2!1sen!2snp!4v1777652048247!5m2!1sen!2snp"
+                            style="border:0;width:100%;height:calc(100% - 25px);border-radius:10px" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div> --}}
+                    <div class="map-tabs">
+                        {{-- <h5>Visit us on</h5> --}}
+
+                        <!-- Tab Buttons -->
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="surkhet">Surkhet</button>
+                            <button class="tab-btn" data-tab="kathmandu">Kathmandu</button>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="tab-content active" id="surkhet">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1406590996676!2d81.6155021!3d28.5955568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a287398d603007%3A0x19ed7fbec5c081f8!2sSURKHET%20SOFT%20PVT.LTD.!5e0!3m2!1sen!2snp!4v1777957037961!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="tab-content" id="kathmandu">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4972.7572581840295!2d85.3653071!3d27.689119899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1b00384e9d73%3A0xc64594823ed006fd!2sSurkhet%20Soft%20Pvt.%20Ltd.%20%E2%80%93%20Kathmandu!5e1!3m2!1sen!2snp!4v1777957201157!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
@@ -174,6 +200,20 @@
 
 
 </body>
+<script>
+    document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', () => {
+
+            // remove active from all
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+            // activate selected
+            button.classList.add('active');
+            document.getElementById(button.dataset.tab).classList.add('active');
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
 <script>
     const {
