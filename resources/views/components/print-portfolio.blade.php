@@ -38,7 +38,7 @@
 
             @foreach ($printPortfolios as $brandPortfolio)
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item"
-                    data-category="{{ $brandPortfolio->print_category_id }}">
+                    data-category="{{ $brandPortfolio->print_category_id }}" data-aos="zoom-in-up" >
                     <div class="brand-project-card">
 
                         <div class="img-wrapper">

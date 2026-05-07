@@ -48,6 +48,9 @@
 
     <section class="brand-sub-content">
         <x-print-portfolio :printCategories="$categories" :printPortfolios="$portfolios" />
+        
+        
+
     </section>
 @endsection
 
