@@ -39,9 +39,7 @@
                 <h2>TEAM</h2>
 
                 <p>
-                    "Lorem ipsum dolor Lorem thesi ipsum<br>
-                    Lorem ipsum dolor amet conse tetuer<br>
-                    adipiscing."
+                    "Turning creative ideas into powerful designs and meaningful experiences."
                 </p>
             </div>
 

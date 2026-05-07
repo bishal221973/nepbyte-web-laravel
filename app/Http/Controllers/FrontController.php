@@ -10,6 +10,8 @@ use App\Models\ContentCategory;
 use App\Models\ContentImage;
 use App\Models\Marketing;
 use App\Models\MarketingCategory;
+use App\Models\PrintCategory;
+use App\Models\PrintPortfolio;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -44,7 +46,12 @@ class FrontController extends Controller
 
     public function printDesign()
     {
-        return view(view: 'front.printDesign');
+        $categories=PrintCategory::latest()->get();
+        $portfolios=PrintPortfolio::latest()->get();
+        return view('front.printDesign',[
+            'categories'=>$categories,
+            'portfolios'=>$portfolios
+        ]);
     }
 
     public function marketing()

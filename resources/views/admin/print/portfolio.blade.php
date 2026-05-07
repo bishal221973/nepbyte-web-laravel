@@ -10,7 +10,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Brands</li>
+                        <li class="breadcrumb-item active" aria-current="page">Print & Design</li>
                         <li class="breadcrumb-item active" aria-current="page">Projects</li>
                     </ol>
                 </div>
@@ -22,11 +22,11 @@
         <div class="container-fluid">
 
 
-            <x-table-component :headers="['#', 'Image','Category','Name', 'Description', 'Status', 'Action']">
+            <x-table-component :headers="['#', 'Image','Category','Name', 'Description', 'Action']">
                 <x-slot name="actions">
                     <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add Project</button>
                 </x-slot>
-                @foreach ($brandPortfolios as $item)
+                @foreach ($printPortfolios as $item)
                     <tr style="padding: 0" data-id="{{ $item->id }}">
                         <td style="padding: 0"><span style="display: block;text-align:start">{{ $loop->iteration }}</span>
                         </td>
@@ -36,19 +36,19 @@
                         <td style="padding: 0">{{ $item?->category?->title }}</td>
                         <td style="padding: 0">{{ $item->name }}</td>
                         <td style="padding: 0">{{ $item->description }}</td>
-                        <td style="padding: 0">
+                        {{-- <td style="padding: 0">
                             <label class="mini-switch">
                                 <input type="checkbox" class="status-toggle" data-id="{{ $item->id }}"
                                     {{ $item->status ? 'checked' : '' }}>
                                 <span></span>
                             </label>
-                        </td>
+                        </td> --}}
                         <td style="padding: 0">
                             <div class="d-flex">
-                                <a href="{{ route('brand-portfolio.edit', $item) }}" style="margin-top: 10px"
+                                <a href="{{ route('print-design.edit', $item) }}" style="margin-top: 10px"
                                     class="btn text-warning shadow-none">Edit</a>
 
-                                <form action="{{ route('brand-portfolio.destroy', $item) }}" method="POST"
+                                <form action="{{ route('print-design.destroy', $item) }}" method="POST"
                                     onsubmit="return confirm('Are you sure ?')">
                                     @csrf
                                     @method('delete')
@@ -68,34 +68,34 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ $brandPortfolio?->id ? 'Update' : 'Create' }} Design
+                    <h5 class="modal-title" id="exampleModalLabel">{{ $printPortfolio?->id ? 'Update' : 'Create' }} Design
                     </h5>
                 </div>
                 <form
-                    action="{{ $brandPortfolio?->id ? route('brand-portfolio.update', $brandPortfolio) : route('brand-portfolio.store') }}"
+                    action="{{ $printPortfolio?->id ? route('print-design.update', $printPortfolio) : route('print-design.store') }}"
                     method="POST" enctype="multipart/form-data">
                     @csrf
-                    @isset($brandPortfolio?->id)
-                        @method('PUT')
+                    @isset($printPortfolio?->id)
+                        @method('POST')
                     @endisset
                     <div class="modal-body">
 
                         <div class="form-group mb-3">
                             <label for="">Select Category <span class="text-danger">*</span></label>
-                            <select name="branding_service_id" id="" class="form-control form-select">
+                            <select name="print_category_id" id="" class="form-control form-select">
                                 <option value="">Select Category</option>
-                                @foreach ($brandServices as $pItem)
-                                    <option value="{{ $pItem?->id }}" {{$brandPortfolio?->branding_service_id == $pItem->id ? 'selected' : ''}}>{{ $pItem?->title }}</option>
+                                @foreach ($printServices as $pItem)
+                                    <option value="{{ $pItem?->id }}" {{$printPortfolio?->print_category_id == $pItem->id ? 'selected' : ''}}>{{ $pItem?->title }}</option>
                                 @endforeach
                             </select>
-                            @error('name')
+                            @error('print_category_id')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Name</label>
                             <input type="text" class="form-control" placeholder="Name" name="name"
-                                value="{{ old('name', $brandPortfolio?->name) }}">
+                                value="{{ old('name', $printPortfolio?->name) }}">
                             @error('name')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -104,7 +104,7 @@
 
                         <div class="form-group mb-3">
                             <label for="">Description</label>
-                            <textarea class="form-control" placeholder="Description" name="description">{{ old('description', $brandPortfolio->description) }}</textarea>
+                            <textarea class="form-control" placeholder="Description" name="description">{{ old('description', $printPortfolio->description) }}</textarea>
                             @error('description')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -114,8 +114,8 @@
                             <label>Image <span class="text-danger">*</span></label>
                             <div class="d-flex align-items-end">
                                 <div class="">
-                                    @if ($brandPortfolio->id)
-                                        <img id="preview" src="/storage/{{ $brandPortfolio->image }}" alt="Preview"
+                                    @if ($printPortfolio->id)
+                                        <img id="preview" src="/storage/{{ $printPortfolio->image }}" alt="Preview"
                                             class="img-thumbnail"
                                             style="max-height:150px;min-height:150px;width:150px;border-radius:50%;object-fit:cover">
                                     @else
@@ -154,7 +154,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit"
-                            class="btn btn-primary">{{ $brandPortfolio?->id ? 'Update' : 'Save' }}</button>
+                            class="btn btn-primary">{{ $printPortfolio?->id ? 'Update' : 'Save' }}</button>
                     </div>
                 </form>
             </div>
@@ -175,7 +175,7 @@
     @endpush
 @endif
 
-@if ($brandPortfolio?->id)
+@if ($printPortfolio?->id)
     @push('script')
         <script>
             document.getElementById("btnAdd").click();

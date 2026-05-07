@@ -10,6 +10,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MarketingCategoryController;
 use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\PrintCategoryController;
+use App\Http\Controllers\PrintPortfolioController;
 use App\Http\Controllers\TeamController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
@@ -65,7 +66,12 @@ Route::prefix('admin')->group(function () {
             ->name('brand-category.sort');
 
 
-            Route::resource('print-category', PrintCategoryController::class);
+        Route::resource('print-category', PrintCategoryController::class);
+        Route::get('print-design', [PrintPortfolioController::class,'index'])->name('print-design.index');
+        Route::post('print-design', [PrintPortfolioController::class,'store'])->name('print-design.store');
+        Route::get('edit/{id}', [PrintPortfolioController::class,'edit'])->name('print-design.edit');
+        Route::post('update/{id}', [PrintPortfolioController::class,'update'])->name('print-design.update');
+        Route::delete('delete/{id}', [PrintPortfolioController::class,'destroy'])->name('print-design.destroy');
         // Route::post('/brand-category/{id}/toggle-status', [BrandCategoryController::class, 'toggleStatus'])
         //     ->name('brand.category.toggle-status');
         // Route::post('/branding-category/sort', [BrandCategoryController::class, 'sort'])
@@ -82,13 +88,12 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('team', TeamController::class);
 
-     Route::prefix('marketing')->group(function () {
+    Route::prefix('marketing')->group(function () {
         Route::resource('marketting-category', MarketingCategoryController::class);
-        Route::get('content', [MarketingController::class,'index'])->name('marketing.index');
-        Route::post('content/store', [MarketingController::class,'store'])->name('marketing.store');
-        Route::get('content/{marketing}/edit', [MarketingController::class,'edit'])->name('marketing.edit');
-        Route::put('content/{marketing}/update', [MarketingController::class,'update'])->name('marketing.update');
-        Route::delete('content/{marketing}/delete', [MarketingController::class,'delete'])->name('marketing.delete');
+        Route::get('content', [MarketingController::class, 'index'])->name('marketing.index');
+        Route::post('content/store', [MarketingController::class, 'store'])->name('marketing.store');
+        Route::get('content/{marketing}/edit', [MarketingController::class, 'edit'])->name('marketing.edit');
+        Route::put('content/{marketing}/update', [MarketingController::class, 'update'])->name('marketing.update');
+        Route::delete('content/{marketing}/delete', [MarketingController::class, 'delete'])->name('marketing.delete');
     });
-    
 });
