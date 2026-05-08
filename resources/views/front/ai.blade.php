@@ -56,7 +56,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Lead Automation">
+                        <img src="/lead.png" class="img-fluid rounded mb-3" alt="Lead Automation">
                         <h5 class="">Lead Automation</h5>
                         <p class="text-white-50">Automate your lead collection, follow-ups, and analytics seamlessly.</p>
                     </div>
@@ -64,7 +64,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Customer Insights">
+                        <img src="/customer.png" class="img-fluid rounded mb-3" alt="Customer Insights">
                         <h5 class="text-white">Customer Insights</h5>
                         <p class="text-white-50">Gain real-time insights about customer behavior and engagement.</p>
                     </div>
@@ -72,7 +72,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Sales Reporting">
+                        <img src="/sales.png" class="img-fluid rounded mb-3" alt="Sales Reporting">
                         <h5 class="text-white">Sales Reporting</h5>
                         <p class="text-white-50">Generate automated reports to track sales performance efficiently.</p>
                     </div>
@@ -80,7 +80,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Email Campaigns">
+                        <img src="/email.png" class="img-fluid rounded mb-3" alt="Email Campaigns">
                         <h5 class="text-white">Email Campaigns</h5>
                         <p class="text-white-50">Create personalized campaigns to nurture leads effectively.</p>
                     </div>
@@ -88,7 +88,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Integration">
+                        <img src="/integration.png" class="img-fluid rounded mb-3" alt="Integration">
                         <h5 class="text-white">Integration</h5>
                         <p class="text-white-50">Easily integrate with CRM, email, and other business tools.</p>
                     </div>
@@ -96,7 +96,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="glass-card1 p-3">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Analytics">
+                        <img src="/analytics.png" class="img-fluid rounded mb-3" alt="Analytics">
                         <h5 class="text-white">Analytics</h5>
                         <p class="text-white-50">Track and analyze all lead activities with advanced dashboards.</p>
                     </div>
@@ -237,6 +237,9 @@
     .text-white-50 {
         color: rgba(255, 255, 255, 0.7);
     }
+    .img-fluid{
+        height: 50px !important;
+    }
 </style>
 
 
@@ -306,5 +309,6 @@
             scale:1.3,
             width: "30vw",
         })
+        
     </script>
 @endpush
