@@ -11,7 +11,7 @@
         </a>
 
        <div class="d-flex align-items-center">
-         <a href="#" class="nav-start-project text-white text-decoration-none">
+         <a href="{{ route('front.collaboration') }}" class="nav-start-project text-white text-decoration-none">
             Collaboration
         </a>
         <a href="{{ route('front.team') }}" class="team-btn1 text-decoration-none">

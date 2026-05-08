@@ -89,4 +89,11 @@ class FrontController extends Controller
             'teams'=>$teams
         ]);
     }
+    public function collaboration()
+    {
+        $teams=Team::latest()->get();
+        return view('front.collaboration',[
+            'teams'=>$teams
+        ]);
+    }
 }
