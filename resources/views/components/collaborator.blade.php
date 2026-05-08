@@ -1,71 +1,16 @@
-<div class="modern-section">
+<div class="modern-section-collaboration">
 
     <div class="container">
-        <small class="mx-auto d-block tag-line">Work Better. Together.</small>
-        <h2 class="section-title1 text-center">Building Stronger <span>Teams</span> Through Transparent <br>
-            <span>Collaboration</span> and <span>Modern Digital Tools</span>
+        <small class="mx-auto d-block tag-line">Our Creative Collaborators</small>
+        <h2 class="section-title1 text-center">A Community of Creative <span>Collaborators</span> <br> Shaping Modern Design and Digital Experiences
         </h2>
-        <div class="row g-4 mt-5">
-
-            <!-- CARD 01 -->
-            <div class="col-lg-6">
-                <div class="modern-card">
-
-                    <span class="badge-modern">System Control / 01</span>
-
-                    <h2 class="title-modern">
-                        Fuel your Browth
-                    </h2>
-
-                    <p class="desc-modern">
-                        Ready to scale ? Whether you need a full-scale digital takeover or a specific higi-performance
-                        service, let's talk strategy.
-                    </p>
-
-                    <div class="features-modern">
-                        <div>Live system monitoring & insights</div>
-                        <div>Intelligent automation & process control</div>
-                        <div>Data-driven analytics & reporting tools</div>
-                    </div>
-
-                    <button class="btn-modern">I need engine</button>
-
-                </div>
-            </div>
-
-            <!-- CARD 02 -->
-            <div class="col-lg-6">
-                <div class="modern-card">
-
-                    <span class="badge-modern">Production Line / 02</span>
-
-                    <h2 class="title-modern">
-                        Join the Assembly
-                    </h2>
-
-                    <p class="desc-modern">
-                        We are seeking elite specialists to join our production line. If you are master of your craft
-                        and ready to contribute to high-impact projects, we want to hear from you.
-                    </p>
-
-                    <div class="features-modern">
-                        <div>End-to-end automated workflow system</div>
-                        <div>Built-in quality assurance & control</div>
-                        <div>Scalable, high-performance production architecture</div>
-                    </div>
-
-                    <button class="btn-modern">Become a partner</button>
-
-                </div>
-            </div>
-
-        </div>
+        
 
     </div>
 
 </div>
 
-<style >
+<style scoped>
     .tag-line {
         color: #789ec3;
         background: #789ec320;
@@ -81,10 +26,9 @@
         color: #789ec3;
     }
 
-    .modern-section {
+    .modern-section-collaboration {
         padding: 100px 0;
-        background: #ffffff;
-        margin-top: 50px
+        background: #f2f2f2;
     }
 
     /* CARD */
