@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="row" style="height: calc(100vh - 100px)">
-        
+
         <!-- Left Side -->
-        <div class="col-md-6 d-flex flex-column justify-content-center ps-5">
-            <h1 class="fw-bold display-4 text-primary">
-                Creative Team
+        <div class="col-md-6 d-flex flex-column justify-content-center ps-5" style="padding-left: 10% !important">
+            <h1 class="fw-bold display-40" style="color: #fff;font-size: 60px">
+                Collaboration
             </h1>
 
             <p class="text-muted fs-5 mt-3" style="max-width:500px">
@@ -59,9 +59,55 @@
 
 
 <style>
-    body {
+    /* body {
         background: linear-gradient(to right, #f5f9ff, #ffffff);
         overflow-x: hidden;
+    } */
+    /* body {
+        background: linear-gradient(135deg,
+                #ffffff 0%,
+                #f5f9ff 25%,
+                #dbe8f5 55%,
+                #789EC3 100%);
+
+        overflow-x: hidden;
+        min-height: 100vh;
+    } */
+    /* body {
+        background: linear-gradient(to right,
+                #ffffff 0%,
+                #eef4fb 40%,
+                #c7d9ec 75%,
+                #789EC3 100%);
+
+        overflow-x: hidden;
+        min-height: 100vh;
+    } */
+    body {
+        background: linear-gradient(-45deg,
+                #789EC3,
+                #789EC3,
+                #b3d0ec,
+                #789EC3);
+
+        background-size: 400% 400%;
+        animation: gradientMove 10s ease infinite;
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 10% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
     }
 
     /* USER CIRCLE */
