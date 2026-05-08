@@ -136,10 +136,10 @@
         min-height: 100vh;
 
         background: linear-gradient(
-            45deg,
+            60deg,
             #789EC3,
             #5e86b0,
-            #b3d0ec,
+            #c7ddf1,
             #789EC3
         ) !important;
 
