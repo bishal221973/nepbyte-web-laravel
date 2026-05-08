@@ -1,166 +1,356 @@
 @extends('layouts.guestLayout')
 
 @section('content')
-    <div class="row" style="height: calc(100vh - 100px)">
 
-        <!-- Left Side -->
-        <div class="col-md-6 d-flex flex-column justify-content-center ps-5" style="padding-left: 10% !important">
-            <h1 class="fw-bold display-40" style="color: #fff;font-size: 60px">
-                Collaboration
-            </h1>
+<div class="hero-wrapper">
 
-            <p class="text-muted fs-5 mt-3" style="max-width:500px">
-                Turning creative ideas into powerful designs and meaningful experiences.
-            </p>
-        </div>
+    <!-- BACKGROUND SHAPES -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
 
-        <!-- Right Side -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
+    <div class="container-fluid">
+        <div class="row hero-section">
 
-            <div style="position: relative">
+            <!-- LEFT SIDE -->
+            <div class="col-lg-6 d-flex flex-column justify-content-center left-side" style="padding-left: 10%">
 
-                <!-- Top User -->
-                <div class="user-circle user-circle1">
-                    <img src="{{ asset('user.png') }}" alt="">
+                <span class="hero-badge">
+                    Creative Digital Agency
+                </span>
+
+                <h1 class="hero-title">
+                    Collaboration
+                </h1>
+
+                <p class="hero-description">
+                    Turning creative ideas into powerful designs and meaningful
+                    digital experiences for modern businesses and brands.
+                </p>
+
+                <!-- STATS -->
+                <div class="hero-stats">
+
+                    <div class="stat-box">
+                        <h3>120+</h3>
+                        <span>Projects</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>80+</h3>
+                        <span>Clients</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>10+</h3>
+                        <span>Years</span>
+                    </div>
+
                 </div>
 
-                <!-- Arrow -->
-                <img src="{{ asset('rotate.png') }}" alt="" class="arrow1">
+                <!-- BUTTONS -->
+                <div class="hero-buttons">
 
-                <div class="d-flex align-items-center justify-content-center">
+                    <button class="btn-primary-custom">
+                        Get Started
+                    </button>
 
-                    <!-- Left User -->
-                    <div class="user-circle user-circle2">
+                    <button class="btn-secondary-custom">
+                        View Portfolio
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+
+                <div class="team-wrapper">
+
+                    <!-- TOP USER -->
+                    <div class="user-circle user-circle1">
                         <img src="{{ asset('user.png') }}" alt="">
                     </div>
 
-                    <!-- Arrow -->
-                    <img src="{{ asset('rotate.png') }}" alt="" class="arrow2">
+                    <!-- ARROW -->
+                    <img src="{{ asset('rotate.png') }}" alt="" class="arrow1">
 
-                    <!-- Center -->
-                    <div class="handshake mx-4">
-                        <i class="fa-solid fa-handshake"></i>
+                    <div class="d-flex align-items-center justify-content-center">
+
+                        <!-- LEFT USER -->
+                        <div class="user-circle user-circle2">
+                            <img src="{{ asset('user.png') }}" alt="">
+                        </div>
+
+                        <!-- ARROW -->
+                        <img src="{{ asset('rotate.png') }}" alt="" class="arrow2">
+
+                        <!-- CENTER -->
+                        <div class="handshake mx-3">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+
+                        <!-- RIGHT USER -->
+                        <div class="user-circle user-circle2">
+                            <img src="{{ asset('user.png') }}" alt="">
+                        </div>
+
+                        <!-- ARROW -->
+                        <img src="{{ asset('rotate.png') }}" alt="" class="arrow3">
+
                     </div>
 
-                    <!-- Right User -->
-                    <div class="user-circle user-circle2">
-                        <img src="{{ asset('user.png') }}" alt="">
+                    <!-- FLOATING CARDS -->
+                    <div class="floating-card card1">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Creative Ideas
                     </div>
 
-                    <!-- Arrow -->
-                    <img src="{{ asset('rotate.png') }}" alt="" class="arrow3">
+                    <div class="floating-card card2">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                        Design Strategy
+                    </div>
+
+                    <div class="floating-card card3">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Business Growth
+                    </div>
 
                 </div>
+
             </div>
 
         </div>
     </div>
+</div>
+
 @endsection
 
 
 <style>
-    /* body {
-        background: linear-gradient(to right, #f5f9ff, #ffffff);
-        overflow-x: hidden;
-    } */
-    /* body {
-        background: linear-gradient(135deg,
-                #ffffff 0%,
-                #f5f9ff 25%,
-                #dbe8f5 55%,
-                #789EC3 100%);
-
-        overflow-x: hidden;
-        min-height: 100vh;
-    } */
-    /* body {
-        background: linear-gradient(to right,
-                #ffffff 0%,
-                #eef4fb 40%,
-                #c7d9ec 75%,
-                #789EC3 100%);
-
-        overflow-x: hidden;
-        min-height: 100vh;
-    } */
     body {
-        background: linear-gradient(-45deg,
-                #789EC3,
-                #789EC3,
-                #b3d0ec,
-                #789EC3);
+        overflow-x: hidden;
+        min-height: 100vh;
+
+        background: linear-gradient(
+            45deg,
+            #789EC3,
+            #5e86b0,
+            #b3d0ec,
+            #789EC3
+        ) !important;
 
         background-size: 400% 400%;
-        animation: gradientMove 10s ease infinite;
-        overflow-x: hidden;
-        min-height: 100vh;
+        /* animation: gradientMove 12s ease infinite; */
     }
 
-    @keyframes gradientMove {
-        0% {
-            background-position: 0% 50%;
-        }
+    .hero-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
 
-        50% {
-            background-position: 10% 50%;
-        }
+    .hero-section {
+        min-height: 92vh;
+        position: relative;
+        z-index: 2;
+    }
 
-        100% {
-            background-position: 0% 50%;
-        }
+    /* BACKGROUND SHAPES */
+    .bg-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        filter: blur(40px);
+        z-index: 1;
+    }
+
+    .shape1 {
+        width: 280px;
+        height: 280px;
+        top: -100px;
+        left: -100px;
+    }
+
+    .shape2 {
+        width: 240px;
+        height: 240px;
+        bottom: -60px;
+        right: -60px;
+    }
+
+    .shape3 {
+        width: 180px;
+        height: 180px;
+        top: 40%;
+        left: 45%;
+    }
+
+    /* LEFT SIDE */
+    .left-side {
+        padding-left: 10%;
+    }
+
+    .hero-badge {
+        width: fit-content;
+        padding: 8px 18px;
+        border-radius: 50px;
+        background: rgba(255,255,255,0.15);
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: 58px;
+        font-weight: 800;
+        color: white;
+        line-height: 1.05;
+        margin-bottom: 20px;
+        text-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .hero-description {
+        font-size: 16px;
+        color: rgba(255,255,255,0.85);
+        line-height: 1.8;
+        max-width: 480px;
+    }
+
+    /* STATS */
+    .hero-stats {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+    }
+
+    .stat-box {
+        background: rgba(255,255,255,0.12);
+        padding: 14px 22px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        color: white;
+        text-align: center;
+        min-width: 95px;
+    }
+
+    .stat-box h3 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .stat-box span {
+        font-size: 12px;
+        opacity: .8;
+    }
+
+    /* BUTTONS */
+    .hero-buttons {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 14px;
+        transition: .4s;
+    }
+
+    .btn-primary-custom {
+        background: white;
+        color: #789EC3;
+    }
+
+    .btn-secondary-custom {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.4);
+        color: white;
+        backdrop-filter: blur(10px);
+    }
+
+    .btn-primary-custom:hover,
+    .btn-secondary-custom:hover {
+        transform: translateY(-5px);
+    }
+
+    /* TEAM WRAPPER */
+    .team-wrapper {
+        position: relative;
+        z-index: 2;
     }
 
     /* USER CIRCLE */
     .user-circle {
-        height: 160px;
-        width: 160px;
-        background-color: #789EC3;
+        height: 135px;
+        width: 135px;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(10px);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        border: 5px solid #fff;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
+        border: 1px solid rgba(255,255,255,0.25);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         animation: float 4s ease-in-out infinite;
-        transition: .3s;
     }
 
-    .user-circle:hover {
-        transform: scale(1.05);
+    .user-circle img {
+        height: 90px;
+        width: 90px;
+        object-fit: contain;
     }
 
     .user-circle1 {
         margin: 0 auto;
-        animation-delay: 0s;
     }
 
     .user-circle2 {
         position: relative;
-        top: 30px;
-        animation-delay: 1s;
-    }
-
-    .user-circle img {
-        height: 120px;
-        width: 120px;
-        object-fit: contain;
-        /* animation: rotateUser 10s linear infinite; */
+        top: 25px;
     }
 
     /* HANDSHAKE */
     .handshake {
-        font-size: 55px;
-        color: #789EC3;
-        background-color: #fff;
-        height: 140px;
-        width: 140px;
+        position: relative;
+        font-size: 42px;
+        color: white;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
+        border: 1px solid rgba(255,255,255,0.25);
         animation: pulse 2s infinite;
+        overflow: hidden;
+    }
+
+    .handshake::after {
+        content: '';
+        position: absolute;
+        width: 180px;
+        height: 180px;
+
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+        animation: rotateGlow 4s linear infinite;
     }
 
     /* ARROWS */
@@ -168,12 +358,12 @@
     .arrow2,
     .arrow3 {
         position: absolute;
-        height: 80px;
+        height: 60px;
         animation: arrowBounce 2s infinite ease-in-out;
     }
 
     .arrow1 {
-        transform: rotate(-30deg) !important;
+        transform: rotate(-30deg);
         top: 25%;
         right: 72%;
     }
@@ -190,14 +380,63 @@
         right: 42%;
     }
 
-    /* FLOAT */
+    /* FLOATING CARDS */
+    .floating-card {
+        position: absolute;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        padding: 10px 18px;
+        border-radius: 12px;
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        animation: float 4s infinite ease-in-out;
+    }
+
+    .floating-card i {
+        margin-right: 8px;
+    }
+
+    .card1 {
+        top: 10%;
+        left: -5%;
+    }
+
+    .card2 {
+        top: 12%;
+        right: 0%;
+    }
+
+    .card3 {
+        bottom: -5%;
+        left: 28%;
+    }
+
+    /* ANIMATIONS */
+    @keyframes gradientMove {
+
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
     @keyframes float {
+
         0% {
             transform: translateY(0px);
         }
 
         50% {
-            transform: translateY(-15px);
+            transform: translateY(-12px);
         }
 
         100% {
@@ -205,8 +444,38 @@
         }
     }
 
-    /* USER IMAGE ROTATE */
-    @keyframes rotateUser {
+    @keyframes pulse {
+
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.06);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes arrowBounce {
+
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes rotateGlow {
+
         from {
             transform: rotate(0deg);
         }
@@ -216,59 +485,58 @@
         }
     }
 
-    /* HANDSHAKE PULSE */
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.08);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    /* ARROW BOUNCE */
-    @keyframes arrowBounce {
-        0% {
-            transform: translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-10px);
-        }
-
-        100% {
-            transform: translateY(0px);
-        }
-    }
-
     /* RESPONSIVE */
-    @media(max-width:768px) {
+    @media(max-width:991px) {
+
+        .left-side {
+            padding: 60px 30px !important;
+            text-align: center;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 42px;
+        }
+
+        .hero-stats {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .team-wrapper {
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
 
         .user-circle {
-            height: 120px;
-            width: 120px;
+            height: 100px;
+            width: 100px;
         }
 
         .user-circle img {
-            height: 80px;
-            width: 80px;
+            height: 65px;
+            width: 65px;
         }
 
         .handshake {
-            height: 100px;
-            width: 100px;
-            font-size: 40px;
+            height: 85px;
+            width: 85px;
+            font-size: 32px;
         }
 
         .arrow1,
         .arrow2,
         .arrow3 {
-            height: 55px;
+            height: 45px;
+        }
+
+        .floating-card {
+            display: none;
         }
     }
 </style>
