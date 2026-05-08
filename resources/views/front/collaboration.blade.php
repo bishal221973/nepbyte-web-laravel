@@ -56,7 +56,7 @@
                     </button>
 
                     <button class="btn-secondary-custom">
-                        View Portfolio
+                        Become a partner
                     </button>
 
                 </div>
@@ -80,7 +80,7 @@
 
                         <!-- LEFT USER -->
                         <div class="user-circle user-circle2">
-                            <img src="{{ asset('user.png') }}" alt="">
+                            <img src="{{ asset('user1.png') }}" alt="">
                         </div>
 
                         <!-- ARROW -->
@@ -93,7 +93,7 @@
 
                         <!-- RIGHT USER -->
                         <div class="user-circle user-circle2">
-                            <img src="{{ asset('user.png') }}" alt="">
+                            <img src="{{ asset('user3.png') }}" alt="">
                         </div>
 
                         <!-- ARROW -->
@@ -124,6 +124,7 @@
         </div>
     </div>
 </div>
+<x-growth/>
 
 @endsection
 
@@ -539,4 +540,88 @@
             display: none;
         }
     }
+    /* LARGE SCREEN BALANCE */
+@media(min-width:1400px){
+
+    .hero-section{
+        min-height: 85vh;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .left-side{
+        padding-left: 10% !important;
+    }
+
+    .hero-title{
+        font-size: 65px;
+    }
+
+    .hero-description{
+        font-size: 20px;
+        max-width: 430px;
+    }
+
+    .hero-stats{
+        gap: 14px;
+    }
+
+    .stat-box{
+        padding: 20px 40px;
+        min-width: 85px;
+    }
+
+    .stat-box h3{
+        font-size: 25px;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom{
+        height: 55px;
+        padding: 0 35px;
+        font-size: 18px;
+    }
+
+    /* TEAM */
+    .team-wrapper{
+        transform: scale(1.25);
+    }
+
+    .floating-card{
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    .card1{
+        left: 0%;
+    }
+
+    .card2{
+        right: 2%;
+    }
+
+    .card3{
+        bottom: 0%;
+    }
+}
+
+/* EXTRA LARGE MONITORS */
+@media(min-width:1700px){
+    
+    .hero-section{
+        max-width: 1500px;
+    }
+
+    .team-wrapper{
+        transform: scale(1.1);
+    }
+
+    .hero-title{
+        font-size: 48px;
+    }
+
+    .hero-description{
+        max-width: 400px;
+    }
+}
 </style>
