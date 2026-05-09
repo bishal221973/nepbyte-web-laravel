@@ -54,7 +54,7 @@
                             Get Started
                         </button>
 
-                        <button class="btn-secondary-custom">
+                        <button class="btn-secondary-custom" data-toggle="modal" data-target="#partnerModal">
                             Become a partner
                         </button>
 
@@ -299,6 +299,229 @@
 
                     <!-- Footer -->
                     <div class="modal-footer bg-light pb-0">
+
+                        <button type="submit" class="btn btn-primary px-4">
+
+                            Submit
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="partnerModal" tabindex="-1" role="dialog" aria-labelledby="partnerModalTitle"
+        aria-hidden="true" style="z-index:9999999">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+            <div class="modal-content border-0 shadow-lg">
+
+                <!-- Header -->
+                <div class="modal-header text-white d-flex justify-content-between py-2"
+                    style="background-color:#789EC3;">
+
+                    <div>
+                        <h4 class="modal-title mb-0" id="partnerModalTitle">
+
+                            Become a Partner
+                        </h4>
+
+                        <small>
+                            Let’s build something amazing together
+                        </small>
+                    </div>
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+
+                        &times;
+                    </button>
+
+                </div>
+
+                <!-- Form -->
+                <form action="{{ route('front.partner.store') }}" method="POST">
+
+                    @csrf
+
+                    <div class="modal-body px-4 py-4">
+
+                        <!-- Personal Info -->
+                        <div class="mb-3">
+
+                            <span class="d-block fw-bold border-bottom mb-3">
+                                Personal Information
+                            </span>
+
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <label>
+                                        Full Name
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Enter full name" required>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label>Email Address</label>
+
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="Enter email address">
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label>Phone Number</label>
+
+                                    <input type="text" name="phone" class="form-control"
+                                        placeholder="Enter phone number">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Company Info -->
+                        <div class="mb-3">
+
+                            <span class="d-block fw-bold border-bottom mb-3">
+                                Company Information
+                            </span>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <label>Company Name</label>
+
+                                    <input type="text" name="company_name" class="form-control"
+                                        placeholder="Enter company name">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label>Website</label>
+
+                                    <input type="text" name="website" class="form-control"
+                                        placeholder="https://example.com">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label>Industry</label>
+
+                                    <input type="text" name="industry" class="form-control"
+                                        placeholder="Software, Ecommerce etc.">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label>Company Size</label>
+
+                                    <select name="company_size" class="form-control">
+
+                                        <option value="">
+                                            Select Company Size
+                                        </option>
+
+                                        <option value="1-10">
+                                            1 - 10 Employees
+                                        </option>
+
+                                        <option value="11-50">
+                                            11 - 50 Employees
+                                        </option>
+
+                                        <option value="51-200">
+                                            51 - 200 Employees
+                                        </option>
+
+                                        <option value="200+">
+                                            200+ Employees
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Partnership Info -->
+                        <div class="mb-3">
+
+                            <span class="d-block fw-bold border-bottom mb-3">
+                                Partnership Details
+                            </span>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <label>Partnership Type</label>
+
+                                    <select name="partnership_type" class="form-control">
+
+                                        <option value="">
+                                            Select Partnership Type
+                                        </option>
+
+                                        <option value="agency">
+                                            Agency Partner
+                                        </option>
+
+                                        <option value="technology">
+                                            Technology Partner
+                                        </option>
+
+                                        <option value="marketing">
+                                            Marketing Partner
+                                        </option>
+
+                                        <option value="reseller">
+                                            Reseller Partner
+                                        </option>
+
+                                        <option value="investor">
+                                            Investor
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3 mb-3">
+                                    <label>Country</label>
+
+                                    <input type="text" name="country" class="form-control" placeholder="Country">
+                                </div>
+
+                                <div class="col-md-3 mb-3">
+                                    <label>City</label>
+
+                                    <input type="text" name="city" class="form-control" placeholder="City">
+                                </div>
+
+                                <div class="col-md-12 mb-3">
+                                    <label>
+                                        Partnership Proposal
+                                    </label>
+
+                                    <textarea name="message" rows="5" class="form-control" placeholder="Tell us about your partnership idea..."></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer bg-light">
+
+
 
                         <button type="submit" class="btn btn-primary px-4">
 

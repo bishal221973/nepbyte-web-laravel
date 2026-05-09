@@ -54,7 +54,7 @@
                         <div>Scalable, high-performance production architecture</div>
                     </div>
 
-                    <button class="btn-modern">Become a partner</button>
+                    <button class="btn-modern" data-toggle="modal" data-target="#partnerModal">Become a partner</button>
 
                 </div>
             </div>
