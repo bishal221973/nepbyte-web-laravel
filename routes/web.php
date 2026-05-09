@@ -127,7 +127,7 @@ Sitemap::create()
             ->setPriority(1.0)
     )
      ->add(
-        Url::create('https://https://surkhetsoft.com/our-team')
+        Url::create('https://surkhetsoft.com/our-team')
             ->setLastModificationDate(Carbon::now())
             ->setPriority(0.8)
     )
