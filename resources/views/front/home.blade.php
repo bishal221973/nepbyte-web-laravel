@@ -74,12 +74,12 @@
                     <i class="fab fa-facebook-f"></i>
                 </a>
 
-                <a href="https://www.facebook.com/surkhetsoft" class="text-decoration-none fab-item instagram"
+                <a href="https://www.instagram.com/surkhetsoft/" class="text-decoration-none fab-item instagram"
                     target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
 
-                <a href="https://www.facebook.com/surkhetsoft" class="text-decoration-none fab-item tiktok"
+                <a href="https://www.tiktok.com/@surkhetsoftproduction" class="text-decoration-none fab-item tiktok"
                     target="_blank">
                     <i class="fab fa-tiktok"></i>
                 </a>
@@ -99,6 +99,8 @@
     </div>
 @endsection
 
+@push('style')
+    
 <style>
     .whatsapp-float {
         position: fixed;
@@ -274,6 +276,10 @@
         animation: pulse 2s infinite;
     }
 </style>
+@endpush
+
+@push('script')
+    
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
@@ -287,3 +293,4 @@
 
     });
 </script>
+@endpush

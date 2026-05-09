@@ -568,7 +568,8 @@
     @endif
 @endsection
 
-
+@push('style')
+    
 <style>
     body {
         overflow-x: hidden;
@@ -1062,3 +1063,4 @@
         }
     }
 </style>
+@endpush

@@ -11,6 +11,7 @@ use App\Http\Controllers\MarketingCategoryController;
 use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\PrintCategoryController;
 use App\Http\Controllers\PrintPortfolioController;
+use App\Http\Controllers\SeoController;
 use App\Http\Controllers\TeamController;
 use App\Models\Brands;
 use Illuminate\Support\Facades\Route;
@@ -100,5 +101,12 @@ Route::middleware(['auth'])->group(function () {
             Route::put('content/{marketing}/update', [MarketingController::class, 'update'])->name('marketing.update');
             Route::delete('content/{marketing}/delete', [MarketingController::class, 'delete'])->name('marketing.delete');
         });
+
+        Route::prefix('setting')->group(function () {
+            Route::resource('seo', SeoController::class);
+        });
     });
 });
+
+
+__DIR__.'/sitemap.php';
