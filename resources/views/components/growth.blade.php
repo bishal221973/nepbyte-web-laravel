@@ -14,7 +14,7 @@
                     <span class="badge-modern">System Control / 01</span>
 
                     <h2 class="title-modern">
-                        Fuel your Browth
+                        Fuel your Growth
                     </h2>
 
                     <p class="desc-modern">
@@ -28,7 +28,7 @@
                         <div>Data-driven analytics & reporting tools</div>
                     </div>
 
-                    <button class="btn-modern">I need engine</button>
+                    <button class="btn-modern" data-toggle="modal" data-target="#needEngineModal">I need engine</button>
 
                 </div>
             </div>
@@ -65,7 +65,7 @@
 
 </div>
 
-<style >
+<style>
     .tag-line {
         color: #789ec3;
         background: #789ec320;

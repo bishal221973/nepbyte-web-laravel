@@ -42,6 +42,7 @@ Route::get('content-production', [FrontController::class, 'production'])->name('
 Route::get('content-production/{contentCategory:slug}', [FrontController::class, 'productionShow'])->name('front.productionShow');
 Route::get('our-team', [FrontController::class, 'team'])->name('front.team');
 Route::get('collaboration', [FrontController::class, 'collaboration'])->name('front.collaboration');
+Route::post('collaboration-store', [FrontController::class, 'collaborationStore'])->name('front.collaboration.store');
 
 Auth::routes();
 

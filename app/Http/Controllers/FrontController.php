@@ -96,4 +96,22 @@ class FrontController extends Controller
             'teams'=>$teams
         ]);
     }
+
+    public function collaborationStore(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'nullable|email',
+            'phone' => 'nullable',
+            'company_name' => 'nullable',
+            'company_type' => 'nullable',
+            'project_type' => 'nullable',
+            'budget' => 'nullable',
+            'description' => 'nullable',
+        ]);
+
+        \App\Models\NeedEngine::create($request->all());
+
+        return redirect()->route('front.collaboration')->with('success', 'Your request has been submitted successfully!');
+    }
 }

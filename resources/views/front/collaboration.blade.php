@@ -1,132 +1,348 @@
 @extends('layouts.guestLayout')
 
 @section('content')
+    <div class="hero-wrapper">
 
-<div class="hero-wrapper">
+        <!-- BACKGROUND SHAPES -->
+        <div class="bg-shape shape1"></div>
+        <div class="bg-shape shape2"></div>
+        <div class="bg-shape shape3"></div>
 
-    <!-- BACKGROUND SHAPES -->
-    <div class="bg-shape shape1"></div>
-    <div class="bg-shape shape2"></div>
-    <div class="bg-shape shape3"></div>
+        <div class="container-fluid">
+            <div class="row hero-section">
 
-    <div class="container-fluid">
-        <div class="row hero-section">
+                <!-- LEFT SIDE -->
+                <div class="col-lg-6 d-flex flex-column justify-content-center left-side" style="padding-left: 10%">
 
-            <!-- LEFT SIDE -->
-            <div class="col-lg-6 d-flex flex-column justify-content-center left-side" style="padding-left: 10%">
+                    <span class="hero-badge">
+                        Creative Digital Agency
+                    </span>
 
-                <span class="hero-badge">
-                    Creative Digital Agency
-                </span>
+                    <h1 class="hero-title">
+                        Collaboration
+                    </h1>
 
-                <h1 class="hero-title">
-                    Collaboration
-                </h1>
+                    <p class="hero-description">
+                        Turning creative ideas into powerful designs and meaningful
+                        digital experiences for modern businesses and brands.
+                    </p>
 
-                <p class="hero-description">
-                    Turning creative ideas into powerful designs and meaningful
-                    digital experiences for modern businesses and brands.
-                </p>
+                    <!-- STATS -->
+                    <div class="hero-stats">
 
-                <!-- STATS -->
-                <div class="hero-stats">
+                        <div class="stat-box">
+                            <h3>120+</h3>
+                            <span>Projects</span>
+                        </div>
 
-                    <div class="stat-box">
-                        <h3>120+</h3>
-                        <span>Projects</span>
+                        <div class="stat-box">
+                            <h3>80+</h3>
+                            <span>Clients</span>
+                        </div>
+
+                        <div class="stat-box">
+                            <h3>10+</h3>
+                            <span>Years</span>
+                        </div>
+
                     </div>
 
-                    <div class="stat-box">
-                        <h3>80+</h3>
-                        <span>Clients</span>
-                    </div>
+                    <!-- BUTTONS -->
+                    <div class="hero-buttons">
 
-                    <div class="stat-box">
-                        <h3>10+</h3>
-                        <span>Years</span>
+                        <button class="btn-primary-custom" data-toggle="modal" data-target="#needEngineModal">
+                            Get Started
+                        </button>
+
+                        <button class="btn-secondary-custom">
+                            Become a partner
+                        </button>
+
                     </div>
 
                 </div>
 
-                <!-- BUTTONS -->
-                <div class="hero-buttons">
+                <!-- RIGHT SIDE -->
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
 
-                    <button class="btn-primary-custom">
-                        Get Started
-                    </button>
+                    <div class="team-wrapper">
 
-                    <button class="btn-secondary-custom">
-                        Become a partner
-                    </button>
+                        <!-- TOP USER -->
+                        <div class="user-circle user-circle1">
+                            <img src="{{ asset('user.png') }}" alt="">
+                        </div>
+
+                        <!-- ARROW -->
+                        <img src="{{ asset('rotate.png') }}" alt="" class="arrow1">
+
+                        <div class="d-flex align-items-center justify-content-center">
+
+                            <!-- LEFT USER -->
+                            <div class="user-circle user-circle2">
+                                <img src="{{ asset('user1.png') }}" alt="">
+                            </div>
+
+                            <!-- ARROW -->
+                            <img src="{{ asset('rotate.png') }}" alt="" class="arrow2">
+
+                            <!-- CENTER -->
+                            <div class="handshake mx-3">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+
+                            <!-- RIGHT USER -->
+                            <div class="user-circle user-circle2">
+                                <img src="{{ asset('user3.png') }}" alt="">
+                            </div>
+
+                            <!-- ARROW -->
+                            <img src="{{ asset('rotate.png') }}" alt="" class="arrow3">
+
+                        </div>
+
+                        <!-- FLOATING CARDS -->
+                        <div class="floating-card card1">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Creative Ideas
+                        </div>
+
+                        <div class="floating-card card2">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                            Design Strategy
+                        </div>
+
+                        <div class="floating-card card3">
+                            <i class="fa-solid fa-chart-line"></i>
+                            Business Growth
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
+        </div>
+    </div>
+    <x-growth />
+    <x-collaborator />
+    <div class="modal fade" id="needEngineModal" tabindex="-1" role="dialog" aria-labelledby="needEngineModalTitle"
+        aria-hidden="true" style="z-index: 999999999 !important">
+        <div class="modal-dialog modal-lg modal-dialog-centered" style="z-index: 99999999" role="document">
+            <div class="modal-content border-0 shadow-lg">
 
-            <!-- RIGHT SIDE -->
-            <div class="col-lg-6 d-flex align-items-center justify-content-center">
-
-                <div class="team-wrapper">
-
-                    <!-- TOP USER -->
-                    <div class="user-circle user-circle1">
-                        <img src="{{ asset('user.png') }}" alt="">
+                <!-- Header -->
+                <div class="modal-header text-white d-flex py-0 justify-content-between" style="background-color: #789EC3">
+                    <div>
+                        <h4 class="modal-title mb-0" id="needEngineModalTitle">
+                            Need Engine Form
+                        </h4>
+                        <small>Please fill in your project requirements</small>
                     </div>
 
-                    <!-- ARROW -->
-                    <img src="{{ asset('rotate.png') }}" alt="" class="arrow1">
-
-                    <div class="d-flex align-items-center justify-content-center">
-
-                        <!-- LEFT USER -->
-                        <div class="user-circle user-circle2">
-                            <img src="{{ asset('user1.png') }}" alt="">
-                        </div>
-
-                        <!-- ARROW -->
-                        <img src="{{ asset('rotate.png') }}" alt="" class="arrow2">
-
-                        <!-- CENTER -->
-                        <div class="handshake mx-3">
-                            <i class="fa-solid fa-handshake"></i>
-                        </div>
-
-                        <!-- RIGHT USER -->
-                        <div class="user-circle user-circle2">
-                            <img src="{{ asset('user3.png') }}" alt="">
-                        </div>
-
-                        <!-- ARROW -->
-                        <img src="{{ asset('rotate.png') }}" alt="" class="arrow3">
-
-                    </div>
-
-                    <!-- FLOATING CARDS -->
-                    <div class="floating-card card1">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        Creative Ideas
-                    </div>
-
-                    <div class="floating-card card2">
-                        <i class="fa-solid fa-pen-ruler"></i>
-                        Design Strategy
-                    </div>
-
-                    <div class="floating-card card3">
-                        <i class="fa-solid fa-chart-line"></i>
-                        Business Growth
-                    </div>
-
+                    <button type="button" class="btn btn-danger text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+
+                <!-- Form -->
+                <form action="{{ route('front.collaboration.store') }}" method="POST">
+                    @csrf
+                    <div class="modal-body px-4 py-4">
+
+                        <!-- Personal Information -->
+                        <div class="mb-1">
+                            <span class="d-block fw-bold w-full border-bottom  mb-2">
+                                Personal Information
+                            </span>
+
+                            <div class="row">
+
+                                <div class="col-md-4 mb-1">
+                                    <label>
+                                        Full Name
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Enter your full name" required>
+                                </div>
+
+                                <div class="col-md-4 mb-1">
+                                    <label>
+                                        Phone Number
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <input type="text" name="phone" class="form-control"
+                                        placeholder="Enter your phone number" required>
+                                </div>
+
+                                <div class="col-md-4 mb-1">
+                                    <label>
+                                        Email Address
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                                        required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Company Information -->
+                        <div class="mb-1">
+
+                            <span class="d-block fw-bold w-full border-bottom  mb-2">
+                                Company Information
+                            </span>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-1">
+                                    <label>Company Name</label>
+
+                                    <input type="text" name="company_name" class="form-control"
+                                        placeholder="Enter company name">
+                                </div>
+
+                                <div class="col-md-6 mb-1">
+                                    <label>Industry Type</label>
+
+                                    <input type="text" name="industry" class="form-control"
+                                        placeholder="Software, Manufacturing, Ecommerce etc.">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="mb-1">
+
+                            <span class="d-block fw-bold w-full border-bottom  mb-2">
+                                Project Details
+                            </span>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-1">
+                                    <label>Project Type</label>
+
+                                    <select name="project_type" class="form-control">
+
+                                        <option value="">
+                                            Select Project Type
+                                        </option>
+
+                                        <option value="website">
+                                            Website
+                                        </option>
+
+                                        <option value="mobile_app">
+                                            Mobile App
+                                        </option>
+
+                                        <option value="software">
+                                            Software Development
+                                        </option>
+
+                                        <option value="branding">
+                                            Branding
+                                        </option>
+
+                                        <option value="marketing">
+                                            Digital Marketing
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb-1">
+                                    <label>Estimated Budget</label>
+
+                                    <select name="budget" class="form-control">
+
+                                        <option value="">
+                                            Select Budget Range
+                                        </option>
+
+                                        <option value="1000-5000">
+                                            $1,000 - $5,000
+                                        </option>
+
+                                        <option value="5000-10000">
+                                            $5,000 - $10,000
+                                        </option>
+
+                                        <option value="10000+">
+                                            $10,000+
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mb-1">
+                                    <label>
+                                        Project Description
+                                    </label>
+
+                                    <textarea name="description" rows="5" class="form-control"
+                                        placeholder="Describe your project requirements..."></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer bg-light pb-0">
+
+                        <button type="submit" class="btn btn-primary px-4">
+
+                            Submit
+                        </button>
+
+                    </div>
+
+                </form>
 
             </div>
 
         </div>
-    </div>
-</div>
-<x-growth/>
-<x-collaborator/>
 
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    @if (session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            // alert("{{ session('success') }}");
+            Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            }).fire({
+                icon: "success",
+                title: "{{ session('success') }}"
+            });
+        </script>
+    @endif
 @endsection
 
 
@@ -135,13 +351,11 @@
         overflow-x: hidden;
         min-height: 100vh;
 
-        background: linear-gradient(
-            60deg,
-            #789EC3,
-            #5e86b0,
-            #c7ddf1,
-            #789EC3
-        ) !important;
+        background: linear-gradient(60deg,
+                #789EC3,
+                #5e86b0,
+                #c7ddf1,
+                #789EC3) !important;
 
         background-size: 400% 400%;
         /* animation: gradientMove 12s ease infinite; */
@@ -197,7 +411,7 @@
         width: fit-content;
         padding: 8px 18px;
         border-radius: 50px;
-        background: rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.15);
         color: white;
         font-size: 14px;
         font-weight: 600;
@@ -211,12 +425,12 @@
         color: white;
         line-height: 1.05;
         margin-bottom: 20px;
-        text-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        text-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
 
     .hero-description {
         font-size: 16px;
-        color: rgba(255,255,255,0.85);
+        color: rgba(255, 255, 255, 0.85);
         line-height: 1.8;
         max-width: 480px;
     }
@@ -229,7 +443,7 @@
     }
 
     .stat-box {
-        background: rgba(255,255,255,0.12);
+        background: rgba(255, 255, 255, 0.12);
         padding: 14px 22px;
         border-radius: 16px;
         backdrop-filter: blur(10px);
@@ -274,7 +488,7 @@
 
     .btn-secondary-custom {
         background: transparent;
-        border: 1px solid rgba(255,255,255,0.4);
+        border: 1px solid rgba(255, 255, 255, 0.4);
         color: white;
         backdrop-filter: blur(10px);
     }
@@ -294,15 +508,15 @@
     .user-circle {
         height: 135px;
         width: 135px;
-        background: rgba(255,255,255,0.12);
+        background: rgba(255, 255, 255, 0.12);
         backdrop-filter: blur(10px);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        border: 1px solid rgba(255,255,255,0.25);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         animation: float 4s ease-in-out infinite;
     }
 
@@ -326,7 +540,7 @@
         position: relative;
         font-size: 42px;
         color: white;
-        background: rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(10px);
         height: 120px;
         width: 120px;
@@ -334,7 +548,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgba(255,255,255,0.25);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         animation: pulse 2s infinite;
         overflow: hidden;
     }
@@ -345,12 +559,10 @@
         width: 180px;
         height: 180px;
 
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.35),
-            transparent
-        );
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.35),
+                transparent);
 
         animation: rotateGlow 4s linear infinite;
     }
@@ -385,14 +597,14 @@
     /* FLOATING CARDS */
     .floating-card {
         position: absolute;
-        background: rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(12px);
         padding: 10px 18px;
         border-radius: 12px;
         color: white;
         font-size: 13px;
         font-weight: 600;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         animation: float 4s infinite ease-in-out;
     }
 
@@ -541,88 +753,89 @@
             display: none;
         }
     }
+
     /* LARGE SCREEN BALANCE */
-@media(min-width:1400px){
+    @media(min-width:1400px) {
 
-    .hero-section{
-        min-height: 85vh;
-        max-width: 1400px;
-        margin: 0 auto;
+        .hero-section {
+            min-height: 85vh;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .left-side {
+            padding-left: 10% !important;
+        }
+
+        .hero-title {
+            font-size: 65px;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            max-width: 430px;
+        }
+
+        .hero-stats {
+            gap: 14px;
+        }
+
+        .stat-box {
+            padding: 20px 40px;
+            min-width: 85px;
+        }
+
+        .stat-box h3 {
+            font-size: 25px;
+        }
+
+        .btn-primary-custom,
+        .btn-secondary-custom {
+            height: 55px;
+            padding: 0 35px;
+            font-size: 18px;
+        }
+
+        /* TEAM */
+        .team-wrapper {
+            transform: scale(1.25);
+        }
+
+        .floating-card {
+            font-size: 12px;
+            padding: 8px 14px;
+        }
+
+        .card1 {
+            left: 0%;
+        }
+
+        .card2 {
+            right: 2%;
+        }
+
+        .card3 {
+            bottom: 0%;
+        }
     }
 
-    .left-side{
-        padding-left: 10% !important;
-    }
+    /* EXTRA LARGE MONITORS */
+    @media(min-width:1700px) {
 
-    .hero-title{
-        font-size: 65px;
-    }
+        .hero-section {
+            max-width: 1500px;
+        }
 
-    .hero-description{
-        font-size: 20px;
-        max-width: 430px;
-    }
+        .team-wrapper {
+            transform: scale(1.1);
+        }
 
-    .hero-stats{
-        gap: 14px;
-    }
+        .hero-title {
+            font-size: 48px;
+        }
 
-    .stat-box{
-        padding: 20px 40px;
-        min-width: 85px;
+        .hero-description {
+            max-width: 400px;
+        }
     }
-
-    .stat-box h3{
-        font-size: 25px;
-    }
-
-    .btn-primary-custom,
-    .btn-secondary-custom{
-        height: 55px;
-        padding: 0 35px;
-        font-size: 18px;
-    }
-
-    /* TEAM */
-    .team-wrapper{
-        transform: scale(1.25);
-    }
-
-    .floating-card{
-        font-size: 12px;
-        padding: 8px 14px;
-    }
-
-    .card1{
-        left: 0%;
-    }
-
-    .card2{
-        right: 2%;
-    }
-
-    .card3{
-        bottom: 0%;
-    }
-}
-
-/* EXTRA LARGE MONITORS */
-@media(min-width:1700px){
-    
-    .hero-section{
-        max-width: 1500px;
-    }
-
-    .team-wrapper{
-        transform: scale(1.1);
-    }
-
-    .hero-title{
-        font-size: 48px;
-    }
-
-    .hero-description{
-        max-width: 400px;
-    }
-}
 </style>
