@@ -22,13 +22,14 @@ class DevelopmentProjectController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'marketing_category_id' => 'required|exists:marketing_categories,id',
+            'development_category_id' => 'required',
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|url',
             'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image' => 'nullable',
             'tags' => 'nullable|string'
         ]);
+
 
         // ✅ Handle Tags (Tagify sends JSON)
         $tags = [];
@@ -47,12 +48,11 @@ class DevelopmentProjectController extends Controller
 
         // ✅ Save Data
         $project = new DevelopmentProject();
-        $project->marketing_category_id = $request->marketing_category_id;
+        $project->development_category_id = $request->development_category_id;
         $project->title = $request->title;
         $project->url = $request->url;
         $project->description = $request->description;
-        $project->image = json_decode($imagePath);
-
+$project->images = $imagePath ? [$imagePath] : [];
         // Save tags as JSON
         $project->tags = $tags;
 

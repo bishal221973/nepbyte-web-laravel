@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Marketing</h3>
+                    <h3 class="mb-0">Development</h3>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         {{-- <li class="breadcrumb-item active" aria-current="page">Content Production</li> --}}
-                        <li class="breadcrumb-item active" aria-current="page">Marketing</li>
+                        <li class="breadcrumb-item active" aria-current="page">Development</li>
                     </ol>
                 </div>
             </div>
@@ -22,7 +22,7 @@
         <div class="container-fluid">
 
 
-            <x-table-component :headers="['#', 'Name', 'Category', 'Description', 'Action']">
+            <x-table-component :headers="['#','Image', 'Name', 'Category', 'Description', 'Action']">
                 <x-slot name="actions">
                     <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add
                         Marketing</button>
@@ -31,7 +31,16 @@
                     <tr style="padding: 0" data-id="{{ $item->id }}">
                         <td style="padding: 0"><span style="display: block;text-align:start">{{ $loop->iteration }}</span>
                         </td>
-                        <td style="padding: 0">{{ $item->name }}</td>
+                        <td style="padding: 0">
+                            @if (count($item->images) > 0)
+                                <img src="/storage/{{$item->images[0]}}" style="height: 50px" alt="">
+                            @else
+                                
+                            @endif
+                        </td>
+                        <td style="padding: 0">
+                            <a href="{{ $item->url }}" class="text-decoration-none" target="__blank">{{ $item->title }}</a>
+                        </td>
                         <td style="padding: 0">{{ $item->category?->name }}</td>
                         <td style="padding: 0">{{ $item->description }}</td>
 
@@ -76,16 +85,16 @@
 
                         <div class="form-group mb-3">
                             <label for="">Category <span class="text-danger">*</span></label>
-                            <select name="marketing_category_id" id="" class="form-control form-select">
+                            <select name="development_category_id" id="" class="form-control form-select">
                                 <option value="">Selct category</option>
 
                                 @foreach ($developmentCategories as $item)
                                     <option value="{{ $item->id }}"
-                                        {{ $item->id == $developmentCategory->marketing_category_id ? 'selected' : '' }}>
+                                        {{ $item->id == $developmentCategory->development_category_id ? 'selected' : '' }}>
                                         {{ $item->name }}</option>
                                 @endforeach
                             </select>
-                            @error('marketing_category_id')
+                            @error('development_category_id')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
