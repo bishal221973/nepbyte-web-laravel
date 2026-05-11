@@ -6,6 +6,8 @@ use App\Http\Controllers\BrandPortfolioController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\ContentCategoryController;
 use App\Http\Controllers\ContentImageController;
+use App\Http\Controllers\DevelopmentCategoryController;
+use App\Http\Controllers\DevelopmentProjectController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MarketingCategoryController;
 use App\Http\Controllers\MarketingController;
@@ -103,6 +105,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('content/{marketing}/edit', [MarketingController::class, 'edit'])->name('marketing.edit');
             Route::put('content/{marketing}/update', [MarketingController::class, 'update'])->name('marketing.update');
             Route::delete('content/{marketing}/delete', [MarketingController::class, 'delete'])->name('marketing.delete');
+        });
+
+        Route::prefix('development')->group(function () {
+            Route::resource('development-category', DevelopmentCategoryController::class);
+            Route::get('content', [DevelopmentProjectController::class, 'index'])->name('developmentProject.index');
+            Route::post('content/store', [DevelopmentProjectController::class, 'store'])->name('developmentProject.store');
+            Route::get('content/{developmentProject}/edit', [DevelopmentProjectController::class, 'edit'])->name('developmentProject.edit');
+            Route::put('content/{developmentProject}/update', [DevelopmentProjectController::class, 'update'])->name('developmentProject.update');
+            Route::delete('content/{developmentProject}/delete', [DevelopmentProjectController::class, 'delete'])->name('developmentProject.delete');
         });
 
         Route::prefix('setting')->group(function () {

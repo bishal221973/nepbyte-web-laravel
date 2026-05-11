@@ -120,8 +120,8 @@
 
                             <div class="d-block">
                                 <div>
-                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Surkhet,
-                                        Nepal / Kathmandu, Nepal</small>
+                                    <small style="color:#696969;font-size:13px;" class="d-block text-center">Kathmandu, Nepal / Surkhet,
+                                        Nepal</small>
                                 </div>
                             </div>
                         </div>
@@ -175,16 +175,16 @@
 
                         <!-- Tab Buttons -->
                         <div class="tab-buttons">
-                            <button class="tab-btn active" data-tab="surkhet">Surkhet</button>
-                            <button class="tab-btn" data-tab="kathmandu">Kathmandu</button>
+                            <button class="tab-btn active" data-tab="kathmandu">Kathmandu</button>
+                            <button class="tab-btn " data-tab="surkhet">Surkhet</button>
                         </div>
 
                         <!-- Tab Content -->
-                        <div class="tab-content active" id="surkhet">
+                        <div class="tab-content " id="surkhet">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1406590996676!2d81.6155021!3d28.5955568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a287398d603007%3A0x19ed7fbec5c081f8!2sSURKHET%20SOFT%20PVT.LTD.!5e0!3m2!1sen!2snp!4v1777957037961!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
-                        <div class="tab-content" id="kathmandu">
+                        <div class="tab-content active" id="kathmandu">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4972.7572581840295!2d85.3653071!3d27.689119899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1b00384e9d73%3A0xc64594823ed006fd!2sSurkhet%20Soft%20Pvt.%20Ltd.%20%E2%80%93%20Kathmandu!5e1!3m2!1sen!2snp!4v1777957201157!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
