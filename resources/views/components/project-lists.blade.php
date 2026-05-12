@@ -29,7 +29,7 @@
                     <div class="project-card" >
                         <div class="project-card-image" >
                             @if (count($item->images) > 0)
-                                <img src="/storage/{{ $item->images[0] }}" class="w-100 h-100" alt="">
+                                <img src="/storage/{{ $item->images[0] }}" class="w-100 h-100" style="object-fit: cover" alt="">
                             @else
                                 <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
                             @endif

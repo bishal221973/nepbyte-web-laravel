@@ -682,14 +682,17 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .project-card-image{
-    height: 150px;
+    height: 200px;
     position: relative;
 }
 .project-card-image h5{
     position: absolute;
-    bottom: 0px;
-    left: 20px;
+    bottom: -4%;
+    left: 0px;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.28);
+    width: 100%;
+    padding: 5px 10px;
 }
 .project-title{
     margin: 0;
@@ -791,4 +794,10 @@ body {
 .my-radius {
   border-bottom-right-radius: 100% 350px;
   border-bottom-left-radius: 100% 350px;
+}
+
+@media (max-width:1236px){
+  .project-card-image{
+    height: 170px;
+  }
 }
