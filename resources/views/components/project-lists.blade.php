@@ -1,241 +1,171 @@
 <div class="footer-glass-container bg-white" style="margin-top: 0px;">
     <div style="padding:0 100px">
-        <h3 class=" text-center capitalize" data-aos="zoom-in-up">
+        <small class="mx-auto d-block text-center tag-line">
             Projects We've Built
-        </h3>
+        </small>
+
+        <h2 class="section-title1 text-center">
+            Our Diversified <span>Design</span> Portfolio
+        </h2>
+
+        <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+
+            <a href="javascript:void(0)" class="btn border py-1 selectCategory selectCategoryActive" data-id="all">
+                <small>All</small>
+            </a>
+
+            @foreach ($categories as $item)
+                <a href="javascript:void(0)" class="btn border py-1 selectCategory" data-id="{{ $item->id }}">
+                    <small>{{ $item->name }}</small>
+                </a>
+            @endforeach
+
+        </div>
 
 
         <div class="row mt-4">
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>Website</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">Bloom Beauty</h5>
-                        <small>Beauti & Skincare</small>
+            @foreach ($projects as $item)
+                <div class="col-lg-4 mb-3 portfolio-item" data-category="{{ $item->development_category_id }}">
+                    <div class="project-card" >
+                        <div class="project-card-image" >
+                            @if (count($item->images) > 0)
+                                <img src="/storage/{{ $item->images[0] }}" class="w-100 h-100" alt="">
+                            @else
+                                <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
+                            @endif
+                            <h5>{{ $item->category?->name }}</h5>
 
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Wordpress
-                            </div>
-                            <div class="project-glass">
-                                E-Commerce
-                            </div>
                         </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
+                        <div class="p-3">
+                            <h5 class="project-title">{{ $item->title }}</h5>
+                            <small>{{$item->description}}</small>
+
+                            {{-- <div class="mt-2 d-flex">
+                                <div class="project-glass">
+                                    @php
+                                        print($item->tags)
+                                    @endphp
+                                </div>
+                                <div class="project-glass">
+                                    E-Commerce
+                                </div>
+                            </div> --}}
+                            @if ($item->url)
+                                
+                            <a href="{{ $item->url }}" target="_blank" class="d-block text-center text-decoration-none btn-project">
+                                <span>View Case</span>
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/fitflex.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>Fitflex</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">Fitflex</h5>
-                        <small>Fitness</small>
 
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                IOS & Android
-                            </div>
-                            <div class="project-glass">
-                                Booking System
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/custom.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>Custom Software</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">Marketlink</h5>
-                        <small>logistics</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Custom CRM
-                            </div>
-                            <div class="project-glass">
-                                Data Analytics
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="400">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>AI/Automation</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">AI Automation</h5>
-                        <small>AI Automation</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Wordpress
-                            </div>
-                            <div class="project-glass">
-                                E-Commerce
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="500">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>Website</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">Bloom Beauty</h5>
-                        <small>Beauti & Skincare</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Wordpress
-                            </div>
-                            <div class="project-glass">
-                                E-Commerce
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="600">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/fitflex.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>Fitflex</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">Fitflex</h5>
-                        <small>Fitness</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                IOS & Android
-                            </div>
-                            <div class="project-glass">
-                                Booking System
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="700">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/custom.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>Custom Software</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">Marketlink</h5>
-                        <small>logistics</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Custom CRM
-                            </div>
-                            <div class="project-glass">
-                                Data Analytics
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="800">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>AI/Automation</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">AI Automation</h5>
-                        <small>AI Automation</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Wordpress
-                            </div>
-                            <div class="project-glass">
-                                E-Commerce
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="900">
-                    <div class="project-card-image">
-                        <img src="{{ asset('images/site.jpg') }}" class="w-100 h-100" alt="">
-                        <h5>AI/Automation</h5>
-                    </div>
-                    <div class="p-3">
-                        <h5 class="project-title">AI Automation</h5>
-                        <small>AI Automation</small>
-
-                        <div class="mt-2 d-flex">
-                            <div class="project-glass">
-                                Wordpress
-                            </div>
-                            <div class="project-glass">
-                                E-Commerce
-                            </div>
-                        </div>
-                        <button class="btn-project">
-                            <span>View Case</span>
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
             <div class="col-lg-12">
                 <div style="height:100px"></div>
             </div>
         </div>
     </div>
 </div>
+
+
+<style>
+    .tag-line {
+        color: #789ec3;
+        background: #789ec320;
+        width: 200px;
+        border-radius: 50px;
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    /* TITLE */
+    .section-title1 span {
+        color: #789ec3;
+    }
+
+    .selectCategory {
+        background: #f1f1f1;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .selectCategoryActive {
+        background: #789ec3 !important;
+        color: #fff !important;
+    }
+</style>
+
+@push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".selectCategory");
+    const items = document.querySelectorAll(".portfolio-item");
+
+    function showItems(filtered) {
+        gsap.fromTo(filtered,
+            {
+                opacity: 0,
+                y: 30,
+                scale: 0.95
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.5,
+                stagger: 0.08,
+                ease: "power3.out"
+            }
+        );
+    }
+
+    function filter(category) {
+
+        let filtered = [];
+
+        items.forEach(item => {
+            const cat = item.getAttribute("data-category");
+
+            if (category === "all" || category == cat) {
+                item.style.display = "block";
+                filtered.push(item);
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        showItems(filtered);
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            buttons.forEach(b => b.classList.remove("selectCategoryActive"));
+            this.classList.add("selectCategoryActive");
+
+            const category = this.getAttribute("data-id");
+
+            gsap.to(items, {
+                opacity: 0,
+                y: 20,
+                scale: 0.98,
+                duration: 0.2,
+                stagger: 0.03,
+                onComplete: () => filter(category)
+            });
+
+        });
+    });
+
+    // default load
+    if (buttons.length) buttons[0].click();
+
+});
+</script>
+@endpush

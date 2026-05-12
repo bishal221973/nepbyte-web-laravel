@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DevelopmentCategory;
 use App\Models\DevelopmentProject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DevelopmentProjectController extends Controller
 {
@@ -59,5 +60,16 @@ $project->images = $imagePath ? [$imagePath] : [];
         $project->save();
 
         return redirect()->back()->with('success', 'Marketing created successfully');
+    }
+
+    public function delete(DevelopmentProject $developmentProject)
+    {
+        if($developmentProject->images){
+            foreach ($developmentProject->images as $image) {
+                Storage::disk('public')->delete($image);
+            }
+        }
+        $developmentProject->delete();
+        return redirect()->back()->with('success', 'Marketing deleted successfully');
     }
 }

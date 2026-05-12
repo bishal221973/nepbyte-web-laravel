@@ -46,10 +46,10 @@
 
                         <td style="padding: 0">
                             <div class="d-flex">
-                                <a href="{{ route('marketing.edit', $item) }}" style="margin-top: 10px"
-                                    class="btn text-warning shadow-none">Edit</a>
+                                {{-- <a href="{{ route('marketing.edit', $item) }}" style="margin-top: 10px"
+                                    class="btn text-warning shadow-none">Edit</a> --}}
 
-                                <form action="{{ route('marketing.delete', $item) }}" method="POST"
+                                <form action="{{ route('developmentProject.delete', $item) }}" method="POST"
                                     onsubmit="return confirm('Are you sure ?')">
                                     @csrf
                                     @method('delete')
@@ -202,6 +202,7 @@
     </script>
 @endpush
 <style>
+    
     .brows-button {
         position: relative;
     }

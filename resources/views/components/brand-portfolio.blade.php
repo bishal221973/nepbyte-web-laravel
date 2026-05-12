@@ -15,16 +15,12 @@
             <!-- FILTER BUTTONS -->
             <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
 
-                <a href="javascript:void(0)"
-                   class="btn border py-1 selectCategory selectCategoryActive"
-                   data-id="all">
+                <a href="javascript:void(0)" class="btn border py-1 selectCategory selectCategoryActive" data-id="all">
                     <small>All</small>
                 </a>
 
                 @foreach ($brandCategories as $item)
-                    <a href="javascript:void(0)"
-                       class="btn border py-1 selectCategory"
-                       data-id="{{ $item->id }}">
+                    <a href="javascript:void(0)" class="btn border py-1 selectCategory" data-id="{{ $item->id }}">
                         <small>{{ $item->title }}</small>
                     </a>
                 @endforeach
@@ -37,7 +33,7 @@
 
             @foreach ($brandPortfolios as $brandPortfolio)
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item"
-                     data-category="{{ $brandPortfolio->brand_category_id }}">
+                    data-category="{{ $brandPortfolio->brand_category_id }}">
 
                     <div class="brand-project-card">
 
@@ -70,167 +66,164 @@
 
 <style>
     /* TAG */
-.tag-line {
-    color: #789ec3;
-    background: #789ec320;
-    width: 200px;
-    border-radius: 50px;
-    font-size: 14px;
-    padding: 6px 10px;
-}
+    .tag-line {
+        color: #789ec3;
+        background: #789ec320;
+        width: 200px;
+        border-radius: 50px;
+        font-size: 14px;
+        padding: 6px 10px;
+    }
 
-/* TITLE */
-.section-title1 span {
-    color: #789ec3;
-}
+    /* TITLE */
+    .section-title1 span {
+        color: #789ec3;
+    }
 
-/* FILTER BUTTON */
-.selectCategory {
-    background: #f1f1f1;
-    border-radius: 6px;
-    transition: 0.3s;
-}
+    /* FILTER BUTTON */
+    .selectCategory {
+        background: #f1f1f1;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
 
-.selectCategoryActive {
-    background: #789ec3 !important;
-    color: #fff !important;
-}
+    .selectCategoryActive {
+        background: #789ec3 !important;
+        color: #fff !important;
+    }
 
-/* CARD */
-.brand-project-card {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(120, 158, 195, 0.25);
-    transition: 0.4s;
-}
+    /* CARD */
+    .brand-project-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(120, 158, 195, 0.25);
+        transition: 0.4s;
+    }
 
-/* IMAGE WRAPPER */
-.img-wrapper {
-    position: relative;
-    overflow: hidden;
-}
+    /* IMAGE WRAPPER */
+    .img-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
 
-/* IMAGE */
-.brand-image {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
-    transition: 0.6s ease;
-}
+    /* IMAGE */
+    .brand-image {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+        transition: 0.6s ease;
+    }
 
-/* DARK OVERLAY (TOP → BOTTOM) */
-.overlay {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
-    z-index: 1;
-    transition: 0.6s ease;
-}
+    /* DARK OVERLAY (TOP → BOTTOM) */
+    .overlay {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+        transition: 0.6s ease;
+    }
 
-/* WHITE CONTENT (BOTTOM → TOP) */
-.card-content {
-    position: absolute;
-    bottom: -100%;
-    left: 2%;
-    width: 96%;
-    background: #789EC3;
-    padding: 15px;
-    z-index: 2;
-    transition: 0.6s ease;
-}
+    /* WHITE CONTENT (BOTTOM → TOP) */
+    .card-content {
+        position: absolute;
+        bottom: -100%;
+        left: 2%;
+        width: 96%;
+        background: #789EC3;
+        padding: 15px;
+        z-index: 2;
+        transition: 0.6s ease;
+    }
 
-/* HOVER EFFECT */
-.brand-project-card:hover .overlay {
-    top: 0;
-}
+    /* HOVER EFFECT */
+    .brand-project-card:hover .overlay {
+        top: 0;
+    }
 
-.brand-project-card:hover .card-content {
-    bottom: 10px;
-    border-radius: 10px
-}
+    .brand-project-card:hover .card-content {
+        bottom: 10px;
+        border-radius: 10px
+    }
 
-.brand-project-card:hover .brand-image {
-    transform: scale(1.1);
-}
+    .brand-project-card:hover .brand-image {
+        transform: scale(1.1);
+    }
 
-/* ITEM PERFORMANCE */
-.portfolio-item {
-    will-change: transform, opacity;
-}
+    /* ITEM PERFORMANCE */
+    .portfolio-item {
+        will-change: transform, opacity;
+    }
 </style>
 
 @push('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-    const buttons = document.querySelectorAll(".selectCategory");
-    const items = document.querySelectorAll(".portfolio-item");
+            const buttons = document.querySelectorAll(".selectCategory");
+            const items = document.querySelectorAll(".portfolio-item");
 
-    function showItems(filtered) {
-        gsap.fromTo(filtered,
-            {
-                opacity: 0,
-                y: 30,
-                scale: 0.95
-            },
-            {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.5,
-                stagger: 0.08,
-                ease: "power3.out"
+            function showItems(filtered) {
+                gsap.fromTo(filtered, {
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.95
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.5,
+                    stagger: 0.08,
+                    ease: "power3.out"
+                });
             }
-        );
-    }
 
-    function filter(category) {
+            function filter(category) {
 
-        let filtered = [];
+                let filtered = [];
 
-        items.forEach(item => {
-            const cat = item.getAttribute("data-category");
+                items.forEach(item => {
+                    const cat = item.getAttribute("data-category");
 
-            if (category === "all" || category == cat) {
-                item.style.display = "block";
-                filtered.push(item);
-            } else {
-                item.style.display = "none";
+                    if (category === "all" || category == cat) {
+                        item.style.display = "block";
+                        filtered.push(item);
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                showItems(filtered);
             }
-        });
 
-        showItems(filtered);
-    }
+            buttons.forEach(btn => {
+                btn.addEventListener("click", function() {
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", function () {
+                    buttons.forEach(b => b.classList.remove("selectCategoryActive"));
+                    this.classList.add("selectCategoryActive");
 
-            buttons.forEach(b => b.classList.remove("selectCategoryActive"));
-            this.classList.add("selectCategoryActive");
+                    const category = this.getAttribute("data-id");
 
-            const category = this.getAttribute("data-id");
+                    gsap.to(items, {
+                        opacity: 0,
+                        y: 20,
+                        scale: 0.98,
+                        duration: 0.2,
+                        stagger: 0.03,
+                        onComplete: () => filter(category)
+                    });
 
-            gsap.to(items, {
-                opacity: 0,
-                y: 20,
-                scale: 0.98,
-                duration: 0.2,
-                stagger: 0.03,
-                onComplete: () => filter(category)
+                });
             });
 
+            // default load
+            if (buttons.length) buttons[0].click();
+
         });
-    });
-
-    // default load
-    if (buttons.length) buttons[0].click();
-
-});
-</script>
+    </script>
 @endpush
