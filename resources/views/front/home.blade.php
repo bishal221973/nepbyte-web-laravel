@@ -12,19 +12,20 @@
         {{-- <small style="color: #fff;" class="description d-block text-center">Buil't for Speed. Engineered for Scale. We provide the integrated power your business needs to dominate.</small> --}}
     </div>
     <div style="position: relative;min-height: 80vh; display: flex; flex-direction: column;justify-content: space-between;">
-        <div class="mt-5 d-flex justify-content-center animate__animated animate__backInDown"
+        <div class="mt-5 justify-content-center menus-desktop animate__animated animate__backInDown"
             style="gap:10px;position: relative;">
             <x-home-card />
         </div>
+        <div class="mt-5 justify-content-center menus-mobile1  animate__animated animate__backInDown"
+            style="gap:0px;position: relative;">
+            <x-mobile-home-card />
+        </div>
 
-        <div class="footer-glass-container animate__animated animate__rubberBand" style="margin-top: 5vh">
+        <div class="footer-glass-container1 animate__animated animate__rubberBand" style="margin-top: 5vh">
             <div class="footer-glass">
                 <h3 class=" text-center capitalize animate__animated animate__swing">
                     Trusted by leading brands
                 </h3>
-                {{-- <div class="flex justify-center animate__animated animate__bounceIn">
-                    <img src="/images/border1.png" class="d-block mx-auto" style="width:200px;opacity: 0.5" alt="" />
-                </div> --}}
 
 
                 <div class="my-carosel animate__animated animate__zoomIn">
@@ -45,14 +46,6 @@
                         @endforeach
                     </div>
                 </div>
-                {{-- <img src="{{ asset('file.enc') }}" class="nav-logo" alt=""> --}}
-
-
-                {{-- <hr>
-
-                <small class="d-block text-center">
-                    © 2024 Surkhet Soft. All rights reserved
-                </small> --}}
             </div>
 
         </div>
@@ -83,8 +76,8 @@
                     target="_blank">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/surkhet-soft-pvt-ltd/?viewAsMember=true" class="text-decoration-none fab-item linkedin"
-                    target="_blank">
+                <a href="https://www.linkedin.com/company/surkhet-soft-pvt-ltd/?viewAsMember=true"
+                    class="text-decoration-none fab-item linkedin" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
 
@@ -100,197 +93,211 @@
 @endsection
 
 @push('style')
-    
-<style>
-    .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25D366;
-        color: white;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-    }
-
-    .whatsapp-float:hover {
-        background-color: #1ebe5d;
-    }
-
-
-
-
-
-
-
-    /* CONTAINER */
-    .fab-container {
-        position: fixed;
-        bottom: 30px;
-        left: 30px;
-        z-index: 9999;
-    }
-
-    /* MAIN BUTTON */
-
-    /* OPTIONS CONTAINER */
-    .fab-options {
-        position: absolute;
-        bottom: 70px;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* INDIVIDUAL BUTTON */
-    .fab-item {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 20px;
-        transform: scale(0);
-        opacity: 0;
-        transition: 0.3s;
-    }
-
-    /* COLORS */
-    .whatsapp {
-        background: #25D366;
-    }
-
-    .facebook {
-        background: #1877F2;
-    }
-
-    .instagram {
-        background: #E4405F;
-    }
-
-    .tiktok {
-        background: #040404;
-    }
-
-    .linkedin {
-        background: #2769AF;
-    }
-
-    /* SHOW STATE */
-    .fab-container.active .fab-item {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    /* STAGGER DELAY */
-    .fab-container.active .fab-item:nth-child(1) {
-        transition-delay: 0.05s;
-    }
-
-    .fab-container.active .fab-item:nth-child(2) {
-        transition-delay: 0.1s;
-    }
-
-    .fab-container.active .fab-item:nth-child(3) {
-        transition-delay: 0.15s;
-    }
-
-    .fab-container.active .fab-item:nth-child(4) {
-        transition-delay: 0.2s;
-    }
-
-    /* MAIN BUTTON */
-    .fab-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: #789ec3;
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 600;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        transition: all 0.4s ease;
-        overflow: hidden;
-    }
-
-    /* ICON */
-    .fab-icon {
-        width: 35px;
-        height: 35px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        transition: 0.4s;
-    }
-
-    /* TEXT */
-    .fab-text {
-        white-space: nowrap;
-        transition: 0.4s;
-    }
-
-    /* HOVER EFFECT */
-    .fab-btn:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
-    }
-
-    /* ICON ROTATE ON ACTIVE */
-    .fab-btn.active .fab-icon {
-        transform: rotate(45deg);
-    }
-
-    /* PULSE ANIMATION */
-    @keyframes pulse {
-        0% {
-            box-shadow: 0 0 0 0 rgba(120, 158, 195, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
-        70% {
-            box-shadow: 0 0 0 15px rgba(120, 158, 195, 0);
+        .whatsapp-float:hover {
+            background-color: #1ebe5d;
         }
 
-        100% {
-            box-shadow: 0 0 0 0 rgba(120, 158, 195, 0);
-        }
-    }
 
-    .fab-btn {
-        animation: pulse 2s infinite;
-    }
-</style>
+
+
+
+
+
+        /* CONTAINER */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+        }
+
+        /* MAIN BUTTON */
+
+        /* OPTIONS CONTAINER */
+        .fab-options {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* INDIVIDUAL BUTTON */
+        .fab-item {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+            transform: scale(0);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        /* COLORS */
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .facebook {
+            background: #1877F2;
+        }
+
+        .instagram {
+            background: #E4405F;
+        }
+
+        .tiktok {
+            background: #040404;
+        }
+
+        .linkedin {
+            background: #2769AF;
+        }
+
+        /* SHOW STATE */
+        .fab-container.active .fab-item {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* STAGGER DELAY */
+        .fab-container.active .fab-item:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .fab-container.active .fab-item:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .fab-container.active .fab-item:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+
+        .fab-container.active .fab-item:nth-child(4) {
+            transition-delay: 0.2s;
+        }
+
+        /* MAIN BUTTON */
+        .fab-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #789ec3;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        /* ICON */
+        .fab-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: 0.4s;
+        }
+
+        /* TEXT */
+        .fab-text {
+            white-space: nowrap;
+            transition: 0.4s;
+        }
+
+        /* HOVER EFFECT */
+        .fab-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ICON ROTATE ON ACTIVE */
+        .fab-btn.active .fab-icon {
+            transform: rotate(45deg);
+        }
+
+        /* PULSE ANIMATION */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(120, 158, 195, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(120, 158, 195, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(120, 158, 195, 0);
+            }
+        }
+
+        .fab-btn {
+            animation: pulse 2s infinite;
+        }
+    </style>
 @endpush
 
 @push('script')
-    
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-        const fab = document.querySelector(".fab-container");
-        const toggle = document.getElementById("fabToggle");
+            const fab = document.querySelector(".fab-container");
+            const toggle = document.getElementById("fabToggle");
 
-        toggle.addEventListener("click", function() {
-            fab.classList.toggle("active");
-            toggle.classList.toggle("active");
+            toggle.addEventListener("click", function() {
+                fab.classList.toggle("active");
+                toggle.classList.toggle("active");
+            });
+
         });
 
-    });
-</script>
+        function toggleAnimation() {
+            const elements = document.querySelectorAll('.animate__rubberBand');
+
+            if (window.innerWidth < 600) {
+                elements.forEach(el => el.classList.remove('animate__rubberBand'));
+            } else {
+                elements.forEach(el => el.classList.add('animate__rubberBand'));
+            }
+        }
+
+        // Run on load
+        toggleAnimation();
+
+        // Run on resize
+        window.addEventListener('resize', toggleAnimation);
+    </script>
 @endpush

@@ -5,20 +5,21 @@
             <small>9814668499</small>
         </div>
     </div> --}}
-    <div class="navbar px-3 d-flex justify-content-between align-items-center" style="overflow: hidden">
+    <div class="navbar px-3 d-flex justify-content-center justify-content-sm-between align-items-center"
+        style="overflow: hidden">
         <a href="/">
             <img src="{{ asset('logo.jpg') }}" class="nav-logo" alt="Logo">
         </a>
 
-       <div class="d-flex align-items-center">
-         <a href="{{ route('front.collaboration') }}" class="nav-start-project text-white text-decoration-none">
-            Collaboration
-        </a>
-        <a href="{{ route('front.team') }}" class="team-btn1 text-decoration-none">
-            <img src="{{ asset('images/team.png') }}" alt="">
-            <span>Team</span>
-        </a>
-       </div>
+        <div class="d-flex align-items-center">
+            <a href="{{ route('front.collaboration') }}" class="nav-start-project text-white text-decoration-none">
+                Collaboration
+            </a>
+            <a href="{{ route('front.team') }}" class="team-btn1 text-decoration-none">
+                <img src="{{ asset('images/team.png') }}" alt="">
+                <span>Team</span>
+            </a>
+        </div>
     </div>
 </div>
 
@@ -79,6 +80,7 @@
         height: 60px;
         width: 60px;
         text-align: center;
+        /* display: none */
     }
 
     .team-btn img {
@@ -124,7 +126,8 @@
         position: sticky;
         top: 0;
     }
-    .navbar-container.stuck .team-btn1{
+
+    .navbar-container.stuck .team-btn1 {
         display: block;
     }
 
