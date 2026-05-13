@@ -13,22 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css"
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css"
         integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-        
-        
-        
-        @include('layouts.meta')
-        @stack('stype')
-        @stack('style')
-    </head>
+
+
+
+
+    @include('layouts.meta')
+    @stack('stype')
+    @stack('style')
+</head>
 
 <body style="overflow-x: hidden">
     @include('front.includes.navbar')
+    {{-- <div class="w-100 main-wrapper"> --}}
     @yield('content')
+    {{-- </div>
+    <x-bottom-nav /> --}}
 </body>
 <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
 <script>
@@ -69,6 +72,13 @@
     //   for an individual element
     var msnry = new Masonry('.grid', {
         // options
+    });
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 </script>
 

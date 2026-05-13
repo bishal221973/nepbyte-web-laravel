@@ -23,6 +23,7 @@
     </div>
 </div>
 
+
 <a href="{{ route('front.team') }}" class="team-btn text-decoration-none">
     <img src="{{ asset('images/team.png') }}" alt="">
     <span>Team</span>

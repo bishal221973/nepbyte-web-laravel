@@ -1,5 +1,18 @@
 @extends('layouts.guestLayout')
 @section('content')
+<div class="mobile-action-buttons">
+
+    <a href="{{ route('front.collaboration') }}" class="btn-mbl btn-primary-mbl">
+        <i class="fa-solid fa-handshake"></i>
+        <span>Collaboration</span>
+    </a>
+
+    <a href="{{ route('front.team') }}" class="btn-mbl btn-secondary-mbl">
+        <img src="{{ asset('images/team.png') }}" alt="">
+        <span>Team</span>
+    </a>
+
+</div>
     <div class="d-flex justify-content-center mt-3 mt-[2%]">
         <div class="main-title animate__animated animate__zoomIn">
             <h1 class="text-white">Complete Business Engine</h4>
@@ -11,7 +24,7 @@
             Do It All.</label> <br>
         {{-- <small style="color: #fff;" class="description d-block text-center">Buil't for Speed. Engineered for Scale. We provide the integrated power your business needs to dominate.</small> --}}
     </div>
-    <div style="position: relative;min-height: 80vh; display: flex; flex-direction: column;justify-content: space-between;">
+    <div class="body-wrapper" style="position: relative; display: flex; flex-direction: column;justify-content: space-between;">
         <div class="mt-5 justify-content-center menus-desktop animate__animated animate__backInDown"
             style="gap:10px;position: relative;">
             <x-home-card />
@@ -20,8 +33,9 @@
             style="gap:0px;position: relative;">
             <x-mobile-home-card />
         </div>
+        {{-- sfs --}}
 
-        <div class="footer-glass-container1 animate__animated animate__rubberBand" style="margin-top: 5vh">
+        <div class="footer-glass-container animate__animated animate__rubberBand" style="">
             <div class="footer-glass">
                 <h3 class=" text-center capitalize animate__animated animate__swing">
                     Trusted by leading brands
