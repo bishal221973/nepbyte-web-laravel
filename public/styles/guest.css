@@ -1023,6 +1023,26 @@ body {
     padding: 0 10vw
 }
 
+.ai-hero-print {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+    padding-left: 10%;
+}
+
+.bubbles {
+    position: relative !important;
+}
+.bubbles {
+        position: relative !important;
+        right: 20%;
+        /* z-index: -1;
+        width: 700px;
+        margin-left: -120px;
+        opacity: 0.1; */
+    }
+
 @media (max-width: 1250px) {
     .production-title {
         font-size: 55px !important;
@@ -1040,6 +1060,14 @@ body {
         left: 0;
         z-index: 999;
         top: calc(100vh - 180px);
+    }
+    .bubbles {
+        position: relative !important;
+        right: 20%;
+        /* z-index: -1;
+        width: 700px;
+        margin-left: -120px;
+        opacity: 0.1; */
     }
 }
 
@@ -1061,6 +1089,14 @@ body {
         z-index: 999;
         top: calc(100vh - 150px);
     }
+     .bubbles {
+        position: absolute !important;
+        top: 20%;
+        z-index: -1;
+        width: 700px;
+        margin-left: -120px;
+        opacity: 0.1;
+    }
 }
 
 @media (max-width: 930px) {
@@ -1081,6 +1117,7 @@ body {
         z-index: 999;
         top: calc(100vh - 130px);
     }
+    
 }
 
 @media (max-width: 768px) {
@@ -1246,6 +1283,14 @@ body {
         position: relative !important;
         top: 0px !important;
     }
+     .bubbles {
+        position: absolute !important;
+        top: 20%;
+        z-index: -1;
+        width: 700px;
+        margin-left: -120px;
+        opacity: 0.1;
+    }
 
 }
 
@@ -1253,6 +1298,36 @@ body {
 
     .production-title {
         font-size: 35px;
+    }
+     .bubbles {
+        width: 600px;
+        /* margin-left: -120px; */
+     }
+     .print-title {
+        font-size: 40px;
+    }
+
+    .print-subtitle {
+        font-size: 18px;
+        color: #fff;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    
+     .bubbles {
+        width: 600px;
+        margin-left: -220px;
+     }
+     .print-title {
+        font-size: 40px;
+    }
+
+    .print-subtitle {
+        font-size: 18px;
+        color: #fff;
     }
 
 }
@@ -1268,6 +1343,20 @@ body {
         /* height: 0px !important; */
     }
 
+    .bubbles {
+        width: 500px;
+        margin-left: -170px;
+     }
+     .print-title {
+        font-size: 40px;
+    }
+
+    .print-subtitle {
+        font-size: 18px;
+        color: #fff;
+    }
+
+
 }
 
 @media (max-width: 380px) {
@@ -1278,6 +1367,17 @@ body {
 
     .body-wrapper {
         min-height: 75vh;
+    }
+
+   
+
+    .print-title {
+        font-size: 35px;
+    }
+
+    .print-subtitle {
+        font-size: 15px;
+        color: #fff;
     }
 
 }

@@ -5,18 +5,18 @@
 
     <img src="{{ asset('printBg.png') }}" class="hero-bg" alt="Brand Background">
     {{-- <div class="hero-overlay"></div> --}}
-    <section class="ai-hero">
+    <section class="ai-hero-print" style="overflow-x: hidden">
 
 
 
         <div class="row ">
             <div class="col-lg-6">
                 <div class=" ">
-                    <h1 class="ai-title text-white">
+                    <h1 class="print-title text-white">
                         Printing & Advertising Projects <span>That Captivate Audiences</span>
                     </h1>
 
-                    <p class="ai-subtitle text-white">
+                    <p class="print-subtitle text-white">
                         Creative, impactful, and memorable—our printing and advertising projects grab attention and connect
                         with
                         your audience, making every campaign truly unforgettable.
@@ -28,6 +28,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
+
                 <div class="bubbles">
                     <div class="card1">2D & 3D Design</div>
                     {{-- <div class="card2">3D Design</div> --}}
@@ -86,6 +87,9 @@
 
     .bubbles {
         z-index: 10;
+        position: relative;
+        height: 500px;
+        padding-right: 300px
     }
 
     .bubbles div {
@@ -95,7 +99,6 @@
         align-items: center;
         text-align: center;
         color: #fff;
-        position: absolute;
         z-index: 1;
     }
 
@@ -103,11 +106,12 @@
         height: 150px;
         width: 150px;
         background-color: #111;
-        top: 5vh;
-        right: 5vw;
+        position: absolute;
+        top: 0%;
+        right: 0%;
         padding: 10px;
-        z-index: 1;
-        transition: 0.5s !important
+        z-index: -3;
+        transition: 0.5s !important;
 
     }
 
@@ -121,11 +125,13 @@
         height: 130px;
         width: 130px;
         background-color: #9accff;
-        top: 4.5vh;
-        right: 13vw;
+        position: absolute;
+        top: 4.5%;
+        right: 20%;
         padding: 10px;
-        z-index: 2;
-        transition: 0.8s !important
+        z-index: -3;
+        transition: 0.8s !important;
+        /* display: none     */
 
 
     }
@@ -140,11 +146,13 @@
         height: 120px;
         width: 120px;
         background-color: #111;
-        top: 5vh;
-        right: 21vw;
+        position: absolute;
+        top: 5%;
+        right: 37%;
         padding: 10px;
-        z-index: 2;
-        transition: 0.8s !important
+        z-index: -1;
+        transition: 0.8s !important;
+        /* display: none */
 
 
     }
@@ -159,11 +167,13 @@
         height: 120px;
         width: 120px;
         background-color: #9accff;
-        top: 12vh;
-        right: 27vw;
+        position: absolute;
+        top: 20%;
+        right: 50%;
         padding: 10px;
-        z-index: 1;
-        transition: 0.8s !important
+        z-index: -1;
+        transition: 0.8s !important;
+        /* display: none */
 
 
     }
@@ -178,11 +188,13 @@
         height: 150px;
         width: 150px;
         background-color: #ced100;
-        top: 14vh;
-        right: 18vw;
+        position: absolute;
+        top: 20%;
+        right: 32%;
         padding: 10px;
-        z-index: 3;
-        transition: 0.8s !important
+        z-index: -1;
+        transition: 0.8s !important;
+        /* display: none */
 
 
     }
@@ -197,11 +209,13 @@
         height: 180px;
         width: 180px;
         background-color: #ff1100;
-        top: 18vh;
-        right: 10vw;
+        position: absolute;
+        top: 22%;
+        right: 10%;
         padding: 10px;
-        z-index: 2;
-        transition: 0.8s !important
+        z-index: -3;
+        transition: 0.8s !important;
+        /* display: none */
 
 
     }
@@ -216,11 +230,13 @@
         height: 130px;
         width: 130px;
         background-color: #111;
-        top: 29vh;
-        right: 20vw;
+        position: absolute;
+        top: 45%;
+        right: 25%;
         padding: 10px;
-        z-index: 1;
-        transition: 0.8s !important
+        z-index: -2;
+        transition: 0.8s !important;
+        /* display: none */
 
 
     }
@@ -235,11 +251,13 @@
         height: 150px;
         width: 150px;
         background-color: #ff1100;
-        top: 23vh;
-        right: 25vw;
+        position: absolute;
+        top: 40%;
+        right: 40%;
         padding: 10px;
-        z-index: 0;
-        transition: 0.8s !important
+        z-index: -3;
+        transition: 0.8s !important;
+        /* display: none */
 
 
     }
@@ -258,7 +276,8 @@
         right: 26vw;
         padding: 10px;
         z-index: 1;
-        transition: 0.8s !important
+        transition: 0.8s !important;
+        display: none
 
 
     }
@@ -277,7 +296,8 @@
         right: 5vw;
         padding: 10px;
         z-index: 2;
-        transition: 0.8s !important
+        transition: 0.8s !important;
+        display: none
 
 
     }
@@ -323,7 +343,7 @@
         color: white;
     }
 
-    .ai-title {
+    .print-title {
         font-size: 50px;
         font-weight: 700;
         margin-bottom: 20px;
@@ -331,11 +351,11 @@
         display: block
     }
 
-    .ai-title span {
+    .print-title span {
         color: #00d2ff;
     }
 
-    .ai-subtitle {
+    .print-subtitle {
         font-size: 20px;
         max-width: 700px;
         margin: auto;
