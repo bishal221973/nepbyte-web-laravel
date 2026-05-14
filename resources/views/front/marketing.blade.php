@@ -5,12 +5,12 @@
 
     <img src="{{ asset('brandBg.png') }}" class="hero-bg" alt="Brand Background">
     {{-- <div class="hero-overlay"></div> --}}
-    <section class="ai-hero">
+    <section class="marketing-hero">
 
         <canvas style="position: absolute" id="canvas"></canvas>
         <div class="row w-100" style="padding: 0 10%;margin-top:13vh">
             <div class="col-lg-6">
-                <h1 class="text-white fw-bold " style="font-size: 50px;width:100%">Digital Marketing That Actually Performs
+                <h1 class="text-white fw-bold marketing-title" style="width:100%">Digital Marketing That Actually Performs
                 </h1>
 
                 <ul class="m-0 px-3 mt-5">
@@ -344,7 +344,7 @@
         color: #fff !important;
     }
 
-    .ai-hero {
+    .marketing-hero {
         height: 80vh;
         width: 100%;
         position: relative;
