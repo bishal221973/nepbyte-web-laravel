@@ -8,32 +8,33 @@
     <section class="ai-hero" style="height: 80vh;padding-bottom:20%">
 
         <canvas style="position: absolute" id="canvas"></canvas>
-        <div class="row w-100" style="padding: 0 10%;margin-top:13vh">
+        <div class="row w-100" style="padding: 0 10%;margin-top:10vh">
 
 
-            <h1 style="font-size: 70px;" class="text-center text-white" data-aos="zoom-in-up">High-impact storytelling
+            <h1 class="production-title text-center text-white" data-aos="zoom-in-up">High-impact storytelling
                 designed to stop the scroll.</h1>
 
-            <p class="text-white text-center mt-5" data-aos="flip-up" style="padding: 0 20%">Stop the scroll. Turn casual
+            <p class="text-white text-center mt-5 production-description" data-aos="flip-up" style="padding: 0 20%">Stop the
+                scroll. Turn casual
                 viewers into loyal customers with cinematic storytelling.</p>
         </div>
 
 
 
     </section>
-
-    <div data-aos="zoom-in" style="width:100vw;position: absolute;top:calc(100vh - 160px);left:0;z-index:999">
+    {{-- data-aos="zoom-in"  --}}
+    <div style="" class="production-sub-title">
         <h3 class="text-white text-center">Content Production for Big and Important Events</h3>
 
     </div>
     <div class="bg-white" style="width: 100vw">
-        <div style="margin-top:-100px;height:550px;width:100vw;background-color:#f2f2f2;" class=" m-0 p-0 my-radius">
+        <div style="" class="  my-radius production-category-list">
             <div class="" style="position: relative;width:10vw">
 
-                <div class="" style="position: absolute;left:0;width:100vw;top:-100px;padding:0 10vw">
+                <div class="category-card" style="">
                     <div class="row">
                         @foreach ($contentCategories as $contentCategory)
-                            <div class="col-md-4 mb-3" data-aos="zoom-in">
+                            <div class="col-12 col-sm-6 col-md-4 mb-3" data-aos="zoom-in">
                                 <a href="{{ route('front.productionShow', $contentCategory) }}"
                                     class="d-block cont-container">
 
@@ -67,7 +68,7 @@
                 <h2 class="text-center" data-aos="zoom-in" style="color: #444">Our business process road</h2>
 
                 <div class="row" style="margin-top: 60px">
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="col-md-4 mb-5" data-aos="zoom-in" data-aos-delay="300">
                         <div class="d-flex gap-3">
                             <h1 style="font-size: 90px;color:#6CBEE1">01.</h1>
                             <div class="d-block">
@@ -77,7 +78,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="col-md-4 mb-5" data-aos="zoom-in" data-aos-delay="400">
                         <div class="d-flex gap-3">
                             <h1 style="font-size: 90px;color:#6CBEE1">02.</h1>
                             <div class="d-block">
@@ -86,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="col-md-4 mb-5" data-aos="zoom-in" data-aos-delay="500">
                         <div class="d-flex gap-3">
                             <h1 style="font-size: 90px;color:#6CBEE1">03.</h1>
                             <div class="d-block">
@@ -98,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-white">
+        <div class="bg-white mt-2">
             <div class="footer-glass-container bg-white animate__animated animate__rubberBand" style="margin: 0;padding:0">
                 <div class="footer-glass" style="box-shadow: none">
                     <h3 class=" text-center capitalize animate__animated animate__swing">

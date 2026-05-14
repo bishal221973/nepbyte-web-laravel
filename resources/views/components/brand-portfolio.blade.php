@@ -32,7 +32,7 @@
         <div class="row px-2 px-md-5">
 
             @foreach ($brandPortfolios as $brandPortfolio)
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item"
+                <div class="col-12 col-sm-6 col-md-4 mb-4 portfolio-item"
                     data-category="{{ $brandPortfolio->brand_category_id }}">
 
                     <div class="brand-project-card">
@@ -157,6 +157,18 @@
     .portfolio-item {
         will-change: transform, opacity;
     }
+
+    @media (max-width: 768px) {
+
+    .body-wrapper {
+        min-height: 73vh;
+    }
+    .strategy-btns a{
+        padding: 2px 10px !important;
+        /* height: 0px !important; */
+    }
+
+}
 </style>
 
 @push('script')

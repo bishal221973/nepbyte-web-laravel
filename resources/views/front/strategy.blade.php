@@ -2,23 +2,23 @@
 @section('content')
     <x-breadcrumb title="Our Strategy" page="Strategy" />
 
-    <div id="fixedContent1" class="w-100 row align-items-center m-0" style="padding: 0px 10%;position: relative;">
+    <div id="fixedContent1" class="w-100 row align-items-center m-0 main-content-wrapper" style="position: relative;">
         <div class="col-md-6">
-            <h1 class="strategy-title uppercase animate__animated animate__zoomIn">
+            <h1 class="strategy-title text-center text-md-start uppercase animate__animated animate__zoomIn">
                 <span class="fw-bold">Sales Funnel </span>
                 <span>Strategy</span>
             </h1>
-            <h1 class="strategy-sub-title animate__animated animate__zoomIn">
+            <h1 class="strategy-sub-title text-center text-md-start animate__animated animate__zoomIn">
                 {{-- <span>That </span>
                 <span class="fw-bold">Converts Visitors </span>
                 <span>into Customers </span> --}}
                 Architecting roadmaps for long-term scalability.
             </h1>
 
-            <span style="color: #e9e9e9" class="d-block my-4 animate__animated animate__zoomIn">From guessing to growing. We
+            <span style="color: #e9e9e9" class="d-block text-center text-md-start  my-4 animate__animated animate__zoomIn">From guessing to growing. We
                 build the blueprint for your scale.</span>
 
-            <div class="flex gap-5 my-10 animate__animated animate__bounceInDown">
+            <div class="d-flex justify-content-center justify-content-md-start gap-2 my-10 strategy-btns animate__animated animate__bounceInDown">
 
                 <a href="#strategyInfo" class="btn funnel-btn text-white fw-bold px-4 py-3 rounded shadow">
                     Get Funnel Blueprint
@@ -26,14 +26,17 @@
                 {{-- <button class="btn strategy-btn fw-bold px-4 py-3 rounded shadow">
                     Book strategy call
                 </button> --}}
-                <a class="btn strategy-btn fw-bold px-4 py-3 rounded shadow" href="https://wa.me/9779814668499?text=Hello%2C%20I%E2%80%99m%20interested%20in%20booking%20a%20strategy%20call%20to%20discuss%20my%20project." target="_blank">
+                <a class="btn strategy-btn fw-bold px-4 py-3 rounded shadow"
+                    href="https://wa.me/9779814668499?text=Hello%2C%20I%E2%80%99m%20interested%20in%20booking%20a%20strategy%20call%20to%20discuss%20my%20project."
+                    target="_blank">
                     Message on WhatsApp
                 </a>
             </div>
 
-            <div class="mt-5">
+            <div class="mt-5 d-flex flex-column justify-content-center justify-content-md-start align-items-center align-items-md-start gap-3 animate__animated animate__fadeInLeft">
 
-                <div class="d-flex list-container align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft">
+                <div>
+                    <div class="d-flex list-container align-items-center gap-3 mb-3 animate__animated animate__fadeInLeft">
                     <div class="list-circle d-flex justify-content-center align-items-center fw-bold"
                         style="height:35px;width:35px;background:white;font-size:14px;">
                         01
@@ -57,6 +60,7 @@
                         03
                     </div>
                     <h5 class="text-white fw-bold mb-0">Scalable Growth System</h5>
+                </div>
                 </div>
 
             </div>
@@ -206,7 +210,9 @@
                     Book strategy call
                 </button> --}}
 
-                 <a class="btn strategy-btn fw-bold px-4 py-3 rounded shadow" href="https://wa.me/9779814668499?text=Hello%2C%20I%E2%80%99m%20interested%20in%20booking%20a%20strategy%20call%20to%20discuss%20my%20project." target="_blank">
+                <a class="btn strategy-btn fw-bold px-4 py-3 rounded shadow"
+                    href="https://wa.me/9779814668499?text=Hello%2C%20I%E2%80%99m%20interested%20in%20booking%20a%20strategy%20call%20to%20discuss%20my%20project."
+                    target="_blank">
                     Message on WhatsApp
                 </a>
             </div>
@@ -214,26 +220,5 @@
     </div>
 @endsection
 @push('script')
-    <script>
-        const element = document.getElementById("fixedContent");
-        const placeholder = document.getElementById("placeholder");
-
-        const elementTop = element.offsetTop + 50;
-        const elementHeight = element.offsetHeight;
-
-        window.addEventListener("scroll", function() {
-
-            if (window.scrollY >= elementTop) {
-                element.classList.add("active");
-
-                // keep bottom content from jumping
-                placeholder.style.height = 700 + "px";
-
-            } else {
-                element.classList.remove("active");
-                placeholder.style.height = "0px";
-            }
-
-        });
-    </script>
+    
 @endpush

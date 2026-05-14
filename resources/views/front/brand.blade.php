@@ -44,19 +44,24 @@
                 </p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 align-items-stretch">
                 @foreach ($brandServices as $item)
-                    <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
-                        <div class="brand-card">
-                            {!! $item->icon !!}
+                    <div class="col-12 col-sm-6 col-md-4 d-flex" data-aos="zoom-in-up" data-aos-delay="100">
+
+                        <div class="brand-card w-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center">
+                                {!! $item->icon !!}
+                            </div>
+
                             <h4>{{ $item->name }}</h4>
-                            <p>{{ $item->description }}</p>
+
+                            <p class="flex-grow-1">
+                                {{ $item->description }}
+                            </p>
                         </div>
+
                     </div>
                 @endforeach
-
-
-
             </div>
 
         </div>
@@ -352,5 +357,50 @@
     .selectCategoryActive {
         background-color: #789EC3 !important;
         color: #fff !important;
+    }
+
+    @media (max-width: 768px) {
+
+        .ai-title {
+            font-size: 40px
+        }
+
+        .brand-sub-content {
+            position: relative !important;
+        }
+
+        .brand-project {
+            background: #f2f2f2;
+            position: relative;
+            margin-top: -200px;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .ai-title {
+            font-size: 35px
+        }
+
+
+    }
+
+    @media (max-width: 510px) {
+
+        .ai-title {
+            font-size: 30px
+        }
+
+        .ai-subtitle {
+            font-size: 16px
+        }
+
+        .hero-btns a {
+            padding: 10px 20px 5px 20px !important;
+            font-size: 13px
+        }
+
+
     }
 </style>
