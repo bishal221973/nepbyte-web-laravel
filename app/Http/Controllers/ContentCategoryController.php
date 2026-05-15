@@ -39,6 +39,7 @@ class ContentCategoryController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
+            'content_type'=>'required',
             'description' => 'nullable',
         ]);
 
@@ -82,6 +83,7 @@ class ContentCategoryController extends Controller
 
         $data = $request->validate([
             'name' => 'required',
+            'content_type'=>'required',
             'description' => 'nullable',
         ]);
 

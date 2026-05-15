@@ -22,7 +22,7 @@
         <div class="container-fluid">
 
 
-            <x-table-component :headers="['#', 'Name', 'Slug','Description', 'Status', 'Action']">
+            <x-table-component :headers="['#', 'Name', 'Slug','Content Type', 'Description', 'Status', 'Action']">
                 <x-slot name="actions">
                     <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add
                         Category</button>
@@ -33,6 +33,7 @@
                         </td>
                         <td style="padding: 0">{{ $item->name }}</td>
                         <td style="padding: 0">{{ $item->slug }}</td>
+                        <td style="padding: 0">{{ $item->content_type }}</td>
                         <td style="padding: 0">{{ $item->description }}</td>
                         <td style="padding: 0">
                             <label class="mini-switch">
@@ -87,7 +88,16 @@
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                        
+                        <div class="form-group mb-3">
+                            <label for="">Content Type</label>
+                            <select name="content_type" class="form-control form-select">
+                                <option value="Photography" {{$brandService?->content_type == 'Photography' ? 'selected' : ''}}>Photography</option>
+                                <option value="Videography" {{$brandService?->content_type == 'Videography' ? 'selected' : ''}}>Videography</option>
+                            </select>
+                            @error('name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
 
                         <div class="form-group mb-3">
                             <label for="">Description</label>
@@ -155,7 +165,7 @@
             let id = checkbox.data('id');
             let status = checkbox.is(':checked') ? 1 : 0;
 
-             let url = "{{ route('content-category.toggle-status', ':id') }}";
+            let url = "{{ route('content-category.toggle-status', ':id') }}";
             url = url.replace(':id', id);
 
             $.ajax({
@@ -211,42 +221,42 @@
     </script> --}}
 
     <script>
-$(document).ready(function () {
+        $(document).ready(function() {
 
-    $("#myTable tbody").sortable({
-        cursor: "move",
-        opacity: 0.8,
+            $("#myTable tbody").sortable({
+                cursor: "move",
+                opacity: 0.8,
 
-        // 🔥 FIX: prevent shrinking
-        helper: function(e, ui) {
-            ui.children().each(function() {
-                $(this).width($(this).width());
-            });
-            return ui;
-        },
+                // 🔥 FIX: prevent shrinking
+                helper: function(e, ui) {
+                    ui.children().each(function() {
+                        $(this).width($(this).width());
+                    });
+                    return ui;
+                },
 
-        update: function () {
+                update: function() {
 
-            let order = [];
+                    let order = [];
 
-            $("#myTable tbody tr").each(function (index) {
-                order.push({
-                    id: $(this).data("id"),
-                    position: index + 1
-                });
-            });
+                    $("#myTable tbody tr").each(function(index) {
+                        order.push({
+                            id: $(this).data("id"),
+                            position: index + 1
+                        });
+                    });
 
-            $.ajax({
-                url: "{{ route('branding-services.sort') }}",
-                type: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    order: order
+                    $.ajax({
+                        url: "{{ route('branding-services.sort') }}",
+                        type: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            order: order
+                        }
+                    });
                 }
-            });
-        }
-    }).disableSelection();
+            }).disableSelection();
 
-});
-</script>
+        });
+    </script>
 @endpush

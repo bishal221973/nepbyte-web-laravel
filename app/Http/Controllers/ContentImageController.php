@@ -27,7 +27,8 @@ class ContentImageController extends Controller
             'content_category_id'=>'required',
             'name' => 'nullable',
             'description' => 'nullable',
-            'image' => 'required',
+            'image' => 'nullable',
+            'iframe'=>'nullable'
         ]);
 
 

@@ -22,7 +22,7 @@
         <div class="container-fluid">
 
 
-            <x-table-component :headers="['#', 'Image','Name', 'Category','Description', 'Action']">
+            <x-table-component :headers="['#', 'Image', 'Name', 'Category', 'Description', 'Action']">
                 <x-slot name="actions">
                     <button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#exampleModal">Add
                         Image</button>
@@ -31,13 +31,13 @@
                     <tr style="padding: 0" data-id="{{ $item->id }}">
                         <td style="padding: 0"><span style="display: block;text-align:start">{{ $loop->iteration }}</span>
                         </td>
-                         <td style="padding: 0">
+                        <td style="padding: 0">
                             <img src="/storage/{{ $item->image }}" style="width:70px " alt="hello">
                         </td>
                         <td style="padding: 0">{{ $item->name }}</td>
                         <td style="padding: 0">{{ $item->category?->name }}</td>
                         <td style="padding: 0">{{ $item->description }}</td>
-                       
+
                         <td style="padding: 0">
                             <div class="d-flex">
                                 <a href="{{ route('content-image.edit', $item) }}" style="margin-top: 10px"
@@ -63,7 +63,8 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ $brandService?->id ? 'Update' : 'Create' }} Production Image
+                    <h5 class="modal-title" id="exampleModalLabel">{{ $brandService?->id ? 'Update' : 'Create' }} Production
+                        Image
                     </h5>
                 </div>
                 <form
@@ -81,7 +82,9 @@
                                 <option value="">Selct category</option>
 
                                 @foreach ($contentCategories as $item)
-                                    <option value="{{$item->id}}" {{$item->id == $brandService->content_category_id ? 'selected' : ''}}>{{$item->name}}</option>
+                                    <option value="{{ $item->id }}"
+                                        {{ $item->id == $brandService->content_category_id ? 'selected' : '' }}>
+                                        {{ $item->name }}</option>
                                 @endforeach
                             </select>
                             @error('content_category_id')
@@ -105,9 +108,20 @@
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-                        
 
-                        <div class="mb-3">
+                        <div class="form-group mb-3">
+                            <label for="">Content Type</label>
+                            <select id="contentType" class="form-control form-select">
+                                <option value="Photography">Photography</option>
+                                <option value="Videography">Videography</option>
+                            </select>
+                            @error('name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+
+                        <div class="mb-3" id="imageUploadSection">
                             <label>Image <span class="text-danger">*</span></label>
                             <div class="d-flex align-items-end">
                                 <div class="">
@@ -145,6 +159,11 @@
                             @error('image')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
+                        </div>
+
+                        <div id="videoInputSection" style="display:none;">
+                            <label>Iframe <span class="text-danger">*</span></label>
+                            <input type="text" name="iframe" class="form-control" placeholder="Enter video link">
                         </div>
 
                     </div>
@@ -198,6 +217,27 @@
 
 
 @push('script')
+<script>
+    const contentType = document.getElementById('contentType');
+    const imageSection = document.getElementById('imageUploadSection');
+    const videoSection = document.getElementById('videoInputSection');
+
+    function toggleFields() {
+        if (contentType.value === 'Photography') {
+            imageSection.style.display = 'block';
+            videoSection.style.display = 'none';
+        } else {
+            imageSection.style.display = 'none';
+            videoSection.style.display = 'block';
+        }
+    }
+
+    // Run on load
+    toggleFields();
+
+    // Run on change
+    contentType.addEventListener('change', toggleFields);
+</script>
     <script>
         $(document).on('change', '.status-toggle', function() {
 
@@ -205,7 +245,7 @@
             let id = checkbox.data('id');
             let status = checkbox.is(':checked') ? 1 : 0;
 
-             let url = "{{ route('content-category.toggle-status', ':id') }}";
+            let url = "{{ route('content-category.toggle-status', ':id') }}";
             url = url.replace(':id', id);
 
             $.ajax({
@@ -261,42 +301,42 @@
     </script> --}}
 
     <script>
-$(document).ready(function () {
+        $(document).ready(function() {
 
-    $("#myTable tbody").sortable({
-        cursor: "move",
-        opacity: 0.8,
+            $("#myTable tbody").sortable({
+                cursor: "move",
+                opacity: 0.8,
 
-        // 🔥 FIX: prevent shrinking
-        helper: function(e, ui) {
-            ui.children().each(function() {
-                $(this).width($(this).width());
-            });
-            return ui;
-        },
+                // 🔥 FIX: prevent shrinking
+                helper: function(e, ui) {
+                    ui.children().each(function() {
+                        $(this).width($(this).width());
+                    });
+                    return ui;
+                },
 
-        update: function () {
+                update: function() {
 
-            let order = [];
+                    let order = [];
 
-            $("#myTable tbody tr").each(function (index) {
-                order.push({
-                    id: $(this).data("id"),
-                    position: index + 1
-                });
-            });
+                    $("#myTable tbody tr").each(function(index) {
+                        order.push({
+                            id: $(this).data("id"),
+                            position: index + 1
+                        });
+                    });
 
-            $.ajax({
-                url: "{{ route('branding-services.sort') }}",
-                type: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    order: order
+                    $.ajax({
+                        url: "{{ route('branding-services.sort') }}",
+                        type: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            order: order
+                        }
+                    });
                 }
-            });
-        }
-    }).disableSelection();
+            }).disableSelection();
 
-});
-</script>
+        });
+    </script>
 @endpush
