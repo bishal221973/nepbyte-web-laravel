@@ -46,23 +46,23 @@ class FrontController extends Controller
 
     public function printDesign()
     {
-        $categories=PrintCategory::latest()->get();
-        $portfolios=PrintPortfolio::latest()->get();
-        return view('front.printDesign',[
-            'categories'=>$categories,
-            'portfolios'=>$portfolios
+        $categories = PrintCategory::latest()->get();
+        $portfolios = PrintPortfolio::latest()->get();
+        return view('front.printDesign', [
+            'categories' => $categories,
+            'portfolios' => $portfolios
         ]);
     }
 
     public function marketing()
     {
         $brands = Brands::latest()->get();
-        $categories=MarketingCategory::latest()->get();
-        $marketings=Marketing::latest()->get();
+        $categories = MarketingCategory::latest()->get();
+        $marketings = Marketing::latest()->get();
         return view('front.marketing', [
             'brands' => $brands,
-            'categories'=>$categories,
-            'marketings'=>$marketings,
+            'categories' => $categories,
+            'marketings' => $marketings,
         ]);
     }
 
@@ -84,16 +84,16 @@ class FrontController extends Controller
 
     public function team()
     {
-        $teams=Team::latest()->get();
-        return view('front.team',[
-            'teams'=>$teams
+        $teams = Team::latest()->get();
+        return view('front.team', [
+            'teams' => $teams
         ]);
     }
     public function collaboration()
     {
-        $teams=Team::latest()->get();
-        return view('front.collaboration',[
-            'teams'=>$teams
+        $teams = Team::latest()->get();
+        return view('front.collaboration', [
+            'teams' => $teams
         ]);
     }
 
@@ -116,29 +116,35 @@ class FrontController extends Controller
     }
 
     public function partnerStore(Request $request)
-{
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'nullable|email|max:255',
-        'phone' => 'nullable|string|max:50',
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'nullable|string|max:50',
 
-        'company_name' => 'nullable|string|max:255',
-        'website' => 'nullable|string|max:255',
-        'industry' => 'nullable|string|max:255',
-        'company_size' => 'nullable|string|max:100',
+            'company_name' => 'nullable|string|max:255',
+            'website' => 'nullable|string|max:255',
+            'industry' => 'nullable|string|max:255',
+            'company_size' => 'nullable|string|max:100',
 
-        'partnership_type' => 'nullable|string|max:100',
+            'partnership_type' => 'nullable|string|max:100',
 
-        'country' => 'nullable|string|max:100',
-        'city' => 'nullable|string|max:100',
+            'country' => 'nullable|string|max:100',
+            'city' => 'nullable|string|max:100',
 
-        'message' => 'nullable|string',
-    ]);
+            'message' => 'nullable|string',
+        ]);
 
-    \App\Models\Partner::create($validated);
+        \App\Models\Partner::create($validated);
 
-    return redirect()
-        ->route('front.collaboration')
-        ->with('success', 'Your partnership request has been submitted successfully!');
-}
+        return redirect()
+            ->route('front.collaboration')
+            ->with('success', 'Your partnership request has been submitted successfully!');
+    }
+
+    public function about()
+    {
+        return view('front.about', [
+        ]);
+    }
 }

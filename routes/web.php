@@ -50,6 +50,7 @@ Route::get('our-team', [FrontController::class, 'team'])->name('front.team');
 Route::get('collaboration', [FrontController::class, 'collaboration'])->name('front.collaboration');
 Route::post('collaboration-store', [FrontController::class, 'collaborationStore'])->name('front.collaboration.store');
 Route::post('partner-store', [FrontController::class, 'partnerStore'])->name('front.partner.store');
+Route::get('about-us', [FrontController::class, 'about'])->name('front.about.us');
 
 Auth::routes();
 
