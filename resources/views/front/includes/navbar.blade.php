@@ -11,9 +11,12 @@
             <img src="{{ asset('logo.jpg') }}" class="nav-logo" alt="Logo">
         </a>
 
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-3">
             <a href="{{ route('front.collaboration') }}" class="nav-start-project text-white text-decoration-none">
                 Collaboration
+            </a>
+            <a href="{{ route('front.about.us') }}" class="nav-start-project text-white text-decoration-none">
+                About Us
             </a>
             <a href="{{ route('front.team') }}" class="team-btn1 text-decoration-none">
                 <img src="{{ asset('images/team.png') }}" alt="">
@@ -22,7 +25,25 @@
         </div>
     </div>
 </div>
+<div class="d-flex d-sm-none justify-content-center  gap-4 flex-wrap faq-links">
 
+    <a href="{{ route('front.team') }}" class="faq-link text-white text-decoration-none">
+        <i class="fas fa-users"></i>
+        <span>Team</span>
+    </a>
+
+    <a href="{{ route('front.collaboration') }}" class="faq-link text-white text-decoration-none">
+        <i class="fas fa-handshake"></i>
+        <span>Collaboration</span>
+    </a>
+
+    <a href="{{route('front.about.us')}}" class="faq-link text-white text-decoration-none">
+        <i class="fas fa-circle-info"></i>
+        <span>About Us</span>
+    </a>
+
+</div>
+<hr style="color: #fff" class="d-sm-none">
 
 <a href="{{ route('front.team') }}" class="team-btn text-decoration-none">
     <img src="{{ asset('images/team.png') }}" alt="">
